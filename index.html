@@ -1190,18 +1190,8 @@
 
   .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: no-preference) {
-    @supports ((animation-timeline: view()) and (animation-range: entry)) {
-      .reveal-on-scroll {
-        opacity: 0; transform: translateY(50px);
-        animation: fade-up-scroll linear both;
-        animation-timeline: view();
-        animation-range: entry 5% cover 25%;
-        transition: none;
-      }
-      .reveal-on-scroll.is-visible { opacity: initial; transform: initial; }
-      @keyframes fade-up-scroll { to { opacity: 1; transform: translateY(0); } }
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll { transition: none; opacity: 1; transform: translateY(0); }
   }
 
   /* Hover Enhancements */
@@ -1226,7 +1216,7 @@
         <nav class="nav-links">
       <a href="#capabilities">Capabilities</a>
       <a href="#work">Experience</a>
-      <a href="#ventures">Ventures</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
       <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment" style="color: var(--gold); border: 1px solid var(--gold-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: -0.4rem;">Book Call</a>
     </nav>
@@ -1612,7 +1602,7 @@
       </div>
     </section>
 
-    <section class="content" id="ventures">
+    <section class="content" id="projects">
       <div class="section-header reveal-on-scroll" style="margin-top: 2rem;">
         <span class="section-num">/ 04.5</span>
         <h2 class="section-title">Projects &amp; Consulting</h2>
@@ -1885,7 +1875,7 @@
           ['', '  about       : who I am and what I do'],
           ['', '  experience  : career history, condensed'],
           ['', '  stack       : tools and tech I actually use'],
-          ['', '  ventures    : Magnis AI and consulting work'],
+          ['', '  projects    : Magnis AI and consulting work'],
           ['', '  clients     : named accounts and engagements'],
           ['', '  casestudy   : the multi-country BFSI migration'],
           ['', '  writing     : LinkedIn articles and talks'],
@@ -1916,7 +1906,7 @@
           ['', 'so I can run an architecture conversation with a CTO and a value'],
           ['', 'conversation with a CIO in the same meeting.'],
           ['', ''],
-          ['dim', "Try 'experience', 'ventures', or 'casestudy' next."]
+          ['dim', "Try 'experience', 'projects', or 'casestudy' next."]
         ],
         experience: () => [
           ['heading', '// experience'],
@@ -1966,8 +1956,8 @@
           ['gold', 'Enterprise'],
           ['', '  TOGAF 9, CISM, Google Cloud Digital Leader, Azure Fundamentals']
         ],
-        ventures: () => [
-          ['heading', '// ventures'],
+        projects: () => [
+          ['heading', '// projects'],
           ['', ''],
           ['gold', '[ advisor and GTM leader ] Magnis AI'],
           ['', '  magnisai.com / app.magnisai.com'],
@@ -2124,7 +2114,7 @@
           ['gold', 'Follow the white rabbit.']
         ],
         ls: () => [
-          ['dim', 'about  experience  stack  ventures  clients  casestudy  writing  contact  resume  available'],
+          ['dim', 'about  experience  stack  projects  clients  casestudy  writing  contact  resume  available'],
           ['dim', '.secrets/  .ssh/  README.md  magnis.config']
         ],
         'cat README.md': () => [
@@ -2147,7 +2137,7 @@
         { keys: ['who', 'are you', 'yourself', 'tell me about', 'introduce', 'background'], cmd: 'about' },
         { keys: ['work history', 'job', 'career', 'experience', 'where have you worked', 'past role'], cmd: 'experience' },
         { keys: ['skill', 'tech', 'tools', 'stack', 'know how', 'languages', 'frameworks'], cmd: 'stack' },
-        { keys: ['magnis', 'startup', 'product', 'building', 'side project', 'venture', 'saas'], cmd: 'ventures' },
+        { keys: ['magnis', 'startup', 'product', 'building', 'side project', 'project', 'saas'], cmd: 'projects' },
         { keys: ['client', 'account', 'banks', 'company', 'companies', 'customer'], cmd: 'clients' },
         { keys: ['case', 'project example', 'detail', 'example work', 'migration', 'bfsi project'], cmd: 'casestudy' },
         { keys: ['article', 'blog', 'writing', 'publish', 'speak', 'talk', 'keynote'], cmd: 'writing' },
@@ -2234,7 +2224,7 @@
             appendLine('error', 'Not sure what you meant by "' + trimmed + '".');
             appendLine('', '');
             appendLine('dim', "I'm a scripted terminal, not a live agent. Here's what I do know:");
-            appendSuggestions(['about', 'experience', 'ventures', 'casestudy', 'contact', 'help']);
+            appendSuggestions(['about', 'experience', 'projects', 'casestudy', 'contact', 'help']);
             appendLine('', '');
             appendLine('dim', "Or email avi.gautam@gmail.com - that's the real fallback.");
           }
@@ -2319,9 +2309,9 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
       <span>Exp</span>
     </a>
-    <a href="#ventures" class="bottom-nav-item">
+    <a href="#projects" class="bottom-nav-item">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-      <span>Ventures</span>
+      <span>Projects</span>
     </a>
     <a href="#contact" class="bottom-nav-item">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -2347,19 +2337,17 @@
 
 
 
-    // Reveal on Scroll Fallback
+    // Reveal on Scroll
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-      revealElements.forEach(el => observer.observe(el));
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    revealElements.forEach(el => observer.observe(el));
   </script>
 
 </body>
