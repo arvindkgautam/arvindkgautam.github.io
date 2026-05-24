@@ -1206,6 +1206,29 @@
   .case-meta { transition: background 0.4s ease; }
   .case-meta:hover { background: var(--bg-card); }
 
+
+  /* Premium Polishes */
+  ::selection { background: var(--gold-soft); color: var(--ink); }
+  ::-moz-selection { background: var(--gold-soft); color: var(--ink); }
+  
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold-soft); }
+
+  @media print {
+    body { background: white; color: black; }
+    body::before { display: none; }
+    .topbar, .bottom-nav, .terminal-section, .cv-button, .mobile-menu-btn, .project-arrow, .scroll-progress { display: none !important; }
+    .hero, .content, .capability, .project, .article { border: none !important; box-shadow: none !important; margin: 0 !important; padding: 1rem 0 !important; page-break-inside: avoid; }
+    .name, .section-title, .project-title, .work-role { color: black !important; }
+    a { text-decoration: underline; color: black; }
+    .project-tag, .section-num { color: #555; }
+    .work-grid { display: block; border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1rem; }
+    .work-meta { float: left; width: 30%; margin-bottom: 1rem; }
+    .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+  }
+
 </style>
 </head>
 
@@ -1347,9 +1370,9 @@
         <span class="capability-icon">ii.</span>
         <h3 class="capability-title">AI &amp; CX advisory</h3>
         <ul class="capability-list">
-          <li>GenAI and agentic workflow architecture</li>
+          <li>GenAI for Voice, Chatbots, and agentic workflows</li>
           <li>RAG pipelines with vector stores and reranking</li>
-          <li>CCaaS transformation: Avaya, Genesys, Amazon Connect</li>
+          <li>Digital &amp; CCaaS transformation (AWS Connect, Avaya, Genesys)</li>
           <li>Prompt engineering, eval harnesses, hallucination guardrails</li>
           <li>AI governance for regulated industries</li>
           <li>Workshop facilitation, roadmap design, vendor selection</li>
@@ -1362,7 +1385,7 @@
           <li>Multi-tenant SaaS with Postgres row-level security</li>
           <li>N8N workflow automation, document extraction</li>
           <li>WhatsApp, Telegram, web business messaging</li>
-          <li>Self-hosted infra: Hetzner, Fly.io, Supabase</li>
+          <li>Edge &amp; Infra: Cloudflare, Hetzner, Fly.io, Supabase</li>
           <li>Claude Code, React Native / Expo</li>
           <li>From audit to BRD to live product</li>
         </ul>
@@ -1485,7 +1508,7 @@
         <div><span style="color: var(--gold);">2010–2015</span> → CX &amp; consulting foundations</div>
         <div><span style="color: var(--gold);">2016–2020</span> → Transformation leadership</div>
         <div><span style="color: var(--gold);">2021–2024</span> → AI adoption &amp; enterprise strategy</div>
-        <div><span style="color: var(--gold);">2025+</span> → Agentic AI &amp; venture initiatives</div>
+        <div><span style="color: var(--gold);">2025+</span> → Agentic AI &amp; advisory initiatives</div>
       </div>
 
       <div class="work-grid reveal-on-scroll">
@@ -1578,7 +1601,7 @@
       </div>
     </section>
 
-    <section class="content" id="magnis-venture">
+    <section class="content" id="magnis">
       <div class="section-header reveal-on-scroll">
         <span class="section-num">/ 04</span>
         <h2 class="section-title">Strategic Advisory & GTM Leadership</h2>
@@ -1587,7 +1610,7 @@
 
       <div class="case-study reveal-on-scroll">
         <div class="case-study-header">
-          <div class="case-tag">Independent AI Venture</div>
+          <div class="case-tag">Independent AI SaaS</div>
           <h3 class="case-title">Magnis AI</h3>
           <p class="case-subtitle">Multi-tenant SaaS practice building practical AI products for Indian SMBs.</p>
         </div>
@@ -1709,9 +1732,8 @@
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Infrastructure</div>
-          <h4 class="tool-name">Hetzner / Fly.io</h4>
-          <p class="tool-opinion">"Where Magnis lives. Hetzner for the heavy stuff at Hetzner prices. Fly for the
-            edge-deployed bits. AWS is for clients who can't say no to AWS."</p>
+          <h4 class="tool-name">Cloudflare / Hetzner</h4>
+          <p class="tool-opinion">"Where Magnis lives. Cloudflare for robust hosting and edge routing, Hetzner for the heavy compute. AWS is for clients who can't say no to AWS."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Messaging</div>
