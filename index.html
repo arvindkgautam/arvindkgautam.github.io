@@ -51,7 +51,6 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* Top bar */
   .topbar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -65,662 +64,166 @@
     -webkit-backdrop-filter: blur(8px);
   }
 
-  .monogram {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--gold);
-  }
+  .monogram { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.02em; color: var(--gold); }
 
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-  }
-
-  .nav-links a {
-    color: var(--ink-dim);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
+  .nav-links { display: flex; gap: 2.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-dim); }
+  .nav-links a { color: var(--ink-dim); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
 
-  .meta-status {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-  }
+  .meta-status { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-dim); }
+  .meta-status::before { content: '●'; color: #6fa86f; margin-right: 0.5em; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  .meta-status::before {
-    content: '●';
-    color: #6fa86f;
-    margin-right: 0.5em;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* Hero */
   .hero {
-    min-height: 100vh;
-    padding: 8rem 2.5rem 4rem;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    position: relative;
-    max-width: 1500px;
-    margin: 0 auto;
+    min-height: 100vh; padding: 8rem 2.5rem 4rem;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem;
+    align-items: end; position: relative; max-width: 1500px; margin: 0 auto;
   }
 
   .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--rule) 1px, transparent 1px),
-      linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at 75% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
     -webkit-mask-image: radial-gradient(ellipse at 75% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
     pointer-events: none;
   }
 
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: rise 0.8s ease-out 0.2s forwards;
-  }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; opacity: 0; animation: rise 0.8s ease-out 0.2s forwards; }
+  .eyebrow .dot { display: inline-block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-right: 0.8em; vertical-align: middle; }
 
-  .eyebrow .dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    margin-right: 0.8em;
-    vertical-align: middle;
-  }
+  h1.name { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 1.8rem; opacity: 0; animation: rise 1s ease-out 0.4s forwards; }
+  h1.name .italic { font-style: italic; font-weight: 400; color: var(--gold); }
 
-  h1.name {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: rise 1s ease-out 0.4s forwards;
-  }
+  .tagline { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: 1.5rem; color: var(--ink-dim); max-width: 36ch; line-height: 1.4; opacity: 0; animation: rise 1s ease-out 0.7s forwards; margin-bottom: 2.5rem; }
 
-  h1.name .italic {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--gold);
-  }
+  .now-line { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-dim); letter-spacing: 0.05em; opacity: 0; animation: rise 1s ease-out 1s forwards; border-left: 2px solid var(--gold-soft); padding-left: 0.8rem; max-width: 44ch; line-height: 1.7; }
+  .now-line strong { color: var(--gold); font-weight: 500; }
 
-  .tagline {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: var(--ink-dim);
-    max-width: 36ch;
-    line-height: 1.4;
-    opacity: 0;
-    animation: rise 1s ease-out 0.7s forwards;
-  }
+  .hero-right { border-left: 1px solid var(--rule); padding-left: 3rem; opacity: 0; animation: rise 1s ease-out 0.9s forwards; }
 
-  .hero-right {
-    border-left: 1px solid var(--rule);
-    padding-left: 3rem;
-    opacity: 0;
-    animation: rise 1s ease-out 0.9s forwards;
-  }
+  .summary { font-size: 1.05rem; color: var(--ink); margin-bottom: 2.5rem; max-width: 44ch; }
 
-  .summary {
-    font-size: 1.05rem;
-    color: var(--ink);
-    margin-bottom: 2.5rem;
-    max-width: 44ch;
-  }
+  .pillars { display: flex; flex-direction: column; gap: 0; }
+  .pillar { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); font-size: 0.95rem; }
+  .pillar:last-child { border-bottom: 1px solid var(--rule); }
+  .pillar-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold-soft); letter-spacing: 0.15em; }
+  .pillar-title { font-weight: 500; color: var(--ink); display: block; margin-bottom: 0.2rem; }
+  .pillar-desc { font-size: 0.88rem; color: var(--ink-dim); }
 
-  .pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+  section.content { padding: 6rem 2.5rem; max-width: 1500px; margin: 0 auto; position: relative; }
 
-  .pillar {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 1rem;
-    padding: 1.1rem 0;
-    border-top: 1px solid var(--rule);
-    font-size: 0.95rem;
-  }
+  .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.2em; }
+  .section-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: 2.5rem; letter-spacing: -0.01em; }
+  .section-intro { margin-left: auto; max-width: 30ch; font-size: 0.9rem; color: var(--ink-dim); text-align: right; font-style: italic; }
 
-  .pillar:last-child {
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .pillar-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--gold-soft);
-    letter-spacing: 0.15em;
-  }
-
-  .pillar-title {
-    font-weight: 500;
-    color: var(--ink);
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-
-  .pillar-desc {
-    font-size: 0.88rem;
-    color: var(--ink-dim);
-  }
-
-  /* Sections */
-  section.content {
-    padding: 6rem 2.5rem;
-    max-width: 1500px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 1.5rem;
-  }
-
-  .section-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--gold);
-    letter-spacing: 0.2em;
-  }
-
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 2.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .section-intro {
-    margin-left: auto;
-    max-width: 30ch;
-    font-size: 0.9rem;
-    color: var(--ink-dim);
-    text-align: right;
-    font-style: italic;
-  }
-
-  /* Capabilities band */
-  .capabilities {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    background: var(--rule);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .capability {
-    background: var(--bg);
-    padding: 3rem 2.5rem;
-    border-right: 1px solid var(--rule);
-  }
-
+  .capabilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--rule); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .capability { background: var(--bg); padding: 3rem 2.5rem; border-right: 1px solid var(--rule); }
   .capability:last-child { border-right: none; }
-
-  .capability-icon {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: block;
-    font-style: italic;
-  }
-
-  .capability-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-
-  .capability-list {
-    list-style: none;
-    font-size: 0.9rem;
-    color: var(--ink-dim);
-  }
-
-  .capability-list li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
+  .capability-icon { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--gold); margin-bottom: 1rem; display: block; font-style: italic; }
+  .capability-title { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem; }
+  .capability-list { list-style: none; font-size: 0.9rem; color: var(--ink-dim); }
+  .capability-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--rule); }
   .capability-list li:last-child { border-bottom: none; }
 
-  /* Work / experience */
-  .work-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-bottom: 3.5rem;
-    padding-bottom: 3.5rem;
-    border-bottom: 1px solid var(--rule);
-  }
+  .case-study { background: var(--bg-soft); border: 1px solid var(--rule-strong); overflow: hidden; }
+  .case-study-header { padding: 2.5rem 3rem; border-bottom: 1px solid var(--rule); background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-card) 100%); }
+  .case-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .case-title { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 0.6rem; line-height: 1.1; }
+  .case-subtitle { font-family: 'Fraunces', serif; font-style: italic; color: var(--ink-dim); font-size: 1.1rem; }
 
-  .work-grid:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+  .case-meta-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--rule); border-bottom: 1px solid var(--rule); }
+  .case-meta { background: var(--bg-soft); padding: 1.5rem 2rem; border-right: 1px solid var(--rule); }
+  .case-meta:last-child { border-right: none; }
+  .case-meta-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 0.4rem; }
+  .case-meta-value { font-size: 0.9rem; color: var(--ink); }
 
-  .work-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--ink-dim);
-  }
+  .case-body { padding: 3rem; display: grid; grid-template-columns: 180px 1fr; gap: 2.5rem; }
+  .case-body + .case-body { border-top: 1px solid var(--rule); }
+  .case-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); padding-top: 0.3rem; }
+  .case-section-content { font-size: 1rem; color: var(--ink); max-width: 65ch; }
+  .case-section-content p { margin-bottom: 0.8rem; }
+  .case-section-content p:last-child { margin-bottom: 0; }
 
-  .work-period {
-    color: var(--gold-soft);
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-  }
+  .case-outcome-list { list-style: none; margin-top: 0.6rem; }
+  .case-outcome-list li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; color: var(--ink-dim); }
+  .case-outcome-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
+  .case-outcome-list li strong { color: var(--ink); font-weight: 500; }
 
+  .work-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--rule); }
+  .work-grid:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .work-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--ink-dim); }
+  .work-period { color: var(--gold-soft); margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 0.1em; }
   .work-loc { color: var(--ink-faint); font-size: 0.8rem; margin-top: 0.4rem; }
-
-  .work-role {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 0.4rem;
-  }
-
-  .work-company {
-    color: var(--gold-soft);
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
-  }
-
+  .work-role { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .work-company { color: var(--gold-soft); margin-bottom: 1.2rem; font-size: 1rem; letter-spacing: 0.02em; }
   .work-desc { font-size: 1rem; color: var(--ink); max-width: 64ch; margin-bottom: 1.2rem; }
+  .work-highlights { list-style: none; font-size: 0.92rem; color: var(--ink-dim); }
+  .work-highlights li { padding: 0.4rem 0; padding-left: 1.3rem; position: relative; }
+  .work-highlights li::before { content: '→'; position: absolute; left: 0; color: var(--gold-soft); }
 
-  .work-highlights {
-    list-style: none;
-    font-size: 0.92rem;
-    color: var(--ink-dim);
-  }
-
-  .work-highlights li {
-    padding: 0.4rem 0;
-    padding-left: 1.3rem;
-    position: relative;
-  }
-
-  .work-highlights li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--gold-soft);
-  }
-
-  /* Projects */
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-
-  .project {
-    background: var(--bg);
-    padding: 2.5rem;
-    transition: background 0.4s ease;
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .project { background: var(--bg); padding: 2.5rem; transition: background 0.4s ease; position: relative; text-decoration: none; color: inherit; display: block; }
   .project:hover { background: var(--bg-soft); }
+  .project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 1rem; }
+  .project-title { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 0.8rem; }
+  .project-desc { font-size: 0.95rem; color: var(--ink-dim); max-width: 44ch; margin-bottom: 1rem; }
+  .project-stack { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+  .project-link { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; }
+  .project-arrow { position: absolute; top: 2.5rem; right: 2.5rem; color: var(--ink-faint); transition: color 0.3s, transform 0.3s; font-size: 1.2rem; }
+  .project:hover .project-arrow { color: var(--gold); transform: translate(4px, -4px); }
 
-  .project-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-soft);
-    margin-bottom: 1rem;
-  }
+  .tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; background: var(--rule); border: 1px solid var(--rule); }
+  .tool { background: var(--bg); padding: 1.8rem 2rem; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+  .tool-name { font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--gold); margin-bottom: 0.3rem; }
+  .tool-category { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.6rem; }
+  .tool-opinion { font-size: 0.9rem; color: var(--ink-dim); font-style: italic; line-height: 1.5; }
 
-  .project-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-  }
+  .writing { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .article { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+  .article-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 0.6rem; }
+  .article-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
 
-  .project-desc {
-    font-size: 0.95rem;
-    color: var(--ink-dim);
-    max-width: 44ch;
-    margin-bottom: 1rem;
-  }
-
-  .project-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-  }
-
-  .project-arrow {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    color: var(--ink-faint);
-    transition: color 0.3s, transform 0.3s;
-    font-size: 1.2rem;
-  }
-
-  .project:hover .project-arrow {
-    color: var(--gold);
-    transform: translate(4px, -4px);
-  }
-
-  /* Writing / thoughts */
-  .writing {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .article {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .article-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-soft);
-    margin-bottom: 0.6rem;
-  }
-
-  .article-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    line-height: 1.3;
-    color: var(--ink);
-  }
-
-  /* Credentials */
-  .credentials {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    padding-top: 1rem;
-  }
-
-  .cred-block-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .cred-list {
-    list-style: none;
-    font-size: 0.95rem;
-    color: var(--ink-dim);
-  }
-
-  .cred-list li {
-    padding: 0.5rem 0;
-  }
-
+  .credentials { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; padding-top: 1rem; }
+  .cred-block-title { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); }
+  .cred-list { list-style: none; font-size: 0.95rem; color: var(--ink-dim); }
+  .cred-list li { padding: 0.5rem 0; }
   .cred-list .em { color: var(--ink); font-weight: 400; }
 
-  /* Contact */
-  .contact {
-    padding: 8rem 2.5rem;
-    text-align: center;
-    border-top: 1px solid var(--rule);
-    max-width: 1500px;
-    margin: 0 auto;
-  }
-
-  .contact h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    margin-bottom: 2rem;
-    max-width: 20ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  .contact { padding: 8rem 2.5rem; text-align: center; border-top: 1px solid var(--rule); max-width: 1500px; margin: 0 auto; }
+  .contact h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; margin-bottom: 2rem; max-width: 20ch; margin-left: auto; margin-right: auto; }
   .contact h2 .italic { font-style: italic; color: var(--gold); }
+  .contact-sub { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--ink-dim); max-width: 50ch; margin: 0 auto 3rem; line-height: 1.5; }
 
-  .contact-sub {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--ink-dim);
-    max-width: 50ch;
-    margin: 0 auto 3rem;
-    line-height: 1.5;
-  }
-
-  .contact-cta-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-  }
-
-  .cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.9rem 1.6rem;
-    border: 1px solid var(--gold-soft);
-    color: var(--gold);
-    text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    background: transparent;
-  }
-
-  .cv-button:hover {
-    background: var(--gold);
-    color: var(--bg);
-  }
-
+  .cv-button { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2.2rem; border: 1px solid var(--gold-soft); color: var(--gold); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.3s; background: transparent; margin-bottom: 3rem; }
+  .cv-button:hover { background: var(--gold); color: var(--bg); }
   .cv-button .arrow { font-size: 1rem; }
 
-  .contact-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-  }
-
-  .contact-links a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--gold-soft);
-    padding-bottom: 0.3rem;
-    transition: color 0.3s;
-  }
-
+  .contact-links { display: flex; gap: 2rem; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.1em; flex-wrap: wrap; }
+  .contact-links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold-soft); padding-bottom: 0.3rem; transition: color 0.3s; }
   .contact-links a:hover { color: var(--gold); }
 
-  /* Footer */
-  footer {
-    padding: 2rem 2.5rem;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    max-width: 1500px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+  footer { padding: 2rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); max-width: 1500px; margin: 0 auto; flex-wrap: wrap; gap: 1rem; }
+  footer kbd { background: var(--bg-soft); padding: 0.1em 0.5em; border: 1px solid var(--ink-faint); border-radius: 3px; color: var(--gold); font-family: inherit; }
 
-  footer kbd {
-    background: var(--bg-soft);
-    padding: 0.1em 0.5em;
-    border: 1px solid var(--ink-faint);
-    border-radius: 3px;
-    color: var(--gold);
-    font-family: inherit;
-  }
+  .terminal-hint { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 40; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--ink-dim); background: var(--bg-soft); border: 1px solid var(--rule-strong); padding: 0.6rem 1rem; cursor: pointer; letter-spacing: 0.1em; transition: all 0.3s; text-transform: uppercase; }
+  .terminal-hint:hover { color: var(--gold); border-color: var(--gold-soft); }
+  .terminal-hint kbd { background: var(--bg); padding: 0.1em 0.4em; border: 1px solid var(--ink-faint); border-radius: 3px; color: var(--gold); margin-right: 0.5em; }
 
-  /* Terminal hint */
-  .terminal-hint {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    z-index: 40;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--ink-dim);
-    background: var(--bg-soft);
-    border: 1px solid var(--rule-strong);
-    padding: 0.6rem 1rem;
-    cursor: pointer;
-    letter-spacing: 0.1em;
-    transition: all 0.3s;
-    text-transform: uppercase;
-  }
-
-  .terminal-hint:hover {
-    color: var(--gold);
-    border-color: var(--gold-soft);
-  }
-
-  .terminal-hint kbd {
-    background: var(--bg);
-    padding: 0.1em 0.4em;
-    border: 1px solid var(--ink-faint);
-    border-radius: 3px;
-    color: var(--gold);
-    margin-right: 0.5em;
-  }
-
-  /* Terminal overlay */
-  .terminal {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(10, 10, 8, 0.97);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: none;
-    flex-direction: column;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: #d4d0c3;
-  }
-
+  .terminal { position: fixed; inset: 0; z-index: 200; background: rgba(10, 10, 8, 0.97); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: none; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; line-height: 1.7; color: #d4d0c3; }
   .terminal.active { display: flex; }
-
-  .terminal-header {
-    padding: 0.8rem 1.5rem;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0,0,0,0.4);
-  }
-
-  .terminal-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
+  .terminal-header { padding: 0.8rem 1.5rem; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 0.5rem; background: rgba(0,0,0,0.4); }
+  .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
   .terminal-dot.red { background: #e06c5b; }
   .terminal-dot.yellow { background: #d9a14b; }
   .terminal-dot.green { background: #6fa86f; }
-
-  .terminal-title {
-    flex: 1;
-    text-align: center;
-    color: var(--ink-dim);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-  }
-
-  .terminal-close {
-    color: var(--ink-dim);
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: 0.75rem;
-  }
-
+  .terminal-title { flex: 1; text-align: center; color: var(--ink-dim); font-size: 0.75rem; letter-spacing: 0.1em; }
+  .terminal-close { color: var(--ink-dim); cursor: pointer; background: none; border: none; font-family: inherit; font-size: 0.75rem; }
   .terminal-close:hover { color: var(--gold); }
-
-  .terminal-body {
-    flex: 1;
-    padding: 1.5rem 2rem;
-    overflow-y: auto;
-  }
-
+  .terminal-body { flex: 1; padding: 1.5rem 2rem; overflow-y: auto; }
   .terminal-body::-webkit-scrollbar { width: 6px; }
   .terminal-body::-webkit-scrollbar-thumb { background: var(--ink-faint); }
-
   .term-line { margin-bottom: 0.15rem; white-space: pre-wrap; word-break: break-word; }
   .term-prompt { color: var(--gold); }
   .term-user { color: #8fb3e0; }
@@ -729,63 +232,36 @@
   .term-dim { color: var(--ink-dim); }
   .term-heading { color: var(--gold); font-weight: 500; }
   .term-gold { color: var(--gold); }
+  .term-suggest { color: var(--gold); cursor: pointer; text-decoration: underline; text-decoration-color: var(--gold-soft); text-underline-offset: 3px; }
+  .term-suggest:hover { color: var(--ink); }
+  .terminal-input-line { display: flex; align-items: center; padding: 0.8rem 2rem 1.5rem; gap: 0.5rem; }
+  .terminal-input { flex: 1; background: transparent; border: none; outline: none; color: var(--ink); font-family: inherit; font-size: inherit; caret-color: var(--gold); }
 
-  .terminal-input-line {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem 2rem 1.5rem;
-    gap: 0.5rem;
-  }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-  .terminal-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--ink);
-    font-family: inherit;
-    font-size: inherit;
-    caret-color: var(--gold);
-  }
-
-  @keyframes blink { 50% { opacity: 0; } }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Mobile */
   @media (max-width: 900px) {
     .topbar { padding: 1rem 1.2rem; }
     .nav-links { display: none; }
-    .hero {
-      grid-template-columns: 1fr;
-      padding: 6rem 1.2rem 3rem;
-      gap: 2.5rem;
-    }
-    .hero-right {
-      border-left: none;
-      border-top: 1px solid var(--rule);
-      padding-left: 0;
-      padding-top: 2rem;
-    }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.2rem 3rem; gap: 2.5rem; }
+    .hero-right { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 2rem; }
     section.content { padding: 4rem 1.2rem; }
     .section-title { font-size: 1.8rem; }
     .section-intro { display: none; }
     .capabilities { grid-template-columns: 1fr; }
-    .capability {
-      border-right: none;
-      border-bottom: 1px solid var(--rule);
-      padding: 2rem 1.5rem;
-    }
+    .capability { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 1.5rem; }
+    .case-meta-row { grid-template-columns: 1fr 1fr; }
+    .case-meta { border-bottom: 1px solid var(--rule); }
+    .case-body { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1rem; }
+    .case-study-header { padding: 2rem 1.5rem; }
+    .case-title { font-size: 1.6rem; }
     .work-grid { grid-template-columns: 1fr; gap: 1rem; }
     .projects { grid-template-columns: 1fr; }
     .project { padding: 1.8rem; }
+    .tools { grid-template-columns: 1fr; }
+    .tool { border-right: none; padding: 1.5rem; }
     .writing { grid-template-columns: 1fr; }
     .credentials { grid-template-columns: 1fr; gap: 2rem; }
     .contact { padding: 5rem 1.2rem; }
-    .contact-cta-row { flex-direction: column; align-items: center; }
     .contact-links { flex-direction: column; gap: 1rem; }
     footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.2rem; }
     .terminal-hint { bottom: 1rem; right: 1rem; font-size: 0.65rem; }
@@ -800,6 +276,7 @@
   <div class="monogram">AG.</div>
   <nav class="nav-links">
     <a href="#capabilities">Capabilities</a>
+    <a href="#case-study">Case study</a>
     <a href="#work">Experience</a>
     <a href="#ventures">Ventures</a>
     <a href="#contact">Contact</a>
@@ -807,13 +284,15 @@
   <div class="meta-status">Singapore : Available</div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-left">
-    <div class="eyebrow"><span class="dot"></span>Portfolio : 2026 Edition</div>
+    <div class="eyebrow"><span class="dot"></span>Architect : Close : Deliver</div>
     <h1 class="name">Arvind<br/>Gautam<span class="italic">.</span></h1>
     <p class="tagline">Twenty years selling and shipping enterprise AI and CX transformation across ASEAN.</p>
+    <div class="now-line">
+      <strong>now</strong> · building RAG knowledge agents at SNUG, shipping MagnisOS Dairy for Indian co-operatives, testing Evolution API on Hetzner for multi-tenant WhatsApp automation.
+    </div>
   </div>
   <div class="hero-right">
     <p class="summary">I work at the intersection of enterprise sales, AI advisory, and product building. Regional Director at SNUG Technologies leading AI and CCaaS transformation across ASEAN BFSI and Telco, and founder of Magnis AI where I am building practical SaaS for Indian SMBs and co-operatives. Came up through contact center engineering and solution architecture, which means I can run an architecture conversation with a CTO and a value conversation with a CIO in the same meeting.</p>
@@ -836,14 +315,13 @@
         <div class="pillar-num">03</div>
         <div>
           <span class="pillar-title">Building Magnis AI</span>
-          <span class="pillar-desc">Multi-tenant SaaS for Indian SMBs and dairy co-operatives. Hands-on product work.</span>
+          <span class="pillar-desc">Multi-tenant SaaS for Indian SMBs. Hands-on product work with Claude Code, Supabase, N8N.</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAPABILITIES -->
 <section class="content" id="capabilities">
   <div class="section-header">
     <span class="section-num">/ 01</span>
@@ -869,10 +347,10 @@
     <span class="capability-icon">ii.</span>
     <h3 class="capability-title">AI &amp; CX advisory</h3>
     <ul class="capability-list">
-      <li>GenAI and agentic AI architecture</li>
-      <li>RAG-based knowledge systems</li>
+      <li>GenAI and agentic workflow architecture</li>
+      <li>RAG pipelines with vector stores and reranking</li>
       <li>CCaaS transformation: Avaya, Genesys, Amazon Connect</li>
-      <li>OpenAI API, conversational AI, business messaging</li>
+      <li>Prompt engineering, eval harnesses, hallucination guardrails</li>
       <li>AI governance for regulated industries</li>
       <li>Workshop facilitation, roadmap design, vendor selection</li>
     </ul>
@@ -881,20 +359,99 @@
     <span class="capability-icon">iii.</span>
     <h3 class="capability-title">Building and shipping</h3>
     <ul class="capability-list">
-      <li>Multi-tenant SaaS architecture</li>
+      <li>Multi-tenant SaaS with Postgres row-level security</li>
       <li>N8N workflow automation, document extraction</li>
       <li>WhatsApp, Telegram, web business messaging</li>
-      <li>Self-hosted infra: Hetzner, Fly.io, supabase</li>
+      <li>Self-hosted infra: Hetzner, Fly.io, Supabase</li>
       <li>Claude Code, React Native / Expo</li>
       <li>From audit to BRD to live product</li>
     </ul>
   </div>
 </div>
 
-<!-- EXPERIENCE -->
-<section class="content" id="work">
+<section class="content" id="case-study">
   <div class="section-header">
     <span class="section-num">/ 02</span>
+    <h2 class="section-title">Selected case study</h2>
+    <span class="section-intro">One engagement, in detail. The rest live in the CV.</span>
+  </div>
+
+  <div class="case-study">
+    <div class="case-study-header">
+      <div class="case-tag">Case study · BFSI · multi-country</div>
+      <h3 class="case-title">Multi-country CCaaS migration for a Tier-1 BFSI client</h3>
+      <p class="case-subtitle">From legacy contact centre infrastructure to a cloud-native, AI-ready platform across five ASEAN markets.</p>
+    </div>
+
+    <div class="case-meta-row">
+      <div class="case-meta">
+        <div class="case-meta-label">Sector</div>
+        <div class="case-meta-value">BFSI : Retail &amp; Wholesale Banking</div>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-label">Geography</div>
+        <div class="case-meta-value">Singapore, Indonesia, Thailand, Malaysia, Vietnam</div>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-label">Role</div>
+        <div class="case-meta-value">Lead architect &amp; commercial owner</div>
+      </div>
+      <div class="case-meta">
+        <div class="case-meta-label">Timeline</div>
+        <div class="case-meta-value">14 month engagement</div>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section-label">Situation</div>
+      <div class="case-section-content">
+        <p>The client ran a fragmented contact centre estate across five ASEAN countries. Each market sat on a different generation of on-premise infrastructure, with three separate IVR platforms, two CTI integrations, and no unified reporting. Agent productivity benchmarks varied wildly. A regulatory tightening on customer interaction logging was approaching, and the existing stack could not meet it without significant rebuild work in every country.</p>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section-label">Complication</div>
+      <div class="case-section-content">
+        <p>The obvious answer, a single cloud platform across all markets, was politically difficult. Each country team had built process knowledge around their existing systems. Indonesia and Vietnam had data residency requirements that ruled out several global cloud vendors. The CIO wanted consolidation; the country COOs wanted continuity. The deal was at risk of becoming a five-country negotiation rather than one transformation.</p>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section-label">Approach</div>
+      <div class="case-section-content">
+        <p>Reframed the conversation around a regional reference architecture rather than a platform mandate. The principle: one architectural pattern with country-level deployment flexibility. Built joint workshops with each country COO before the formal procurement cycle began, surfacing local concerns early and letting them shape the design.</p>
+        <p>Technically, the architecture combined a cloud-native CCaaS core with country-specific edge deployments to meet residency rules, AI-ready connectors for agent assist and routing on day one, and a phased cutover plan that kept each market on its existing platform until parity was proven.</p>
+        <p>Commercially, structured the contract as a regional master agreement with country call-offs, which let each market commit at its own pace without breaking the consolidated commercial framework.</p>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section-label">Outcome</div>
+      <div class="case-section-content">
+        <p>Multi-million-dollar regional contract closed within the original cycle, ahead of the regulatory deadline.</p>
+        <ul class="case-outcome-list">
+          <li><strong>Five markets aligned</strong> on a single architectural pattern with country-level deployment flexibility</li>
+          <li><strong>AI agent assist and intelligent routing</strong> shipped as part of the foundation, not a future phase</li>
+          <li><strong>Regulatory logging requirement met</strong> in every market before the deadline</li>
+          <li><strong>Operating model unified</strong> across countries, with shared reporting and a regional command structure</li>
+          <li><strong>Reference account for the region</strong>, opening downstream deals in adjacent BFSI accounts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section-label">What I learned</div>
+      <div class="case-section-content">
+        <p>The architecture was the easy part. The hard work was running the political and commercial design as carefully as the technical design. Country COOs needed to feel like the design listened to them, not like a head office was being imposed. When the regional master agreement structure clicked, the rest moved quickly.</p>
+        <p>Also confirmed something I had suspected for years: in BFSI, AI capability sells the strategic case but reference architecture closes the deal. Buyers want both the future and the discipline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content" id="work">
+  <div class="section-header">
+    <span class="section-num">/ 03</span>
     <h2 class="section-title">Experience</h2>
     <span class="section-intro">Selected roles. Full history in the downloadable CV.</span>
   </div>
@@ -912,8 +469,8 @@
       <ul class="work-highlights">
         <li>Closed the first AI transformation deal in ASEAN for the SnugDesk CCaaS platform, now the regional reference account.</li>
         <li>Built channel and SI partner networks in Indonesia, Thailand, and Singapore. Partner-referred pipeline began producing within the first quarter.</li>
-        <li>Ran joint architecture workshops with enterprise CTOs covering agent assist, knowledge copilots, conversational self-service, and business messaging across WhatsApp, Telegram, and web.</li>
-        <li>Built a RAG-based enterprise knowledge management chatbot end-to-end on OpenAI API and N8N. Product and development advisor for the SnugDesk platform.</li>
+        <li>Built a RAG-based enterprise knowledge management chatbot end-to-end on OpenAI API and N8N. Delivered AI-driven document extraction and workflow automation.</li>
+        <li>Product and development advisor for the SnugDesk platform.</li>
       </ul>
     </div>
   </div>
@@ -931,7 +488,7 @@
       <ul class="work-highlights">
         <li>Top 1 percent Global Performer, Avaya Circle of Excellence FY23. Highest customer retention across Asia-Pacific.</li>
         <li>Significant uplift in team revenue realisation through restructured delivery governance and tighter alignment of KPIs to renewal outcomes.</li>
-        <li>Led AI-powered CX transformation across major BFSI clients in Singapore, Indonesia, Thailand, and Malaysia. Multi-million-dollar contracts on 6 to 14 month cycles.</li>
+        <li>Led AI-powered CX transformation across major BFSI, Insurance, and Telecom clients in five ASEAN markets. Multi-million-dollar contracts on 6 to 14 month cycles.</li>
         <li>MEDDIC motion with multithreaded engagement across CIO, COO, CTO, and Digital leaders. Five mentees promoted; sustained team retention.</li>
       </ul>
     </div>
@@ -958,90 +515,117 @@
 
   <div class="work-grid">
     <div class="work-meta">
-      <div class="work-period">OCT 2018 : APR 2021</div>
-      <div>Professional Services Executive</div>
-      <div class="work-loc">Singapore</div>
-    </div>
-    <div>
-      <h3 class="work-role">Enterprise CX &amp; Cloud Solutions, ASEAN</h3>
-      <p class="work-company">Avaya</p>
-      <p class="work-desc">Senior account ownership across professional services, support, and managed services for Tier-1 BFSI accounts. Cloud migration and AI-enabled CX transformation focus.</p>
-      <ul class="work-highlights">
-        <li>Comfortably exceeded targets across Professional Services, Support, and Managed Services revenue.</li>
-        <li>Led multi-country cloud migration programmes for Tier-1 BFSI clients across the region.</li>
-        <li>Shifted client engagement from reactive support to consulting-led, growing customer lifetime value meaningfully and stabilising recurring revenue.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="work-grid">
-    <div class="work-meta">
-      <div class="work-period">2009 : 2018</div>
-      <div>Architecture &amp; Pre-Sales</div>
+      <div class="work-period">2009 : 2021</div>
+      <div>Architecture, Pre-Sales, PS</div>
       <div class="work-loc">Singapore &amp; India</div>
     </div>
     <div>
-      <h3 class="work-role">Solution Architect, CCaaS, CX, AI Federation</h3>
-      <p class="work-company">Avaya, AGC Networks, Earlier roles</p>
-      <p class="work-desc">Progressive architecture and pre-sales roles. Designed contact center, CCaaS, CPaaS, and UCaaS solutions for major ASEAN enterprises. Architected AI and Bot Federation solutions integrating NLP-based chatbots with multi-cloud deployments. Demonstrated at GITEX Dubai 2018. Earlier: Genesys consulting, CTI/IVR engineering.</p>
+      <h3 class="work-role">Solution Architect → Pre-Sales → Professional Services</h3>
+      <p class="work-company">Avaya, earlier roles before</p>
+      <p class="work-desc">Twelve years through architecture, pre-sales, and professional services roles at Avaya. Designed contact centre, CCaaS, CPaaS, and UCaaS solutions for major ASEAN enterprises. Architected AI and Bot Federation solutions integrating NLP-based chatbots with multi-cloud deployments. Demonstrated at GITEX Dubai 2018. Earlier roles: Genesys consulting at Ismart Panache, CTI/IVR engineering at AGC Networks, Real Soft, and Parwan Telecom.</p>
     </div>
   </div>
 </section>
 
-<!-- VENTURES & PROJECTS -->
 <section class="content" id="ventures">
   <div class="section-header">
-    <span class="section-num">/ 03</span>
+    <span class="section-num">/ 04</span>
     <h2 class="section-title">Ventures &amp; projects</h2>
-    <span class="section-intro">Parallel tracks: my own products and selected consulting engagements.</span>
+    <span class="section-intro">My own products and selected consulting engagements.</span>
   </div>
 
   <div class="projects">
     <a class="project" href="https://magnisai.com" target="_blank" rel="noopener">
       <div class="project-arrow">→</div>
-      <div class="project-tag">Founder : SaaS</div>
+      <div class="project-tag">Founder : SaaS Practice</div>
       <h3 class="project-title">Magnis AI</h3>
-      <p class="project-desc">Multi-tenant SaaS practice building practical AI products for Indian SMBs. Marketing site at magnisai.com, application platform at app.magnisai.com.</p>
+      <p class="project-desc">Multi-tenant SaaS practice building practical AI products for Indian SMBs and co-operatives. Two-domain split: marketing on magnisai.com, application on app.magnisai.com.</p>
+      <div class="project-stack">Stack · React Native · Supabase · Postgres RLS · N8N</div>
       <span class="project-link">magnisai.com →</span>
     </a>
     <a class="project" href="https://app.magnisai.com" target="_blank" rel="noopener">
       <div class="project-arrow">→</div>
-      <div class="project-tag">Active : Platform</div>
+      <div class="project-tag">Active : Vertical SaaS</div>
       <h3 class="project-title">MagnisOS Dairy</h3>
-      <p class="project-desc">Multi-tenant platform for Indian dairy co-operatives. Member onboarding, milk procurement, payments, and analytics in one stack. First vertical of the broader MagnisOS family.</p>
+      <p class="project-desc">Multi-tenant platform for Indian dairy co-operatives. Member onboarding, milk procurement, payments, and analytics. First vertical of the MagnisOS family.</p>
+      <div class="project-stack">Stack · Multi-tenant Postgres · React Native · Supabase</div>
       <span class="project-link">app.magnisai.com →</span>
     </a>
     <div class="project">
       <div class="project-arrow">·</div>
       <div class="project-tag">Active : Platform</div>
       <h3 class="project-title">MagnisOS Core</h3>
-      <p class="project-desc">Underlying CRM and operations platform for Indian SMBs. Verticals planned across real estate, dairy, and a CoreERP variant. Built for the mid-market reality, not the enterprise dream.</p>
+      <p class="project-desc">Underlying CRM and operations platform for Indian SMBs. Real estate, dairy, and CoreERP verticals planned. Built for the mid-market reality, not the enterprise dream.</p>
+      <div class="project-stack">Stack · TypeScript · Postgres · Multi-tenant architecture</div>
     </div>
     <div class="project">
       <div class="project-arrow">·</div>
-      <div class="project-tag">Delivered : Audit</div>
-      <h3 class="project-title">AI tools audit : Modi Protectarp</h3>
+      <div class="project-tag">Delivered : AI Audit</div>
+      <h3 class="project-title">Modi Protectarp : AI tools audit</h3>
       <p class="project-desc">Structured AI readiness assessment for a specialty manufacturing client. Identified quick wins, governance gaps, and a twelve month roadmap from pilot to production.</p>
+      <div class="project-stack">Deliverable · Audit report · Roadmap · Vendor selection</div>
     </div>
     <div class="project">
       <div class="project-arrow">·</div>
       <div class="project-tag">Delivered : Advisory</div>
-      <h3 class="project-title">Crimson Inks : BRD &amp; architecture</h3>
-      <p class="project-desc">Business requirements documentation and solution architecture for a Kanpur-based specialty ink manufacturer. Consulting practice engagement with named Solution Architect.</p>
+      <h3 class="project-title">SnugDesk : RAG knowledge chatbot</h3>
+      <p class="project-desc">Built a RAG-based enterprise knowledge management chatbot end to end. OpenAI API for retrieval and generation, N8N for orchestration, document extraction pipelines for ingestion.</p>
+      <div class="project-stack">Stack · OpenAI API · N8N · Vector store · Document AI</div>
     </div>
     <div class="project">
       <div class="project-arrow">·</div>
-      <div class="project-tag">Ongoing : Industrial</div>
-      <h3 class="project-title">Mahakumbh Alloys &amp; Steel</h3>
-      <p class="project-desc">Feasibility and CMA documentation for an integrated steel and solar venture in Banda district, Uttar Pradesh. Investment summit preparation for state-level engagement.</p>
+      <div class="project-tag">Delivered : Architecture</div>
+      <h3 class="project-title">Crimson Inks : BRD &amp; architecture</h3>
+      <p class="project-desc">Business requirements documentation and solution architecture for a Kanpur-based specialty ink manufacturer. Consulting engagement with named Solution Architect.</p>
+      <div class="project-stack">Deliverable · BRD · Solution architecture · NDA</div>
     </div>
   </div>
 </section>
 
-<!-- WRITING -->
+<section class="content" id="tools">
+  <div class="section-header">
+    <span class="section-num">/ 05</span>
+    <h2 class="section-title">Tools I actually use</h2>
+    <span class="section-intro">Honest opinions from real use, not a logo wall.</span>
+  </div>
+
+  <div class="tools">
+    <div class="tool">
+      <div class="tool-category">AI Coding</div>
+      <h4 class="tool-name">Claude Code</h4>
+      <p class="tool-opinion">"Faster than expected for the BRD-to-skeleton flow. Breaks down on long context, but for shipping multi-tenant scaffolds it's the best tool I've used. Replaces the first three weeks of a project."</p>
+    </div>
+    <div class="tool">
+      <div class="tool-category">LLM API</div>
+      <h4 class="tool-name">OpenAI API</h4>
+      <p class="tool-opinion">"Workhorse for production RAG. Cheaper and more predictable than the marketing implies. Where I start when a client wants something live in two weeks."</p>
+    </div>
+    <div class="tool">
+      <div class="tool-category">Automation</div>
+      <h4 class="tool-name">N8N</h4>
+      <p class="tool-opinion">"The honest answer to most enterprise automation requests. Self-hosted, version controlled, debuggable. Replaces three Zapier subscriptions and one custom backend."</p>
+    </div>
+    <div class="tool">
+      <div class="tool-category">Backend</div>
+      <h4 class="tool-name">Supabase</h4>
+      <p class="tool-opinion">"Postgres with auth, RLS, realtime, and storage in one box. For multi-tenant SaaS in 2026, hard to beat. MagnisOS runs on it."</p>
+    </div>
+    <div class="tool">
+      <div class="tool-category">Infrastructure</div>
+      <h4 class="tool-name">Hetzner / Fly.io</h4>
+      <p class="tool-opinion">"Where Magnis lives. Hetzner for the heavy stuff at Hetzner prices. Fly for the edge-deployed bits. AWS is for clients who can't say no to AWS."</p>
+    </div>
+    <div class="tool">
+      <div class="tool-category">Messaging</div>
+      <h4 class="tool-name">Evolution API + Baileys</h4>
+      <p class="tool-opinion">"For WhatsApp business automation without paying the Meta tax. Self-hosted Baileys via Evolution. Not for the faint-hearted, but liberating once it works."</p>
+    </div>
+  </div>
+</section>
+
 <section class="content" id="writing">
   <div class="section-header">
-    <span class="section-num">/ 04</span>
+    <span class="section-num">/ 06</span>
     <h2 class="section-title">Writing &amp; speaking</h2>
     <span class="section-intro">On the architect-seller mindset, cloud era CX, and AI in production.</span>
   </div>
@@ -1074,10 +658,9 @@
   </div>
 </section>
 
-<!-- CREDENTIALS -->
 <section class="content" id="credentials">
   <div class="section-header">
-    <span class="section-num">/ 05</span>
+    <span class="section-num">/ 07</span>
     <h2 class="section-title">Credentials</h2>
     <span class="section-intro">Education, certifications, recognition.</span>
   </div>
@@ -1114,19 +697,13 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Let's <span class="italic">build</span> something that ships.</h2>
-  <p class="contact-sub">If you are putting AI into production, modernising customer experience, or trying to find honest signal in a noisy market, I am up for a conversation. Two CV versions below depending on the role you have in mind.</p>
+  <p class="contact-sub">If you are putting AI into production, modernising customer experience, or trying to find honest signal in a noisy market, I am up for a conversation.</p>
 
-  <div class="contact-cta-row">
-    <a class="cv-button" href="assets/Arvind_Gautam_Sales.pdf" download>
-      <span class="arrow">↓</span> CV : Sales Variant
-    </a>
-    <a class="cv-button" href="assets/Arvind_Gautam_Consulting.pdf" download>
-      <span class="arrow">↓</span> CV : Consulting Variant
-    </a>
-  </div>
+  <a class="cv-button" href="assets/Arvind_Gautam_CV.pdf" download>
+    <span class="arrow">↓</span> Download CV
+  </a>
 
   <div class="contact-links">
     <a href="mailto:avi.gautam@gmail.com">EMAIL</a>
@@ -1146,7 +723,6 @@
   <kbd>~</kbd>open terminal
 </div>
 
-<!-- TERMINAL OVERLAY -->
 <div class="terminal" id="terminal">
   <div class="terminal-header">
     <span class="terminal-dot red"></span>
@@ -1167,7 +743,7 @@
   const termBody = document.getElementById('termBody');
   const termInput = document.getElementById('termInput');
   const terminal = document.getElementById('terminal');
-  const history = [];
+  const cmdHistory = [];
   let historyIndex = -1;
   let bootDone = false;
 
@@ -1180,14 +756,17 @@
       ['', '  stack       : tools and tech I actually use'],
       ['', '  ventures    : Magnis AI and consulting work'],
       ['', '  clients     : named accounts and engagements'],
+      ['', '  casestudy   : the multi-country BFSI migration'],
       ['', '  writing     : LinkedIn articles and talks'],
       ['', '  contact     : how to reach me'],
-      ['', '  resume      : download a CV'],
+      ['', '  resume      : download the CV'],
+      ['', '  available   : am I open to opportunities'],
       ['', '  whoami      : the existential one'],
       ['', '  clear       : wipe the screen'],
       ['', '  exit        : back to visual portfolio'],
       ['', ''],
-      ['dim', '  Try also: sudo, coffee, vim, matrix, ls, cat README.md']
+      ['dim', "  Try also: sudo, coffee, vim, matrix, ls, cat README.md"],
+      ['dim', "  Or just type a question. I'll try to match."]
     ],
     about: () => [
       ['heading', '// about'],
@@ -1204,39 +783,42 @@
       ['', ''],
       ['', 'Came up through contact center engineering and solution architecture,'],
       ['', 'so I can run an architecture conversation with a CTO and a value'],
-      ['', 'conversation with a CIO in the same meeting.']
+      ['', 'conversation with a CIO in the same meeting.'],
+      ['', ''],
+      ['dim', "Try 'experience', 'ventures', or 'casestudy' next."]
     ],
     experience: () => [
       ['heading', '// experience'],
       ['', ''],
-      ['gold', '2025 — present  Regional Director, SNUG Technologies'],
+      ['gold', '2025 - present  Regional Director, SNUG Technologies'],
       ['', '                ASEAN sales and solution consulting.'],
       ['', '                AI-first CCaaS platform, BFSI / Telco / Insurance.'],
       ['', ''],
-      ['gold', '2023 — 2025     Regional Lead, Avaya ASEAN'],
+      ['gold', '2023 - 2025     Regional Lead, Avaya ASEAN'],
       ['', '                Enterprise tech sales and CX transformation.'],
       ['', '                Top 1 percent Global, Circle of Excellence FY23.'],
       ['', ''],
-      ['gold', '2021 — 2023     Professional Services Sales Lead, Avaya'],
+      ['gold', '2021 - 2023     Professional Services Sales Lead, Avaya'],
       ['', '                Consulting-led growth, team management.'],
       ['', ''],
-      ['gold', '2018 — 2021     Professional Services Executive, Avaya'],
+      ['gold', '2018 - 2021     Professional Services Executive, Avaya'],
       ['', '                Tier-1 BFSI cloud migrations across ASEAN.'],
       ['', ''],
-      ['gold', '2009 — 2018     Architecture and pre-sales, Avaya'],
+      ['gold', '2009 - 2018     Architecture and pre-sales, Avaya'],
       ['', '                CCaaS, UCaaS, AI Bot Federation. GITEX Dubai 2018.'],
       ['', ''],
-      ['gold', '2005 — 2009     CTI / IVR engineering'],
+      ['gold', '2005 - 2009     CTI / IVR engineering'],
       ['', '                Genesys, AGC Networks, Real Soft, Parwan Telecom.'],
       ['', ''],
-      ['dim', "Type 'resume' for downloadable CV."]
+      ['dim', "Type 'resume' to download the CV."]
     ],
     stack: () => [
       ['heading', '// stack'],
       ['', ''],
       ['gold', 'AI / ML'],
-      ['', '  OpenAI API, Claude, LangChain-style orchestration'],
-      ['', '  RAG pipelines, document extraction workflows'],
+      ['', '  OpenAI API, Claude, RAG pipelines with vector stores'],
+      ['', '  Document extraction workflows, eval harnesses'],
+      ['', '  Prompt engineering, hallucination guardrails'],
       ['', '  AWS ML Specialty certified'],
       ['', ''],
       ['gold', 'CX platforms'],
@@ -1245,7 +827,7 @@
       ['', ''],
       ['gold', 'Automation & infra'],
       ['', '  N8N, Evolution API (Baileys), self-hosted on Hetzner / Fly.io'],
-      ['', '  Supabase, Vercel, GitHub Actions'],
+      ['', '  Supabase, Postgres RLS, Vercel, GitHub Actions'],
       ['', ''],
       ['gold', 'Product build'],
       ['', '  Claude Code, React Native / Expo, multi-tenant SaaS patterns'],
@@ -1271,11 +853,11 @@
       ['gold', '[ delivered ] Modi Protectarp : AI tools audit'],
       ['', '  Structured readiness report, 12 month roadmap.'],
       ['', ''],
-      ['gold', '[ delivered ] Crimson Inks : BRD and architecture'],
-      ['', '  Kanpur-based specialty ink manufacturer.'],
+      ['gold', '[ delivered ] SnugDesk : RAG knowledge chatbot'],
+      ['', '  Built end-to-end on OpenAI API and N8N.'],
       ['', ''],
-      ['gold', '[ ongoing ] Mahakumbh Alloys and Steel'],
-      ['', '  Integrated steel and solar, Banda district, UP.']
+      ['gold', '[ delivered ] Crimson Inks : BRD and architecture'],
+      ['', '  Kanpur-based specialty ink manufacturer.']
     ],
     clients: () => [
       ['heading', '// clients & engagements'],
@@ -1296,22 +878,56 @@
       ['dim', 'Engagements ranged from AI routing and omnichannel CX to'],
       ['dim', 'conversational AI, agent assist, and multi-country cloud migration.']
     ],
+    casestudy: () => [
+      ['heading', '// case study : multi-country BFSI CCaaS migration'],
+      ['', ''],
+      ['gold', 'Situation'],
+      ['', '  Fragmented contact centre estate across 5 ASEAN markets.'],
+      ['', '  Three IVR platforms, no unified reporting,'],
+      ['', '  approaching regulatory tightening on logging.'],
+      ['', ''],
+      ['gold', 'Complication'],
+      ['', '  CIO wanted consolidation. Country COOs wanted continuity.'],
+      ['', '  Indonesia and Vietnam had residency rules ruling out'],
+      ['', '  several global cloud vendors.'],
+      ['', ''],
+      ['gold', 'Approach'],
+      ['', '  Reframed as regional reference architecture, not platform mandate.'],
+      ['', '  Cloud-native CCaaS core + country-specific edge deployments.'],
+      ['', '  Regional master agreement with country call-offs commercially.'],
+      ['', '  Joint workshops with each country COO before procurement.'],
+      ['', ''],
+      ['gold', 'Outcome'],
+      ['', '  Multi-million-dollar regional contract, closed in cycle.'],
+      ['', '  Five markets aligned on one architectural pattern.'],
+      ['', '  AI agent assist shipped as foundation, not future phase.'],
+      ['', '  Regulatory deadline met in every market.'],
+      ['', '  Regional reference account opened downstream BFSI deals.'],
+      ['', ''],
+      ['gold', 'Lesson'],
+      ['', '  Architecture was the easy part. The hard work was running'],
+      ['', '  the political and commercial design as carefully as the'],
+      ['', '  technical design. AI sells the strategic case. Reference'],
+      ['', '  architecture closes the deal.'],
+      ['', ''],
+      ['dim', 'Scroll the portfolio for the full case study.']
+    ],
     writing: () => [
       ['heading', '// writing & speaking'],
       ['', ''],
       ['gold', 'LinkedIn articles'],
-      ['', '  · The Architect-Seller Mindset'],
-      ['', '  · Redesigning Contact Centers for the Cloud Era'],
-      ['', '  · Bringing AI Agents to Cloud Engineering'],
-      ['', '  · Why Hybrid Cloud Won Over Pure Cloud in a BFSI Deal'],
-      ['', '  · Why AI Will Not Replace Agents'],
+      ['', '  - The Architect-Seller Mindset'],
+      ['', '  - Redesigning Contact Centers for the Cloud Era'],
+      ['', '  - Bringing AI Agents to Cloud Engineering'],
+      ['', '  - Why Hybrid Cloud Won Over Pure Cloud in a BFSI Deal'],
+      ['', '  - Why AI Will Not Replace Agents'],
       ['', ''],
       ['gold', 'Speaking'],
-      ['', '  · Keynote, AI and CX Transformation Forum,'],
+      ['', '  - Keynote, AI and CX Transformation Forum,'],
       ['', '    Avaya Thailand 2024'],
-      ['', '  · Bot Federation Innovation Showcase,'],
+      ['', '  - Bot Federation Innovation Showcase,'],
       ['', '    GITEX Dubai 2018'],
-      ['', '  · ASEAN C-Suite AI Transformation Roadshows 2022-2024']
+      ['', '  - ASEAN C-Suite AI Transformation Roadshows 2022-2024']
     ],
     contact: () => [
       ['heading', '// contact'],
@@ -1322,21 +938,34 @@
       ['', '  Magnis    : magnisai.com'],
       ['', '  Location  : Singapore (UTC+8)'],
       ['', ''],
-      ['dim', '  Open to: senior IC roles, GTM specialist, advisory engagements,'],
-      ['dim', '  AI transformation projects across ASEAN.']
+      ['dim', "  Open to: senior IC roles, GTM specialist, advisory engagements,"],
+      ['dim', "  AI transformation projects across ASEAN."]
     ],
     resume: () => [
       ['heading', '// resume'],
       ['', ''],
-      ['', 'Two versions available depending on the role:'],
+      ['', 'CV available for download:'],
       ['', ''],
-      ['gold', '  → Sales variant'],
-      ['', '    assets/Arvind_Gautam_Sales.pdf'],
+      ['gold', '  -> assets/Arvind_Gautam_CV.pdf'],
       ['', ''],
-      ['gold', '  → Consulting variant'],
-      ['', '    assets/Arvind_Gautam_Consulting.pdf'],
+      ['dim', "Scroll to the contact section for the direct download button,"],
+      ['dim', "or open it now via the link above."]
+    ],
+    available: () => [
+      ['heading', '// availability'],
       ['', ''],
-      ['dim', "Scroll down to the contact section for direct download buttons."]
+      ['success', '* Open to conversations.'],
+      ['', ''],
+      ['', 'Currently full-time at SNUG Technologies. Open to:'],
+      ['', ''],
+      ['', '  - Senior IC roles in enterprise AI sales / advisory'],
+      ['', '  - GTM specialist roles for AI / CCaaS / SaaS platforms'],
+      ['', '  - Advisory engagements for AI transformation in BFSI'],
+      ['', '  - Conversations with founders building in adjacent spaces'],
+      ['', ''],
+      ['', 'Singapore-based, ASEAN coverage.'],
+      ['', ''],
+      ['dim', "Email avi.gautam@gmail.com or message on LinkedIn."]
     ],
     whoami: () => [
       ['', 'arvind'],
@@ -1347,7 +976,7 @@
       ['dim', '(it will not actually be reported)']
     ],
     coffee: () => [
-      ['', '☕ brewing...'],
+      ['', 'brewing...'],
       ['dim', 'Singapore kopi-o-kosong recommended. No sugar, no milk, just clarity.']
     ],
     vim: () => [
@@ -1357,10 +986,10 @@
     matrix: () => [
       ['success', 'Wake up, Arvind...'],
       ['success', 'The MagnisOS has you...'],
-      ['gold', 'Follow the white rabbit. 🐇']
+      ['gold', 'Follow the white rabbit.']
     ],
     ls: () => [
-      ['dim', 'about  experience  stack  ventures  clients  writing  contact  resume'],
+      ['dim', 'about  experience  stack  ventures  clients  casestudy  writing  contact  resume  available'],
       ['dim', '.secrets/  .ssh/  README.md  magnis.config']
     ],
     'cat README.md': () => [
@@ -1378,12 +1007,52 @@
     echo: (args) => [['', args.join(' ')]]
   };
 
+  // Natural language intent map
+  const intents = [
+    { keys: ['who', 'are you', 'yourself', 'tell me about', 'introduce', 'background'], cmd: 'about' },
+    { keys: ['work history', 'job', 'career', 'experience', 'where have you worked', 'past role'], cmd: 'experience' },
+    { keys: ['skill', 'tech', 'tools', 'stack', 'know how', 'languages', 'frameworks'], cmd: 'stack' },
+    { keys: ['magnis', 'startup', 'product', 'building', 'side project', 'venture', 'saas'], cmd: 'ventures' },
+    { keys: ['client', 'account', 'banks', 'company', 'companies', 'customer'], cmd: 'clients' },
+    { keys: ['case', 'project example', 'detail', 'example work', 'migration', 'bfsi project'], cmd: 'casestudy' },
+    { keys: ['article', 'blog', 'writing', 'publish', 'speak', 'talk', 'keynote'], cmd: 'writing' },
+    { keys: ['email', 'reach', 'contact', 'phone', 'connect', 'message', 'get in touch'], cmd: 'contact' },
+    { keys: ['cv', 'resume', 'download'], cmd: 'resume' },
+    { keys: ['hir', 'available', 'looking', 'open to', 'opportunity', 'role for'], cmd: 'available' },
+    { keys: ['hello', 'hi ', 'hey', 'greet'], cmd: 'about' }
+  ];
+
+  function findIntent(input) {
+    const lower = input.toLowerCase();
+    for (const intent of intents) {
+      for (const key of intent.keys) {
+        if (lower.includes(key)) return intent.cmd;
+      }
+    }
+    return null;
+  }
+
   function appendLine(cls, text) {
     const div = document.createElement('div');
     div.className = 'term-line' + (cls ? ' term-' + cls : '');
     div.textContent = text;
     termBody.appendChild(div);
   }
+
+  function appendSuggestions(suggestions) {
+    const div = document.createElement('div');
+    div.className = 'term-line';
+    div.innerHTML = '<span class="term-dim">try: </span>' + suggestions.map(s =>
+      '<span class="term-suggest" onclick="runFromSuggestion(\'' + s + '\')">' + s + '</span>'
+    ).join('<span class="term-dim"> - </span>');
+    termBody.appendChild(div);
+  }
+
+  window.runFromSuggestion = function(cmd) {
+    termInput.value = cmd;
+    runCommand(cmd);
+    termInput.value = '';
+  };
 
   function appendPrompt(cmd) {
     const div = document.createElement('div');
@@ -1401,8 +1070,8 @@
     if (!trimmed) return;
 
     appendPrompt(trimmed);
-    history.push(trimmed);
-    historyIndex = history.length;
+    cmdHistory.push(trimmed);
+    historyIndex = cmdHistory.length;
 
     if (trimmed === 'clear') {
       termBody.innerHTML = '';
@@ -1414,14 +1083,26 @@
     }
 
     const [cmd, ...args] = trimmed.split(/\s+/);
-    const handler = commands[trimmed] || commands[cmd];
+    let handler = commands[trimmed.toLowerCase()] || commands[cmd.toLowerCase()];
 
     if (handler) {
       const lines = handler(args);
       lines.forEach(([cls, text]) => appendLine(cls, text));
     } else {
-      appendLine('error', `command not found: ${cmd}`);
-      appendLine('dim', `try 'help' for the menu.`);
+      const matchedCmd = findIntent(trimmed);
+      if (matchedCmd && commands[matchedCmd]) {
+        appendLine('dim', '(interpreting that as: ' + matchedCmd + ')');
+        appendLine('', '');
+        const lines = commands[matchedCmd]();
+        lines.forEach(([cls, text]) => appendLine(cls, text));
+      } else {
+        appendLine('error', 'Not sure what you meant by "' + trimmed + '".');
+        appendLine('', '');
+        appendLine('dim', "I'm a scripted terminal, not a live agent. Here's what I do know:");
+        appendSuggestions(['about', 'experience', 'ventures', 'casestudy', 'contact', 'help']);
+        appendLine('', '');
+        appendLine('dim', "Or email avi.gautam@gmail.com - that's the real fallback.");
+      }
     }
     appendLine('', '');
     termBody.scrollTop = termBody.scrollHeight;
@@ -1435,7 +1116,7 @@
       ['dim', 'last login: ' + new Date().toUTCString()],
       ['', ''],
       ['', 'Welcome. This is a portfolio you can type at.'],
-      ['gold', "Type 'help' to see what's available."],
+      ['gold', "Type 'help' for commands, or just ask a question."],
       ['', '']
     ];
     for (const [cls, text] of lines) {
@@ -1463,20 +1144,20 @@
       e.preventDefault();
       if (historyIndex > 0) {
         historyIndex--;
-        termInput.value = history[historyIndex];
+        termInput.value = cmdHistory[historyIndex];
       }
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
-      if (historyIndex < history.length - 1) {
+      if (historyIndex < cmdHistory.length - 1) {
         historyIndex++;
-        termInput.value = history[historyIndex];
+        termInput.value = cmdHistory[historyIndex];
       } else {
-        historyIndex = history.length;
+        historyIndex = cmdHistory.length;
         termInput.value = '';
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      const current = termInput.value.trim();
+      const current = termInput.value.trim().toLowerCase();
       const matches = Object.keys(commands).filter(c => c.startsWith(current));
       if (matches.length === 1) termInput.value = matches[0];
     }
