@@ -1160,76 +1160,250 @@
         padding: 0.5rem 1.2rem 1rem;
       }
     }
-  
-  /* UI/UX Improvements */
-  .scroll-progress {
-    position: fixed; top: 0; left: 0; height: 3px; background: var(--gold);
-    width: 0%; z-index: 1000;
-  }
-  @supports (animation-timeline: scroll()) {
+
+    /* UI/UX Improvements */
     .scroll-progress {
-      width: 100%; transform-origin: 0 50%; transform: scaleX(0);
-      animation: scroll-progress-anim auto linear forwards;
-      animation-timeline: scroll(root);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gold);
+      width: 0%;
+      z-index: 1000;
     }
-    @keyframes scroll-progress-anim { to { transform: scaleX(1); } }
-  }
 
-  /* Bottom Nav */
-  .bottom-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(14,13,11,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--rule-strong); z-index: 60; padding-bottom: env(safe-area-inset-bottom); }
-  .bottom-nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; padding: 0.8rem 0; color: var(--ink-dim); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s; }
-  .bottom-nav-item:hover, .bottom-nav-item:active { color: var(--gold); }
-  .bottom-nav-item.highlight { color: var(--gold); background: rgba(201, 165, 90, 0.05); }
-  .bottom-nav-item svg { margin-bottom: 0.2rem; opacity: 0.8; }
-  
-  @media (max-width: 900px) {
-    .bottom-nav { display: flex; }
-    .meta-status { display: none; }
-    body { padding-bottom: 5rem; } /* Extra space so content isn't hidden */
-  }
+    @supports (animation-timeline: scroll()) {
+      .scroll-progress {
+        width: 100%;
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+        animation: scroll-progress-anim auto linear forwards;
+        animation-timeline: scroll(root);
+      }
 
-  .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-  .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal-on-scroll { transition: none; opacity: 1; transform: translateY(0); }
-  }
+      @keyframes scroll-progress-anim {
+        to {
+          transform: scaleX(1);
+        }
+      }
+    }
 
-  /* Hover Enhancements */
-  .capability { transition: background 0.4s ease, transform 0.4s ease; }
-  .capability:hover { background: var(--bg-soft); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 10; position: relative; }
-  
-  .work-grid { transition: transform 0.4s ease; }
-  .work-grid:hover { transform: translateX(8px); }
-  .work-grid .work-role { transition: color 0.4s ease; }
-  .work-grid:hover .work-role { color: var(--gold); }
+    /* Bottom Nav */
+    .bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 13, 11, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--rule-strong);
+      z-index: 60;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
 
-  .case-meta { transition: background 0.4s ease; }
-  .case-meta:hover { background: var(--bg-card); }
+    .bottom-nav-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.8rem 0;
+      color: var(--ink-dim);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+    }
+
+    .bottom-nav-item:hover,
+    .bottom-nav-item:active {
+      color: var(--gold);
+    }
+
+    .bottom-nav-item.highlight {
+      color: var(--gold);
+      background: rgba(201, 165, 90, 0.05);
+    }
+
+    .bottom-nav-item svg {
+      margin-bottom: 0.2rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      .bottom-nav {
+        display: flex;
+      }
+
+      .meta-status {
+        display: none;
+      }
+
+      body {
+        padding-bottom: 5rem;
+      }
+
+      /* Extra space so content isn't hidden */
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        transition: none;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover Enhancements */
+    .capability {
+      transition: background 0.4s ease, transform 0.4s ease;
+    }
+
+    .capability:hover {
+      background: var(--bg-soft);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      position: relative;
+    }
+
+    .work-grid {
+      transition: transform 0.4s ease;
+    }
+
+    .work-grid:hover {
+      transform: translateX(8px);
+    }
+
+    .work-grid .work-role {
+      transition: color 0.4s ease;
+    }
+
+    .work-grid:hover .work-role {
+      color: var(--gold);
+    }
+
+    .case-meta {
+      transition: background 0.4s ease;
+    }
+
+    .case-meta:hover {
+      background: var(--bg-card);
+    }
 
 
-  /* Premium Polishes */
-  ::selection { background: var(--gold-soft); color: var(--ink); }
-  ::-moz-selection { background: var(--gold-soft); color: var(--ink); }
-  
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 5px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--gold-soft); }
+    /* Premium Polishes */
+    ::selection {
+      background: var(--gold-soft);
+      color: var(--ink);
+    }
 
-  @media print {
-    body { background: white; color: black; }
-    body::before { display: none; }
-    .topbar, .bottom-nav, .terminal-section, .cv-button, .mobile-menu-btn, .project-arrow, .scroll-progress { display: none !important; }
-    .hero, .content, .capability, .project, .article { border: none !important; box-shadow: none !important; margin: 0 !important; padding: 1rem 0 !important; page-break-inside: avoid; }
-    .name, .section-title, .project-title, .work-role { color: black !important; }
-    a { text-decoration: underline; color: black; }
-    .project-tag, .section-num { color: #555; }
-    .work-grid { display: block; border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1rem; }
-    .work-meta { float: left; width: 30%; margin-bottom: 1rem; }
-    .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
-  }
+    ::-moz-selection {
+      background: var(--gold-soft);
+      color: var(--ink);
+    }
 
-</style>
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-soft);
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      body::before {
+        display: none;
+      }
+
+      .topbar,
+      .bottom-nav,
+      .terminal-section,
+      .cv-button,
+      .mobile-menu-btn,
+      .project-arrow,
+      .scroll-progress {
+        display: none !important;
+      }
+
+      .hero,
+      .content,
+      .capability,
+      .project,
+      .article {
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 1rem 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .name,
+      .section-title,
+      .project-title,
+      .work-role {
+        color: black !important;
+      }
+
+      a {
+        text-decoration: underline;
+        color: black;
+      }
+
+      .project-tag,
+      .section-num {
+        color: #555;
+      }
+
+      .work-grid {
+        display: block;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .work-meta {
+        float: left;
+        width: 30%;
+        margin-bottom: 1rem;
+      }
+
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -1242,16 +1416,18 @@
       <a href="#work">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment" style="color: var(--gold); border: 1px solid var(--gold-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: -0.4rem;">Book Call</a>
+      <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment"
+        style="color: var(--gold); border: 1px solid var(--gold-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: -0.4rem;">Book
+        Call</a>
     </nav>
     <div class="meta-status">Singapore : Available</div>
-    
+
   </div>
 
   <section class="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-left">
-      <div class="eyebrow"><span class="dot"></span>Architect : Close : Deliver</div>
+      <div class="eyebrow"><span class="dot"></span>AI Strategy : Enterprise Transformation : Growth</div>
       <h1 class="name">Arvind K<br />Gautam<span class="italic">.</span></h1>
       <p class="tagline" style="margin-bottom: 1rem;">CX &amp; AI Transformation Leader helping enterprises design and
         scale AI adoption, Agentic AI use cases, and customer-led growth strategies.</p>
@@ -1265,11 +1441,9 @@
       </div>
     </div>
     <div class="hero-right">
-      <p class="summary">I work at the intersection of enterprise sales, AI advisory, and product building. Focused on
-        making AI practical and useful for business outcomes. Regional Director at SNUG Technologies leading AI and
-        CCaaS transformation across ASEAN BFSI and Telco, and advisor and GTM leader at Magnis AI where I am building
-        practical SaaS for Indian SMBs. Came up through contact center engineering and solution architecture, which
-        means I can run an architecture conversation with a CTO and a value conversation with a CIO in the same meeting.
+      <p class="summary">AI Transformation Leader with 15+ years helping enterprises modernize customer experience
+        through AI, cloud, and digital transformation across ASEAN. I bridge strategy, enterprise architecture, and
+        commercial execution.
       </p>
 
       <div style="margin-bottom: 2rem;">
@@ -1315,33 +1489,62 @@
     </div>
   </section>
 
+  <section class="content" style="padding-top: 0; padding-bottom: 1rem;">
+    <div
+      style="border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 2rem 0; text-align: center;">
+      <h3
+        style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1.5rem;">
+        Selected Enterprise Engagements</h3>
+      <div
+        style="font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ink); display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem 2rem; opacity: 0.8;">
+        <span>Standard Chartered</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>OCBC</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>UOB</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>BNI</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>Prudential</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>Singtel</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>AIA</span>
+      </div>
+    </div>
+  </section>
+
   <section class="content" id="outcomes">
     <div class="section-header reveal-on-scroll">
       <span class="section-num">/ 01</span>
       <h2 class="section-title">Selected Leadership Outcomes</h2>
     </div>
     <div
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; background: var(--bg-soft); padding: 3rem; border: 1px solid var(--rule); margin-bottom: 2rem;">
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; background: var(--bg-soft); padding: 3rem; border: 1px solid var(--rule); margin-bottom: 2rem;">
       <div>
-        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">AI
-          Transformation</h3>
-        <p style="color: var(--ink-dim); font-size: 0.95rem;">Defined enterprise AI roadmap for CX modernization.</p>
-      </div>
-      <div>
-        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">
-          Agentic AI</h3>
-        <p style="color: var(--ink-dim); font-size: 0.95rem;">Designed use cases for workflow automation and intelligent
-          assistants.</p>
-      </div>
-      <div>
-        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">
-          Customer Experience</h3>
-        <p style="color: var(--ink-dim); font-size: 0.95rem;">Led customer-centric transformation programs.</p>
-      </div>
-      <div>
-        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">Growth
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">120%+
         </h3>
-        <p style="color: var(--ink-dim); font-size: 0.95rem;">Supported revenue and GTM acceleration initiatives.</p>
+        <p style="color: var(--ink-dim); font-size: 0.95rem;">Quota attainment across multiple years.</p>
+      </div>
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">USD 8M
+        </h3>
+        <p style="color: var(--ink-dim); font-size: 0.95rem;">ASEAN team ownership.</p>
+      </div>
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">35%
+        </h3>
+        <p style="color: var(--ink-dim); font-size: 0.95rem;">Reduction in process effort via AI automation.</p>
+      </div>
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">72%
+          →112%</h3>
+        <p style="color: var(--ink-dim); font-size: 0.95rem;">Delivery realization improvement.</p>
+      </div>
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem;">Top 1%
+        </h3>
+        <p style="color: var(--ink-dim); font-size: 0.95rem;">Global Performer FY23.</p>
       </div>
     </div>
   </section>
@@ -1438,17 +1641,6 @@
         </div>
 
         <div class="case-body">
-          <div class="case-section-label">Complication</div>
-          <div class="case-section-content">
-            <p>The obvious answer, a single cloud platform across all markets, was politically difficult. Each country
-              team had built process knowledge around their existing systems. Indonesia and Vietnam had data residency
-              requirements that ruled out several global cloud vendors. The CIO wanted consolidation; the country COOs
-              wanted continuity. The deal was at risk of becoming a five-country negotiation rather than one
-              transformation.</p>
-          </div>
-        </div>
-
-        <div class="case-body">
           <div class="case-section-label">Approach</div>
           <div class="case-section-content">
             <p>Reframed the conversation around a regional reference architecture rather than a platform mandate. The
@@ -1483,14 +1675,9 @@
         </div>
 
         <div class="case-body">
-          <div class="case-section-label">What I learned</div>
+          <div class="case-section-label">Key learning</div>
           <div class="case-section-content">
-            <p>The architecture was the easy part. The hard work was running the political and commercial design as
-              carefully as the technical design. Country COOs needed to feel like the design listened to them, not like
-              a head office was being imposed. When the regional master agreement structure clicked, the rest moved
-              quickly.</p>
-            <p>Also confirmed something I had suspected for years: in BFSI, AI capability sells the strategic case but
-              reference architecture closes the deal. Buyers want both the future and the discipline.</p>
+            <p>Transformation succeeds when political alignment and architecture evolve together.</p>
           </div>
         </div>
       </div>
@@ -1505,16 +1692,16 @@
 
       <div
         style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 3rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.1em; flex-wrap: wrap; gap: 1rem;">
-        <div><span style="color: var(--gold);">2010–2015</span> → CX &amp; consulting foundations</div>
-        <div><span style="color: var(--gold);">2016–2020</span> → Transformation leadership</div>
-        <div><span style="color: var(--gold);">2021–2024</span> → AI adoption &amp; enterprise strategy</div>
-        <div><span style="color: var(--gold);">2025+</span> → Agentic AI &amp; advisory initiatives</div>
+        <div><span style="color: var(--gold);">2005–2009</span> → Contact Center Engineering Foundation</div>
+        <div><span style="color: var(--gold);">2010–2016</span> → Solution Architecture &amp; Enterprise Delivery</div>
+        <div><span style="color: var(--gold);">2016–2020</span> → ASEAN Transformation Leadership</div>
+        <div><span style="color: var(--gold);">2021–Present</span> → AI, CX &amp; Enterprise Growth Leadership</div>
       </div>
 
       <div class="work-grid reveal-on-scroll">
         <div class="work-meta">
           <div class="work-period">APR 2025 : PRESENT</div>
-          <div>Regional Director</div>
+          <div>Regional Lead</div>
           <div class="work-loc">Singapore</div>
         </div>
         <div>
@@ -1604,8 +1791,8 @@
     <section class="content" id="magnis">
       <div class="section-header reveal-on-scroll">
         <span class="section-num">/ 04</span>
-        <h2 class="section-title">Strategic Advisory & GTM Leadership</h2>
-        <span class="section-intro">Magnis AI — Advisor and GTM Leader</span>
+        <h2 class="section-title">Strategic Venture Leadership</h2>
+        <span class="section-intro">Platform Lead and Strategic Advisor</span>
       </div>
 
       <div class="case-study reveal-on-scroll">
@@ -1617,10 +1804,10 @@
         <div class="case-body" style="grid-template-columns: 1fr; padding: 2.5rem 3rem;">
           <ul class="case-outcome-list">
             <li><strong>Led end-to-end SaaS platform design and execution</strong></li>
-            <li><strong>Defined AI platform vision and use cases</strong></li>
-            <li><strong>Worked on product strategy and roadmap</strong></li>
-            <li><strong>Guided GTM and customer experience approach</strong></li>
-            <li><strong>Collaborated closely with the founding team</strong></li>
+            <li><strong>Defined product roadmap and AI use cases</strong></li>
+            <li><strong>Guided GTM and customer experience strategy</strong></li>
+            <li><strong>Worked closely with founders and product teams</strong></li>
+            <li><strong>Built multi-tenant AI platform capabilities</strong></li>
           </ul>
         </div>
       </div>
@@ -1733,7 +1920,8 @@
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Infrastructure</div>
           <h4 class="tool-name">Cloudflare / Hetzner</h4>
-          <p class="tool-opinion">"Where Magnis lives. Cloudflare for robust hosting and edge routing, Hetzner for the heavy compute. AWS is for clients who can't say no to AWS."</p>
+          <p class="tool-opinion">"Where Magnis lives. Cloudflare for robust hosting and edge routing, Hetzner for the
+            heavy compute. AWS is for clients who can't say no to AWS."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Messaging</div>
@@ -1747,8 +1935,9 @@
     <section class="content" id="writing">
       <div class="section-header reveal-on-scroll">
         <span class="section-num">/ 06</span>
-        <h2 class="section-title">Writing &amp; speaking</h2>
-        <span class="section-intro">On the architect-seller mindset, cloud era CX, and AI in production.</span>
+        <h2 class="section-title">Insights</h2>
+        <span class="section-intro">Thought leadership on the architect-seller mindset, cloud era CX, and AI in
+          production.</span>
       </div>
 
       <div class="writing">
@@ -1841,25 +2030,26 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2 style="max-width: 25ch;">Let's discuss AI adoption, CX transformation, or Agentic AI opportunities.</h2>
-      <p class="contact-sub reveal-on-scroll">If you are putting AI into production, modernising customer experience, or trying to find
+      <h2 style="max-width: 25ch;">Let’s discuss AI transformation, customer experience modernization, or Agentic AI
+        opportunities across ASEAN.</h2>
+      <p class="contact-sub reveal-on-scroll">If you are putting AI into production, modernising customer experience, or
+        trying to find
         honest signal in a noisy market, I am up for a conversation.</p>
 
-      <a class="cv-button" href="assets/Arvind_Gautam_CV.pdf" download>
-        <span class="arrow">↓</span> Download CV
+      <a class="cv-button" href="mailto:arvind.gautam@gmail.com?subject=Book%20a%20Strategy%20Discussion">
+        <span class="arrow">→</span> Book a strategy discussion
       </a>
 
       <div class="contact-links">
-        <a class="reveal-on-scroll" href="mailto:avi.gautam@gmail.com">EMAIL</a>
-        <a href="https://linkedin.com/in/arvindkgautam" target="_blank" rel="noopener">LINKEDIN</a>
-        <a href="https://magnisai.com" target="_blank" rel="noopener">MAGNIS AI</a>
-        <a href="https://github.com/arvindkgautam" target="_blank" rel="noopener">GITHUB</a>
+        <a class="reveal-on-scroll" href="https://linkedin.com/in/arvindkgautam" target="_blank"
+          rel="noopener">LINKEDIN</a>
+        <a href="mailto:arvind.gautam@gmail.com">EMAIL</a>
       </div>
     </section>
 
     <footer>
       <span>© 2026 Arvind Gautam · Singapore</span>
-      <span>Architect : Close : Deliver</span>
+      <span>AI Strategy : Enterprise Transformation : Growth</span>
       <span>Press <kbd>~</kbd> for terminal</span>
     </footer>
 
@@ -1919,7 +2109,7 @@
           ['', '20+ years across enterprise sales, AI advisory, and CX transformation'],
           ['', 'in ASEAN. BFSI and Telco primarily.'],
           ['', ''],
-          ['', 'Day job: Regional Director at SNUG Technologies. ASEAN sales and'],
+          ['', 'Day job: Regional Lead at SNUG Technologies. ASEAN sales and'],
           ['', 'solution consulting for an AI-first CCaaS platform.'],
           ['', ''],
           ['', 'Parallel track: Magnis AI. Multi-tenant SaaS for Indian SMBs,'],
@@ -1934,7 +2124,7 @@
         experience: () => [
           ['heading', '// experience'],
           ['', ''],
-          ['gold', '2025 - present  Regional Director, SNUG Technologies'],
+          ['gold', '2025 - present  Regional Lead, SNUG Technologies'],
           ['', '                ASEAN sales and solution consulting.'],
           ['', '                AI-first CCaaS platform, BFSI / Telco / Insurance.'],
           ['', ''],
@@ -2326,52 +2516,65 @@
     </script>
 
 
-  <!-- Bottom Mobile Navigation Bar -->
-  <nav class="bottom-nav">
-    <a href="#work" class="bottom-nav-item">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-      <span>Exp</span>
-    </a>
-    <a href="#projects" class="bottom-nav-item">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-      <span>Projects</span>
-    </a>
-    <a href="#contact" class="bottom-nav-item">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-      <span>Contact</span>
-    </a>
-    <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment" class="bottom-nav-item highlight">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-      <span>Book Call</span>
-    </a>
-  </nav>
+    <!-- Bottom Mobile Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="#work" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+        <span>Exp</span>
+      </a>
+      <a href="#projects" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        <span>Projects</span>
+      </a>
+      <a href="#contact" class="bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Contact</span>
+      </a>
+      <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment" class="bottom-nav-item highlight">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Book Call</span>
+      </a>
+    </nav>
 
-  <!-- UI/UX Improvements Script -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <script>
-    // Scroll Progress Fallback
-    if (!CSS.supports('animation-timeline: scroll()')) {
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById('scrollProgress').style.width = (winScroll / height) * 100 + '%';
-      });
-    }
+    <!-- UI/UX Improvements Script -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <script>
+      // Scroll Progress Fallback
+      if (!CSS.supports('animation-timeline: scroll()')) {
+        window.addEventListener('scroll', () => {
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          document.getElementById('scrollProgress').style.width = (winScroll / height) * 100 + '%';
+        });
+      }
 
 
 
-    // Reveal on Scroll
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-    revealElements.forEach(el => observer.observe(el));
-  </script>
+      // Reveal on Scroll
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+      revealElements.forEach(el => observer.observe(el));
+    </script>
 
 </body>
 
