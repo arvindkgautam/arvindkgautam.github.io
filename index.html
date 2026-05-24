@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Arvind Gautam : Enterprise AI &amp; Transformation</title>
-<meta name="description" content="Arvind Gautam : Enterprise AI and CX transformation leader. Singapore. Architect. Close. Deliver." />
+<title>Arvind Gautam : Enterprise AI &amp; Transformation, ASEAN</title>
+<meta name="description" content="Arvind Gautam. Singapore. Twenty years selling and shipping enterprise AI and CX transformation across ASEAN. BFSI and Telco. Founder of Magnis AI." />
+<meta name="author" content="Arvind Gautam" />
+<meta property="og:title" content="Arvind Gautam : Enterprise AI &amp; Transformation, ASEAN" />
+<meta property="og:description" content="Twenty years selling and shipping enterprise AI and CX transformation across ASEAN." />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -12,17 +16,18 @@
   :root {
     --bg: #0e0d0b;
     --bg-soft: #16140f;
+    --bg-card: #1a1813;
     --ink: #ecebe6;
     --ink-dim: #8a857a;
     --ink-faint: #4a463d;
     --gold: #c9a55a;
     --gold-soft: #8a7440;
     --rule: rgba(236, 235, 230, 0.08);
+    --rule-strong: rgba(236, 235, 230, 0.15);
     --grain-opacity: 0.04;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -36,7 +41,6 @@
     position: relative;
   }
 
-  /* Film grain overlay */
   body::before {
     content: '';
     position: fixed;
@@ -52,11 +56,11 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 50;
-    padding: 1.5rem 2.5rem;
+    padding: 1.3rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(14,13,11,0.9) 0%, rgba(14,13,11,0) 100%);
+    background: linear-gradient(to bottom, rgba(14,13,11,0.92) 0%, rgba(14,13,11,0) 100%);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
@@ -69,17 +73,33 @@
     color: var(--gold);
   }
 
-  .meta {
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--ink-dim);
-    display: flex;
-    gap: 2rem;
   }
 
-  .meta .status::before {
+  .nav-links a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .meta-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  .meta-status::before {
     content: '●';
     color: #6fa86f;
     margin-right: 0.5em;
@@ -96,10 +116,12 @@
     min-height: 100vh;
     padding: 8rem 2.5rem 4rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
     align-items: end;
     position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
   }
 
   .hero-grid-bg {
@@ -109,8 +131,8 @@
       linear-gradient(var(--rule) 1px, transparent 1px),
       linear-gradient(90deg, var(--rule) 1px, transparent 1px);
     background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at 70% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 70% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    mask-image: radial-gradient(ellipse at 75% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 75% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
     pointer-events: none;
   }
 
@@ -141,7 +163,7 @@
     font-size: clamp(3rem, 8vw, 6.5rem);
     line-height: 0.95;
     letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     opacity: 0;
     animation: rise 1s ease-out 0.4s forwards;
   }
@@ -156,9 +178,9 @@
     font-family: 'Fraunces', serif;
     font-weight: 300;
     font-style: italic;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--ink-dim);
-    max-width: 32ch;
+    max-width: 36ch;
     line-height: 1.4;
     opacity: 0;
     animation: rise 1s ease-out 0.7s forwards;
@@ -174,21 +196,21 @@
   .summary {
     font-size: 1.05rem;
     color: var(--ink);
-    margin-bottom: 2rem;
-    max-width: 42ch;
+    margin-bottom: 2.5rem;
+    max-width: 44ch;
   }
 
   .pillars {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .pillar {
     display: grid;
     grid-template-columns: 60px 1fr;
     gap: 1rem;
-    padding: 0.8rem 0;
+    padding: 1.1rem 0;
     border-top: 1px solid var(--rule);
     font-size: 0.95rem;
   }
@@ -201,13 +223,25 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--gold-soft);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+  }
+
+  .pillar-title {
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.88rem;
+    color: var(--ink-dim);
   }
 
   /* Sections */
-  section {
+  section.content {
     padding: 6rem 2.5rem;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
     position: relative;
   }
@@ -235,17 +269,77 @@
     letter-spacing: -0.01em;
   }
 
+  .section-intro {
+    margin-left: auto;
+    max-width: 30ch;
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+    text-align: right;
+    font-style: italic;
+  }
+
+  /* Capabilities band */
+  .capabilities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: var(--rule);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .capability {
+    background: var(--bg);
+    padding: 3rem 2.5rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .capability:last-child { border-right: none; }
+
+  .capability-icon {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+    font-style: italic;
+  }
+
+  .capability-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .capability-list {
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+  }
+
+  .capability-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .capability-list li:last-child { border-bottom: none; }
+
   /* Work / experience */
   .work-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    margin-bottom: 4rem;
-    padding-bottom: 4rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
     border-bottom: 1px solid var(--rule);
   }
 
-  .work-grid:last-child { border-bottom: none; }
+  .work-grid:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 
   .work-meta {
     font-family: 'JetBrains Mono', monospace;
@@ -253,22 +347,49 @@
     color: var(--ink-dim);
   }
 
-  .work-period { color: var(--gold-soft); margin-bottom: 0.5rem; }
+  .work-period {
+    color: var(--gold-soft);
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .work-loc { color: var(--ink-faint); font-size: 0.8rem; margin-top: 0.4rem; }
 
   .work-role {
     font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .work-company {
-    color: var(--ink-dim);
-    margin-bottom: 1.5rem;
+    color: var(--gold-soft);
+    margin-bottom: 1.2rem;
     font-size: 1rem;
+    letter-spacing: 0.02em;
   }
 
-  .work-desc { font-size: 1rem; color: var(--ink); max-width: 60ch; }
+  .work-desc { font-size: 1rem; color: var(--ink); max-width: 64ch; margin-bottom: 1.2rem; }
+
+  .work-highlights {
+    list-style: none;
+    font-size: 0.92rem;
+    color: var(--ink-dim);
+  }
+
+  .work-highlights li {
+    padding: 0.4rem 0;
+    padding-left: 1.3rem;
+    position: relative;
+  }
+
+  .work-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold-soft);
+  }
 
   /* Projects */
   .projects {
@@ -283,8 +404,10 @@
     background: var(--bg);
     padding: 2.5rem;
     transition: background 0.4s ease;
-    cursor: pointer;
     position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .project:hover { background: var(--bg-soft); }
@@ -308,7 +431,15 @@
   .project-desc {
     font-size: 0.95rem;
     color: var(--ink-dim);
-    max-width: 40ch;
+    max-width: 44ch;
+    margin-bottom: 1rem;
+  }
+
+  .project-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
   }
 
   .project-arrow {
@@ -317,6 +448,7 @@
     right: 2.5rem;
     color: var(--ink-faint);
     transition: color 0.3s, transform 0.3s;
+    font-size: 1.2rem;
   }
 
   .project:hover .project-arrow {
@@ -324,11 +456,73 @@
     transform: translate(4px, -4px);
   }
 
+  /* Writing / thoughts */
+  .writing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .article {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .article-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 0.6rem;
+  }
+
+  .article-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* Credentials */
+  .credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-top: 1rem;
+  }
+
+  .cred-block-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cred-list {
+    list-style: none;
+    font-size: 0.95rem;
+    color: var(--ink-dim);
+  }
+
+  .cred-list li {
+    padding: 0.5rem 0;
+  }
+
+  .cred-list .em { color: var(--ink); font-weight: 400; }
+
   /* Contact */
   .contact {
     padding: 8rem 2.5rem;
     text-align: center;
     border-top: 1px solid var(--rule);
+    max-width: 1500px;
+    margin: 0 auto;
   }
 
   .contact h2 {
@@ -337,18 +531,58 @@
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.05;
     margin-bottom: 2rem;
-    max-width: 18ch;
+    max-width: 20ch;
     margin-left: auto;
     margin-right: auto;
   }
 
   .contact h2 .italic { font-style: italic; color: var(--gold); }
 
+  .contact-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink-dim);
+    max-width: 50ch;
+    margin: 0 auto 3rem;
+    line-height: 1.5;
+  }
+
+  .contact-cta-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid var(--gold-soft);
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    background: transparent;
+  }
+
+  .cv-button:hover {
+    background: var(--gold);
+    color: var(--bg);
+  }
+
+  .cv-button .arrow { font-size: 1rem; }
+
   .contact-links {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    margin-top: 3rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
@@ -375,6 +609,19 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-faint);
+    max-width: 1500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer kbd {
+    background: var(--bg-soft);
+    padding: 0.1em 0.5em;
+    border: 1px solid var(--ink-faint);
+    border-radius: 3px;
+    color: var(--gold);
+    font-family: inherit;
   }
 
   /* Terminal hint */
@@ -385,13 +632,14 @@
     z-index: 40;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--ink-faint);
+    color: var(--ink-dim);
     background: var(--bg-soft);
-    border: 1px solid var(--rule);
+    border: 1px solid var(--rule-strong);
     padding: 0.6rem 1rem;
     cursor: pointer;
     letter-spacing: 0.1em;
     transition: all 0.3s;
+    text-transform: uppercase;
   }
 
   .terminal-hint:hover {
@@ -419,7 +667,7 @@
     display: none;
     flex-direction: column;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.7;
     color: #d4d0c3;
   }
@@ -473,13 +721,14 @@
   .terminal-body::-webkit-scrollbar { width: 6px; }
   .terminal-body::-webkit-scrollbar-thumb { background: var(--ink-faint); }
 
-  .term-line { margin-bottom: 0.2rem; white-space: pre-wrap; word-break: break-word; }
+  .term-line { margin-bottom: 0.15rem; white-space: pre-wrap; word-break: break-word; }
   .term-prompt { color: var(--gold); }
   .term-user { color: #8fb3e0; }
   .term-success { color: #6fa86f; }
   .term-error { color: #e06c5b; }
   .term-dim { color: var(--ink-dim); }
   .term-heading { color: var(--gold); font-weight: 500; }
+  .term-gold { color: var(--gold); }
 
   .terminal-input-line {
     display: flex;
@@ -499,15 +748,6 @@
     caret-color: var(--gold);
   }
 
-  .cursor-blink {
-    display: inline-block;
-    width: 8px;
-    height: 1.1em;
-    background: var(--gold);
-    vertical-align: text-bottom;
-    animation: blink 1s steps(2) infinite;
-  }
-
   @keyframes blink { 50% { opacity: 0; } }
 
   @keyframes rise {
@@ -516,9 +756,9 @@
   }
 
   /* Mobile */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .topbar { padding: 1rem 1.2rem; }
-    .meta { display: none; }
+    .nav-links { display: none; }
     .hero {
       grid-template-columns: 1fr;
       padding: 6rem 1.2rem 3rem;
@@ -530,16 +770,26 @@
       padding-left: 0;
       padding-top: 2rem;
     }
-    section { padding: 4rem 1.2rem; }
+    section.content { padding: 4rem 1.2rem; }
     .section-title { font-size: 1.8rem; }
+    .section-intro { display: none; }
+    .capabilities { grid-template-columns: 1fr; }
+    .capability {
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 2rem 1.5rem;
+    }
     .work-grid { grid-template-columns: 1fr; gap: 1rem; }
     .projects { grid-template-columns: 1fr; }
     .project { padding: 1.8rem; }
+    .writing { grid-template-columns: 1fr; }
+    .credentials { grid-template-columns: 1fr; gap: 2rem; }
     .contact { padding: 5rem 1.2rem; }
+    .contact-cta-row { flex-direction: column; align-items: center; }
     .contact-links { flex-direction: column; gap: 1rem; }
-    footer { flex-direction: column; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.2rem; }
     .terminal-hint { bottom: 1rem; right: 1rem; font-size: 0.65rem; }
-    .terminal-body { padding: 1rem 1.2rem; font-size: 0.8rem; }
+    .terminal-body { padding: 1rem 1.2rem; font-size: 0.78rem; }
     .terminal-input-line { padding: 0.5rem 1.2rem 1rem; }
   }
 </style>
@@ -548,10 +798,13 @@
 
 <div class="topbar">
   <div class="monogram">AG.</div>
-  <div class="meta">
-    <span>Singapore : SGT</span>
-    <span class="status">Available for new work</span>
-  </div>
+  <nav class="nav-links">
+    <a href="#capabilities">Capabilities</a>
+    <a href="#work">Experience</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="meta-status">Singapore : Available</div>
 </div>
 
 <!-- HERO -->
@@ -560,102 +813,303 @@
   <div class="hero-left">
     <div class="eyebrow"><span class="dot"></span>Portfolio : 2026 Edition</div>
     <h1 class="name">Arvind<br/>Gautam<span class="italic">.</span></h1>
-    <p class="tagline">Architect, close, deliver: enterprise AI and customer experience transformation across ASEAN.</p>
+    <p class="tagline">Twenty years selling and shipping enterprise AI and CX transformation across ASEAN.</p>
   </div>
   <div class="hero-right">
-    <p class="summary">Twenty plus years bridging strategy, sales and delivery for BFSI and telco. Currently Regional Director at SNUG Technologies and founder of Magnis AI Consulting, where I help mid-market clients in India and the region put AI into production rather than into pitch decks.</p>
+    <p class="summary">I work at the intersection of enterprise sales, AI advisory, and product building. Regional Director at SNUG Technologies leading AI and CCaaS transformation across ASEAN BFSI and Telco, and founder of Magnis AI where I am building practical SaaS for Indian SMBs and co-operatives. Came up through contact center engineering and solution architecture, which means I can run an architecture conversation with a CTO and a value conversation with a CIO in the same meeting.</p>
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-num">01</div>
-        <div>Advisory and audits : AI tools, CX architecture, GTM readiness.</div>
+        <div>
+          <span class="pillar-title">Enterprise sales and GTM</span>
+          <span class="pillar-desc">Complex multi-country deals, MEDDIC, consultative selling, team leadership across ASEAN.</span>
+        </div>
       </div>
       <div class="pillar">
         <div class="pillar-num">02</div>
-        <div>SaaS product build : MagnisOS for Indian SMBs and co-operatives.</div>
+        <div>
+          <span class="pillar-title">AI advisory and CX transformation</span>
+          <span class="pillar-desc">From proof of concept to production. GenAI, RAG, agentic workflows, governance in regulated environments.</span>
+        </div>
       </div>
       <div class="pillar">
         <div class="pillar-num">03</div>
-        <div>Regional delivery : ASEAN BFSI and telco, Standard Chartered to AIS.</div>
+        <div>
+          <span class="pillar-title">Building Magnis AI</span>
+          <span class="pillar-desc">Multi-tenant SaaS for Indian SMBs and dairy co-operatives. Hands-on product work.</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
-<section id="work">
+<!-- CAPABILITIES -->
+<section class="content" id="capabilities">
   <div class="section-header">
     <span class="section-num">/ 01</span>
-    <h2 class="section-title">Selected work</h2>
+    <h2 class="section-title">Capabilities</h2>
+    <span class="section-intro">Three practices, one operator: sales, advisory, build.</span>
+  </div>
+</section>
+
+<div class="capabilities">
+  <div class="capability">
+    <span class="capability-icon">i.</span>
+    <h3 class="capability-title">Enterprise sales</h3>
+    <ul class="capability-list">
+      <li>Complex multi-country deal cycles, 6 to 14 months</li>
+      <li>MEDDIC and consultative selling motion</li>
+      <li>C-suite and multithreaded stakeholder engagement</li>
+      <li>Sales team leadership, hiring, P&amp;L ownership</li>
+      <li>Channel and SI partner development</li>
+      <li>BFSI, Insurance, Telecom, Public Sector verticals</li>
+    </ul>
+  </div>
+  <div class="capability">
+    <span class="capability-icon">ii.</span>
+    <h3 class="capability-title">AI &amp; CX advisory</h3>
+    <ul class="capability-list">
+      <li>GenAI and agentic AI architecture</li>
+      <li>RAG-based knowledge systems</li>
+      <li>CCaaS transformation: Avaya, Genesys, Amazon Connect</li>
+      <li>OpenAI API, conversational AI, business messaging</li>
+      <li>AI governance for regulated industries</li>
+      <li>Workshop facilitation, roadmap design, vendor selection</li>
+    </ul>
+  </div>
+  <div class="capability">
+    <span class="capability-icon">iii.</span>
+    <h3 class="capability-title">Building and shipping</h3>
+    <ul class="capability-list">
+      <li>Multi-tenant SaaS architecture</li>
+      <li>N8N workflow automation, document extraction</li>
+      <li>WhatsApp, Telegram, web business messaging</li>
+      <li>Self-hosted infra: Hetzner, Fly.io, supabase</li>
+      <li>Claude Code, React Native / Expo</li>
+      <li>From audit to BRD to live product</li>
+    </ul>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="content" id="work">
+  <div class="section-header">
+    <span class="section-num">/ 02</span>
+    <h2 class="section-title">Experience</h2>
+    <span class="section-intro">Selected roles. Full history in the downloadable CV.</span>
   </div>
 
   <div class="work-grid">
     <div class="work-meta">
-      <div class="work-period">2024 : present</div>
+      <div class="work-period">APR 2025 : PRESENT</div>
       <div>Regional Director</div>
+      <div class="work-loc">Singapore</div>
     </div>
     <div>
-      <h3 class="work-role">SNUG Technologies</h3>
-      <p class="work-company">Singapore : Advisory, sales, delivery across ASEAN</p>
-      <p class="work-desc">P&amp;L responsibility across ASEAN markets. Led delivery of OpenAI chatbot integrations across Telegram, WhatsApp and web via N8N, plus RAG-based knowledge management and AI document extraction workflows for enterprise clients. Top 1 percent global recognition; Avaya Circle of Excellence FY23.</p>
+      <h3 class="work-role">Sales &amp; Solution Consulting, ASEAN</h3>
+      <p class="work-company">SNUG Technologies</p>
+      <p class="work-desc">Driving enterprise tech sales and solution consulting for an AI-first CCaaS platform across mid-market and enterprise accounts in BFSI, Telecom, Insurance, and Public Sector.</p>
+      <ul class="work-highlights">
+        <li>Closed the first AI transformation deal in ASEAN for the SnugDesk CCaaS platform, now the regional reference account.</li>
+        <li>Built channel and SI partner networks in Indonesia, Thailand, and Singapore. Partner-referred pipeline began producing within the first quarter.</li>
+        <li>Ran joint architecture workshops with enterprise CTOs covering agent assist, knowledge copilots, conversational self-service, and business messaging across WhatsApp, Telegram, and web.</li>
+        <li>Built a RAG-based enterprise knowledge management chatbot end-to-end on OpenAI API and N8N. Product and development advisor for the SnugDesk platform.</li>
+      </ul>
     </div>
   </div>
 
   <div class="work-grid">
     <div class="work-meta">
-      <div class="work-period">2023 : present</div>
-      <div>Founder</div>
+      <div class="work-period">MAR 2023 : FEB 2025</div>
+      <div>Regional Lead</div>
+      <div class="work-loc">Singapore</div>
     </div>
     <div>
-      <h3 class="work-role">Magnis AI Consulting</h3>
-      <p class="work-company">India and region : Independent practice</p>
-      <p class="work-desc">Lightweight AI tools audits and digital transformation engagements for mid-market manufacturing and services clients. Recent: structured AI readiness report for Modi Protectarp; BRD and architecture for Crimson Inks specialty manufacturing.</p>
+      <h3 class="work-role">Enterprise Tech Sales &amp; CX Transformation, ASEAN</h3>
+      <p class="work-company">Avaya</p>
+      <p class="work-desc">Owned the ASEAN enterprise sales portfolio across Tier-1 BFSI, Insurance, and Telecom accounts in five countries. Line-managed a regional team of senior Account Executives carrying team quota, alongside direct ownership of strategic accounts.</p>
+      <ul class="work-highlights">
+        <li>Top 1 percent Global Performer, Avaya Circle of Excellence FY23. Highest customer retention across Asia-Pacific.</li>
+        <li>Significant uplift in team revenue realisation through restructured delivery governance and tighter alignment of KPIs to renewal outcomes.</li>
+        <li>Led AI-powered CX transformation across major BFSI clients in Singapore, Indonesia, Thailand, and Malaysia. Multi-million-dollar contracts on 6 to 14 month cycles.</li>
+        <li>MEDDIC motion with multithreaded engagement across CIO, COO, CTO, and Digital leaders. Five mentees promoted; sustained team retention.</li>
+      </ul>
     </div>
   </div>
 
   <div class="work-grid">
     <div class="work-meta">
-      <div class="work-period">2016 : 2023</div>
-      <div>Senior roles</div>
+      <div class="work-period">APR 2021 : MAR 2023</div>
+      <div>Professional Services Sales Lead</div>
+      <div class="work-loc">Singapore</div>
     </div>
     <div>
-      <h3 class="work-role">Enterprise CX and architecture</h3>
-      <p class="work-company">Singapore, India : BFSI and telco</p>
-      <p class="work-desc">Pre-sales, solution architecture and regional services leadership across Standard Chartered, OCBC, UOB, AIS Thailand and BNI Indonesia. Contact centre modernisation, CCaaS migration and contact strategy work for tier-one banks.</p>
+      <h3 class="work-role">Consulting-Led Growth, ASEAN</h3>
+      <p class="work-company">Avaya</p>
+      <p class="work-desc">Senior account-led role driving complex enterprise transformation deals, competitive displacements, and consulting-led growth across the region.</p>
+      <ul class="work-highlights">
+        <li>Finished above target through strategic account development. Significant growth in customer lifetime value through account expansion.</li>
+        <li>Closed multi-phase transformation engagements across SaaS, CCaaS, CPaaS and API platforms, professional services, and renewals.</li>
+        <li>Embedded Google CCAI and conversational AI into the consulting sales framework as a competitive lever.</li>
+        <li>Multi-country deal execution across Singapore, Indonesia, Thailand, Malaysia, Philippines, and Vietnam.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-meta">
+      <div class="work-period">OCT 2018 : APR 2021</div>
+      <div>Professional Services Executive</div>
+      <div class="work-loc">Singapore</div>
+    </div>
+    <div>
+      <h3 class="work-role">Enterprise CX &amp; Cloud Solutions, ASEAN</h3>
+      <p class="work-company">Avaya</p>
+      <p class="work-desc">Senior account ownership across professional services, support, and managed services for Tier-1 BFSI accounts. Cloud migration and AI-enabled CX transformation focus.</p>
+      <ul class="work-highlights">
+        <li>Comfortably exceeded targets across Professional Services, Support, and Managed Services revenue.</li>
+        <li>Led multi-country cloud migration programmes for Tier-1 BFSI clients across the region.</li>
+        <li>Shifted client engagement from reactive support to consulting-led, growing customer lifetime value meaningfully and stabilising recurring revenue.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-meta">
+      <div class="work-period">2009 : 2018</div>
+      <div>Architecture &amp; Pre-Sales</div>
+      <div class="work-loc">Singapore &amp; India</div>
+    </div>
+    <div>
+      <h3 class="work-role">Solution Architect, CCaaS, CX, AI Federation</h3>
+      <p class="work-company">Avaya, AGC Networks, Earlier roles</p>
+      <p class="work-desc">Progressive architecture and pre-sales roles. Designed contact center, CCaaS, CPaaS, and UCaaS solutions for major ASEAN enterprises. Architected AI and Bot Federation solutions integrating NLP-based chatbots with multi-cloud deployments. Demonstrated at GITEX Dubai 2018. Earlier: Genesys consulting, CTI/IVR engineering.</p>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- VENTURES & PROJECTS -->
+<section class="content" id="ventures">
   <div class="section-header">
-    <span class="section-num">/ 02</span>
-    <h2 class="section-title">In the lab</h2>
+    <span class="section-num">/ 03</span>
+    <h2 class="section-title">Ventures &amp; projects</h2>
+    <span class="section-intro">Parallel tracks: my own products and selected consulting engagements.</span>
   </div>
 
   <div class="projects">
-    <div class="project">
+    <a class="project" href="https://magnisai.com" target="_blank" rel="noopener">
       <div class="project-arrow">→</div>
-      <div class="project-tag">Active : SaaS</div>
-      <h3 class="project-title">MagnisOS Dairy</h3>
-      <p class="project-desc">Multi-tenant SaaS for Indian dairy co-operatives. Member onboarding, milk procurement, payments and analytics in one stack.</p>
-    </div>
-    <div class="project">
+      <div class="project-tag">Founder : SaaS</div>
+      <h3 class="project-title">Magnis AI</h3>
+      <p class="project-desc">Multi-tenant SaaS practice building practical AI products for Indian SMBs. Marketing site at magnisai.com, application platform at app.magnisai.com.</p>
+      <span class="project-link">magnisai.com →</span>
+    </a>
+    <a class="project" href="https://app.magnisai.com" target="_blank" rel="noopener">
       <div class="project-arrow">→</div>
       <div class="project-tag">Active : Platform</div>
+      <h3 class="project-title">MagnisOS Dairy</h3>
+      <p class="project-desc">Multi-tenant platform for Indian dairy co-operatives. Member onboarding, milk procurement, payments, and analytics in one stack. First vertical of the broader MagnisOS family.</p>
+      <span class="project-link">app.magnisai.com →</span>
+    </a>
+    <div class="project">
+      <div class="project-arrow">·</div>
+      <div class="project-tag">Active : Platform</div>
       <h3 class="project-title">MagnisOS Core</h3>
-      <p class="project-desc">Underlying CRM and operations platform for Indian SMBs. Verticals across real estate, dairy and a CoreERP variant.</p>
+      <p class="project-desc">Underlying CRM and operations platform for Indian SMBs. Verticals planned across real estate, dairy, and a CoreERP variant. Built for the mid-market reality, not the enterprise dream.</p>
     </div>
     <div class="project">
-      <div class="project-arrow">→</div>
+      <div class="project-arrow">·</div>
       <div class="project-tag">Delivered : Audit</div>
       <h3 class="project-title">AI tools audit : Modi Protectarp</h3>
-      <p class="project-desc">Structured assessment of AI opportunities across operations, identifying quick wins and 12 month roadmap.</p>
+      <p class="project-desc">Structured AI readiness assessment for a specialty manufacturing client. Identified quick wins, governance gaps, and a twelve month roadmap from pilot to production.</p>
     </div>
     <div class="project">
-      <div class="project-arrow">→</div>
-      <div class="project-tag">Industrial : Banda</div>
-      <h3 class="project-title">Mahakumbh Alloys and Steel</h3>
-      <p class="project-desc">Feasibility and CMA documentation for integrated steel and solar venture in Bundelkhand region, UP.</p>
+      <div class="project-arrow">·</div>
+      <div class="project-tag">Delivered : Advisory</div>
+      <h3 class="project-title">Crimson Inks : BRD &amp; architecture</h3>
+      <p class="project-desc">Business requirements documentation and solution architecture for a Kanpur-based specialty ink manufacturer. Consulting practice engagement with named Solution Architect.</p>
+    </div>
+    <div class="project">
+      <div class="project-arrow">·</div>
+      <div class="project-tag">Ongoing : Industrial</div>
+      <h3 class="project-title">Mahakumbh Alloys &amp; Steel</h3>
+      <p class="project-desc">Feasibility and CMA documentation for an integrated steel and solar venture in Banda district, Uttar Pradesh. Investment summit preparation for state-level engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="content" id="writing">
+  <div class="section-header">
+    <span class="section-num">/ 04</span>
+    <h2 class="section-title">Writing &amp; speaking</h2>
+    <span class="section-intro">On the architect-seller mindset, cloud era CX, and AI in production.</span>
+  </div>
+
+  <div class="writing">
+    <div class="article">
+      <div class="article-tag">LinkedIn Article</div>
+      <h3 class="article-title">The Architect-Seller Mindset: Why Technical Depth Matters in Driving Digital Transformation</h3>
+    </div>
+    <div class="article">
+      <div class="article-tag">LinkedIn Article</div>
+      <h3 class="article-title">Redesigning Contact Centers for the Cloud Era: A Framework for Scalable and Agile Development</h3>
+    </div>
+    <div class="article">
+      <div class="article-tag">LinkedIn Article</div>
+      <h3 class="article-title">Bringing AI Agents to Cloud Engineering: How Autonomous Operations Are Changing Reliability at Scale</h3>
+    </div>
+    <div class="article">
+      <div class="article-tag">LinkedIn Article</div>
+      <h3 class="article-title">Why Hybrid Cloud Won Over Pure Cloud in Our Biggest BFSI Deal of 2024</h3>
+    </div>
+    <div class="article">
+      <div class="article-tag">Keynote · 2024</div>
+      <h3 class="article-title">AI and CX Transformation Forum, Avaya Thailand</h3>
+    </div>
+    <div class="article">
+      <div class="article-tag">Innovation Showcase · 2018</div>
+      <h3 class="article-title">Bot Federation and Conversational AI, GITEX Dubai</h3>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="content" id="credentials">
+  <div class="section-header">
+    <span class="section-num">/ 05</span>
+    <h2 class="section-title">Credentials</h2>
+    <span class="section-intro">Education, certifications, recognition.</span>
+  </div>
+
+  <div class="credentials">
+    <div>
+      <div class="cred-block-title">Education</div>
+      <ul class="cred-list">
+        <li><span class="em">Executive PGDBM</span> · Symbiosis University, 2015</li>
+        <li><span class="em">MCA, Computer Science</span> · APJ Abdul Kalam University, 2005</li>
+        <li><span class="em">B.Sc. Mathematics</span> · Bundelkhand University, 2000</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cred-block-title">Certifications</div>
+      <ul class="cred-list">
+        <li><span class="em">AWS Machine Learning</span> Specialty, 2024</li>
+        <li><span class="em">Google Cloud Digital Leader</span>, 2024</li>
+        <li><span class="em">CISM</span>, 2025</li>
+        <li><span class="em">TOGAF 9</span>, 2018</li>
+        <li><span class="em">Microsoft Azure Fundamentals</span>, 2020</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cred-block-title">Recognition</div>
+      <ul class="cred-list">
+        <li><span class="em">Avaya Circle of Excellence</span> · Top 1 percent Global, FY23</li>
+        <li><span class="em">Outstanding Client Engagement</span> · 2021</li>
+        <li><span class="em">Best Delivery Architect, Singtel</span> · 2017</li>
+        <li><span class="em">Innovation Awards</span> · 2016, 2018</li>
+        <li><span class="em">Member</span> · AEA, Singapore Computer Society</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -663,17 +1117,29 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Let's <span class="italic">build</span> something that ships.</h2>
-  <p class="tagline" style="margin: 0 auto; max-width: 50ch;">If you are putting AI into production, modernising CX or trying to find honest signal in a noisy market, I am up for a conversation.</p>
+  <p class="contact-sub">If you are putting AI into production, modernising customer experience, or trying to find honest signal in a noisy market, I am up for a conversation. Two CV versions below depending on the role you have in mind.</p>
+
+  <div class="contact-cta-row">
+    <a class="cv-button" href="assets/Arvind_Gautam_Sales.pdf" download>
+      <span class="arrow">↓</span> CV : Sales Variant
+    </a>
+    <a class="cv-button" href="assets/Arvind_Gautam_Consulting.pdf" download>
+      <span class="arrow">↓</span> CV : Consulting Variant
+    </a>
+  </div>
+
   <div class="contact-links">
-    <a href="mailto:hello@example.com">EMAIL</a>
+    <a href="mailto:avi.gautam@gmail.com">EMAIL</a>
     <a href="https://linkedin.com/in/arvindkgautam" target="_blank" rel="noopener">LINKEDIN</a>
-    <a href="https://github.com/" target="_blank" rel="noopener">GITHUB</a>
+    <a href="https://magnisai.com" target="_blank" rel="noopener">MAGNIS AI</a>
+    <a href="https://github.com/arvindkgautam" target="_blank" rel="noopener">GITHUB</a>
   </div>
 </section>
 
 <footer>
-  <span>© 2026 Arvind Gautam</span>
-  <span>Built in Singapore : Press <kbd style="background: var(--bg-soft); padding: 0.1em 0.4em; border: 1px solid var(--ink-faint); border-radius: 3px; color: var(--gold);">~</kbd> for terminal</span>
+  <span>© 2026 Arvind Gautam · Singapore</span>
+  <span>Architect : Close : Deliver</span>
+  <span>Press <kbd>~</kbd> for terminal</span>
 </footer>
 
 <div class="terminal-hint" onclick="openTerminal()">
@@ -698,7 +1164,6 @@
 </div>
 
 <script>
-  // Terminal logic
   const termBody = document.getElementById('termBody');
   const termInput = document.getElementById('termInput');
   const terminal = document.getElementById('terminal');
@@ -713,45 +1178,58 @@
       ['', '  about       : who I am and what I do'],
       ['', '  experience  : career history, condensed'],
       ['', '  stack       : tools and tech I actually use'],
-      ['', '  projects    : current builds and shipped work'],
+      ['', '  ventures    : Magnis AI and consulting work'],
+      ['', '  clients     : named accounts and engagements'],
+      ['', '  writing     : LinkedIn articles and talks'],
       ['', '  contact     : how to reach me'],
       ['', '  resume      : download a CV'],
       ['', '  whoami      : the existential one'],
       ['', '  clear       : wipe the screen'],
       ['', '  exit        : back to visual portfolio'],
       ['', ''],
-      ['dim', '  Try also: sudo, coffee, vim, matrix']
+      ['dim', '  Try also: sudo, coffee, vim, matrix, ls, cat README.md']
     ],
     about: () => [
       ['heading', '// about'],
       ['', ''],
       ['', 'Arvind Gautam. Singapore based. Originally from Banda, Bundelkhand.'],
-      ['', '20+ years across enterprise CX, AI delivery and regional GTM in ASEAN.'],
+      ['', '20+ years across enterprise sales, AI advisory, and CX transformation'],
+      ['', 'in ASEAN. BFSI and Telco primarily.'],
       ['', ''],
-      ['', 'Day job: Regional Director at SNUG Technologies, owning advisory'],
-      ['', 'and delivery across the region.'],
+      ['', 'Day job: Regional Director at SNUG Technologies. ASEAN sales and'],
+      ['', 'solution consulting for an AI-first CCaaS platform.'],
       ['', ''],
-      ['', 'Parallel track: Magnis AI Consulting, where I help mid-market clients'],
-      ['', 'in India figure out which AI use cases are real and which are theatre.'],
+      ['', 'Parallel track: Magnis AI. Multi-tenant SaaS for Indian SMBs,'],
+      ['', 'starting with dairy co-operatives. Hands-on product work.'],
       ['', ''],
-      ['', 'Also building MagnisOS, a multi-tenant SaaS for Indian SMBs.'],
-      ['', 'Dairy co-operatives first, real estate and CoreERP next.']
+      ['', 'Came up through contact center engineering and solution architecture,'],
+      ['', 'so I can run an architecture conversation with a CTO and a value'],
+      ['', 'conversation with a CIO in the same meeting.']
     ],
     experience: () => [
       ['heading', '// experience'],
       ['', ''],
-      ['gold', '2024 — present  Regional Director, SNUG Technologies'],
-      ['', '                ASEAN BFSI and telco. AI delivery, P&L, GTM.'],
+      ['gold', '2025 — present  Regional Director, SNUG Technologies'],
+      ['', '                ASEAN sales and solution consulting.'],
+      ['', '                AI-first CCaaS platform, BFSI / Telco / Insurance.'],
       ['', ''],
-      ['gold', '2023 — present  Founder, Magnis AI Consulting'],
-      ['', '                India practice. AI audits, BRDs, transformation.'],
+      ['gold', '2023 — 2025     Regional Lead, Avaya ASEAN'],
+      ['', '                Enterprise tech sales and CX transformation.'],
+      ['', '                Top 1 percent Global, Circle of Excellence FY23.'],
       ['', ''],
-      ['gold', '2016 — 2023     Solution architecture and pre-sales'],
-      ['', '                Standard Chartered, OCBC, UOB, AIS, BNI.'],
+      ['gold', '2021 — 2023     Professional Services Sales Lead, Avaya'],
+      ['', '                Consulting-led growth, team management.'],
       ['', ''],
-      ['gold', '< 2016          Earlier: IVR, CTI, contact centre engineering'],
+      ['gold', '2018 — 2021     Professional Services Executive, Avaya'],
+      ['', '                Tier-1 BFSI cloud migrations across ASEAN.'],
       ['', ''],
-      ['dim', 'Type `resume` for the full version.']
+      ['gold', '2009 — 2018     Architecture and pre-sales, Avaya'],
+      ['', '                CCaaS, UCaaS, AI Bot Federation. GITEX Dubai 2018.'],
+      ['', ''],
+      ['gold', '2005 — 2009     CTI / IVR engineering'],
+      ['', '                Genesys, AGC Networks, Real Soft, Parwan Telecom.'],
+      ['', ''],
+      ['dim', "Type 'resume' for downloadable CV."]
     ],
     stack: () => [
       ['heading', '// stack'],
@@ -761,51 +1239,104 @@
       ['', '  RAG pipelines, document extraction workflows'],
       ['', '  AWS ML Specialty certified'],
       ['', ''],
-      ['gold', 'Automation'],
-      ['', '  N8N, custom WhatsApp / Telegram bots (Baileys via Evolution API)'],
-      ['', '  Self-hosted infra on Hetzner / Fly.io'],
+      ['gold', 'CX platforms'],
+      ['', '  Avaya, Genesys Cloud, Amazon Connect, Google CCAI, Cognigy'],
+      ['', '  Conversational AI, business messaging (WhatsApp, Telegram, web)'],
       ['', ''],
-      ['gold', 'Product'],
+      ['gold', 'Automation & infra'],
+      ['', '  N8N, Evolution API (Baileys), self-hosted on Hetzner / Fly.io'],
+      ['', '  Supabase, Vercel, GitHub Actions'],
+      ['', ''],
+      ['gold', 'Product build'],
       ['', '  Claude Code, React Native / Expo, multi-tenant SaaS patterns'],
       ['', ''],
       ['gold', 'Enterprise'],
-      ['', '  TOGAF 9, CISM, Google Cloud Digital Leader']
+      ['', '  TOGAF 9, CISM, Google Cloud Digital Leader, Azure Fundamentals']
     ],
-    projects: () => [
-      ['heading', '// projects'],
+    ventures: () => [
+      ['heading', '// ventures'],
+      ['', ''],
+      ['gold', '[ founder ] Magnis AI'],
+      ['', '  magnisai.com / app.magnisai.com'],
+      ['', '  Multi-tenant SaaS practice for Indian SMBs.'],
       ['', ''],
       ['gold', '[ active ] MagnisOS Dairy'],
-      ['', '  Multi-tenant SaaS for Indian dairy co-operatives.'],
+      ['', '  Platform for Indian dairy co-operatives.'],
+      ['', '  Member onboarding, procurement, payments, analytics.'],
       ['', ''],
       ['gold', '[ active ] MagnisOS Core'],
-      ['', '  CRM and ops platform. Real estate / dairy / CoreERP verticals.'],
+      ['', '  CRM and ops platform.'],
+      ['', '  Real estate, dairy, CoreERP verticals.'],
       ['', ''],
-      ['gold', '[ shipped ] Modi Protectarp : AI tools audit'],
-      ['', '  Structured readiness report and 12 month roadmap.'],
+      ['gold', '[ delivered ] Modi Protectarp : AI tools audit'],
+      ['', '  Structured readiness report, 12 month roadmap.'],
       ['', ''],
-      ['gold', '[ shipped ] Crimson Inks : BRD and NDA'],
-      ['', '  Kanpur based specialty ink manufacturer.'],
+      ['gold', '[ delivered ] Crimson Inks : BRD and architecture'],
+      ['', '  Kanpur-based specialty ink manufacturer.'],
       ['', ''],
       ['gold', '[ ongoing ] Mahakumbh Alloys and Steel'],
-      ['', '  Integrated steel and solar project, Banda district, UP.']
+      ['', '  Integrated steel and solar, Banda district, UP.']
+    ],
+    clients: () => [
+      ['heading', '// clients & engagements'],
+      ['', ''],
+      ['gold', 'BFSI'],
+      ['', '  Standard Chartered, OCBC, UOB, BNI Indonesia'],
+      ['', ''],
+      ['gold', 'Insurance'],
+      ['', '  AIA, Manulife, Prudential'],
+      ['', ''],
+      ['gold', 'Telecom'],
+      ['', '  Singtel, AIS Thailand'],
+      ['', ''],
+      ['gold', 'Geography'],
+      ['', '  Singapore (base), Indonesia, Thailand, Malaysia,'],
+      ['', '  Philippines, Vietnam, India.'],
+      ['', ''],
+      ['dim', 'Engagements ranged from AI routing and omnichannel CX to'],
+      ['dim', 'conversational AI, agent assist, and multi-country cloud migration.']
+    ],
+    writing: () => [
+      ['heading', '// writing & speaking'],
+      ['', ''],
+      ['gold', 'LinkedIn articles'],
+      ['', '  · The Architect-Seller Mindset'],
+      ['', '  · Redesigning Contact Centers for the Cloud Era'],
+      ['', '  · Bringing AI Agents to Cloud Engineering'],
+      ['', '  · Why Hybrid Cloud Won Over Pure Cloud in a BFSI Deal'],
+      ['', '  · Why AI Will Not Replace Agents'],
+      ['', ''],
+      ['gold', 'Speaking'],
+      ['', '  · Keynote, AI and CX Transformation Forum,'],
+      ['', '    Avaya Thailand 2024'],
+      ['', '  · Bot Federation Innovation Showcase,'],
+      ['', '    GITEX Dubai 2018'],
+      ['', '  · ASEAN C-Suite AI Transformation Roadshows 2022-2024']
     ],
     contact: () => [
       ['heading', '// contact'],
       ['', ''],
-      ['', '  Email     : hello@example.com   ← update this'],
+      ['', '  Email     : avi.gautam@gmail.com'],
+      ['', '  Phone     : +65 9833 0031'],
       ['', '  LinkedIn  : linkedin.com/in/arvindkgautam'],
-      ['', '  Location  : Singapore (SGT, UTC+8)'],
+      ['', '  Magnis    : magnisai.com'],
+      ['', '  Location  : Singapore (UTC+8)'],
       ['', ''],
-      ['dim', '  Open to: senior IC roles, GTM specialist, advisory.']
+      ['dim', '  Open to: senior IC roles, GTM specialist, advisory engagements,'],
+      ['dim', '  AI transformation projects across ASEAN.']
     ],
     resume: () => [
       ['heading', '// resume'],
       ['', ''],
-      ['', 'Two versions available:'],
-      ['', '  → Consulting variant'],
-      ['', '  → Sales variant'],
+      ['', 'Two versions available depending on the role:'],
       ['', ''],
-      ['dim', 'Drop your CV PDFs in /assets and link them here.']
+      ['gold', '  → Sales variant'],
+      ['', '    assets/Arvind_Gautam_Sales.pdf'],
+      ['', ''],
+      ['gold', '  → Consulting variant'],
+      ['', '    assets/Arvind_Gautam_Consulting.pdf'],
+      ['', ''],
+      ['dim', "Scroll down to the contact section for direct download buttons."]
     ],
     whoami: () => [
       ['', 'arvind'],
@@ -829,13 +1360,16 @@
       ['gold', 'Follow the white rabbit. 🐇']
     ],
     ls: () => [
-      ['dim', 'about  experience  projects  stack  contact  resume'],
-      ['dim', '.secrets/  .ssh/  README.md']
+      ['dim', 'about  experience  stack  ventures  clients  writing  contact  resume'],
+      ['dim', '.secrets/  .ssh/  README.md  magnis.config']
     ],
     'cat README.md': () => [
       ['heading', '# Arvind Gautam'],
       ['', ''],
       ['', '> Architect. Close. Deliver.'],
+      ['', ''],
+      ['', 'Twenty years selling and shipping enterprise AI'],
+      ['', 'and CX transformation across ASEAN.'],
       ['', ''],
       ['', 'A portfolio that you can also type at.']
     ],
@@ -948,7 +1482,6 @@
     }
   });
 
-  // Global keyboard: ~ to open, Esc to close
   document.addEventListener('keydown', (e) => {
     if (e.key === '`' || e.key === '~') {
       if (document.activeElement !== termInput) {
