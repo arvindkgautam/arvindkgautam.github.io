@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arvind Gautam : Enterprise AI &amp; Transformation</title>
+<meta name="description" content="Arvind Gautam : Enterprise AI and CX transformation leader. Singapore. Architect. Close. Deliver." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0d0b;
+    --bg-soft: #16140f;
+    --ink: #ecebe6;
+    --ink-dim: #8a857a;
+    --ink-faint: #4a463d;
+    --gold: #c9a55a;
+    --gold-soft: #8a7440;
+    --rule: rgba(236, 235, 230, 0.08);
+    --grain-opacity: 0.04;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Film grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Top bar */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(14,13,11,0.9) 0%, rgba(14,13,11,0) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .monogram {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    display: flex;
+    gap: 2rem;
+  }
+
+  .meta .status::before {
+    content: '●';
+    color: #6fa86f;
+    margin-right: 0.5em;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    padding: 8rem 2.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    position: relative;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 70% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 70% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: rise 0.8s ease-out 0.2s forwards;
+  }
+
+  .eyebrow .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-right: 0.8em;
+    vertical-align: middle;
+  }
+
+  h1.name {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: rise 1s ease-out 0.4s forwards;
+  }
+
+  h1.name .italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .tagline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--ink-dim);
+    max-width: 32ch;
+    line-height: 1.4;
+    opacity: 0;
+    animation: rise 1s ease-out 0.7s forwards;
+  }
+
+  .hero-right {
+    border-left: 1px solid var(--rule);
+    padding-left: 3rem;
+    opacity: 0;
+    animation: rise 1s ease-out 0.9s forwards;
+  }
+
+  .summary {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 2rem;
+    max-width: 42ch;
+  }
+
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pillar {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+
+  .pillar:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pillar-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold-soft);
+    letter-spacing: 0.1em;
+  }
+
+  /* Sections */
+  section {
+    padding: 6rem 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.5rem;
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Work / experience */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .work-grid:last-child { border-bottom: none; }
+
+  .work-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+  }
+
+  .work-period { color: var(--gold-soft); margin-bottom: 0.5rem; }
+
+  .work-role {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-company {
+    color: var(--ink-dim);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .work-desc { font-size: 1rem; color: var(--ink); max-width: 60ch; }
+
+  /* Projects */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .project {
+    background: var(--bg);
+    padding: 2.5rem;
+    transition: background 0.4s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .project:hover { background: var(--bg-soft); }
+
+  .project-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    color: var(--ink-dim);
+    max-width: 40ch;
+  }
+
+  .project-arrow {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    color: var(--ink-faint);
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .project:hover .project-arrow {
+    color: var(--gold);
+    transform: translate(4px, -4px);
+  }
+
+  /* Contact */
+  .contact {
+    padding: 8rem 2.5rem;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+  }
+
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact h2 .italic { font-style: italic; color: var(--gold); }
+
+  .contact-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-links a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+    padding-bottom: 0.3rem;
+    transition: color 0.3s;
+  }
+
+  .contact-links a:hover { color: var(--gold); }
+
+  /* Footer */
+  footer {
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* Terminal hint */
+  .terminal-hint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 40;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+  }
+
+  .terminal-hint:hover {
+    color: var(--gold);
+    border-color: var(--gold-soft);
+  }
+
+  .terminal-hint kbd {
+    background: var(--bg);
+    padding: 0.1em 0.4em;
+    border: 1px solid var(--ink-faint);
+    border-radius: 3px;
+    color: var(--gold);
+    margin-right: 0.5em;
+  }
+
+  /* Terminal overlay */
+  .terminal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10, 10, 8, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #d4d0c3;
+  }
+
+  .terminal.active { display: flex; }
+
+  .terminal-header {
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .terminal-dot.red { background: #e06c5b; }
+  .terminal-dot.yellow { background: #d9a14b; }
+  .terminal-dot.green { background: #6fa86f; }
+
+  .terminal-title {
+    flex: 1;
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  .terminal-close {
+    color: var(--ink-dim);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.75rem;
+  }
+
+  .terminal-close:hover { color: var(--gold); }
+
+  .terminal-body {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+  }
+
+  .terminal-body::-webkit-scrollbar { width: 6px; }
+  .terminal-body::-webkit-scrollbar-thumb { background: var(--ink-faint); }
+
+  .term-line { margin-bottom: 0.2rem; white-space: pre-wrap; word-break: break-word; }
+  .term-prompt { color: var(--gold); }
+  .term-user { color: #8fb3e0; }
+  .term-success { color: #6fa86f; }
+  .term-error { color: #e06c5b; }
+  .term-dim { color: var(--ink-dim); }
+  .term-heading { color: var(--gold); font-weight: 500; }
+
+  .terminal-input-line {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 2rem 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: inherit;
+    caret-color: var(--gold);
+  }
+
+  .cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background: var(--gold);
+    vertical-align: text-bottom;
+    animation: blink 1s steps(2) infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .topbar { padding: 1rem 1.2rem; }
+    .meta { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 6rem 1.2rem 3rem;
+      gap: 2.5rem;
+    }
+    .hero-right {
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-left: 0;
+      padding-top: 2rem;
+    }
+    section { padding: 4rem 1.2rem; }
+    .section-title { font-size: 1.8rem; }
+    .work-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .projects { grid-template-columns: 1fr; }
+    .project { padding: 1.8rem; }
+    .contact { padding: 5rem 1.2rem; }
+    .contact-links { flex-direction: column; gap: 1rem; }
+    footer { flex-direction: column; gap: 0.5rem; }
+    .terminal-hint { bottom: 1rem; right: 1rem; font-size: 0.65rem; }
+    .terminal-body { padding: 1rem 1.2rem; font-size: 0.8rem; }
+    .terminal-input-line { padding: 0.5rem 1.2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="monogram">AG.</div>
+  <div class="meta">
+    <span>Singapore : SGT</span>
+    <span class="status">Available for new work</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-left">
+    <div class="eyebrow"><span class="dot"></span>Portfolio : 2026 Edition</div>
+    <h1 class="name">Arvind<br/>Gautam<span class="italic">.</span></h1>
+    <p class="tagline">Architect, close, deliver: enterprise AI and customer experience transformation across ASEAN.</p>
+  </div>
+  <div class="hero-right">
+    <p class="summary">Twenty plus years bridging strategy, sales and delivery for BFSI and telco. Currently Regional Director at SNUG Technologies and founder of Magnis AI Consulting, where I help mid-market clients in India and the region put AI into production rather than into pitch decks.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div>Advisory and audits : AI tools, CX architecture, GTM readiness.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div>SaaS product build : MagnisOS for Indian SMBs and co-operatives.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div>Regional delivery : ASEAN BFSI and telco, Standard Chartered to AIS.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-header">
+    <span class="section-num">/ 01</span>
+    <h2 class="section-title">Selected work</h2>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-meta">
+      <div class="work-period">2024 : present</div>
+      <div>Regional Director</div>
+    </div>
+    <div>
+      <h3 class="work-role">SNUG Technologies</h3>
+      <p class="work-company">Singapore : Advisory, sales, delivery across ASEAN</p>
+      <p class="work-desc">P&amp;L responsibility across ASEAN markets. Led delivery of OpenAI chatbot integrations across Telegram, WhatsApp and web via N8N, plus RAG-based knowledge management and AI document extraction workflows for enterprise clients. Top 1 percent global recognition; Avaya Circle of Excellence FY23.</p>
+    </div>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-meta">
+      <div class="work-period">2023 : present</div>
+      <div>Founder</div>
+    </div>
+    <div>
+      <h3 class="work-role">Magnis AI Consulting</h3>
+      <p class="work-company">India and region : Independent practice</p>
+      <p class="work-desc">Lightweight AI tools audits and digital transformation engagements for mid-market manufacturing and services clients. Recent: structured AI readiness report for Modi Protectarp; BRD and architecture for Crimson Inks specialty manufacturing.</p>
+    </div>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-meta">
+      <div class="work-period">2016 : 2023</div>
+      <div>Senior roles</div>
+    </div>
+    <div>
+      <h3 class="work-role">Enterprise CX and architecture</h3>
+      <p class="work-company">Singapore, India : BFSI and telco</p>
+      <p class="work-desc">Pre-sales, solution architecture and regional services leadership across Standard Chartered, OCBC, UOB, AIS Thailand and BNI Indonesia. Contact centre modernisation, CCaaS migration and contact strategy work for tier-one banks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">/ 02</span>
+    <h2 class="section-title">In the lab</h2>
+  </div>
+
+  <div class="projects">
+    <div class="project">
+      <div class="project-arrow">→</div>
+      <div class="project-tag">Active : SaaS</div>
+      <h3 class="project-title">MagnisOS Dairy</h3>
+      <p class="project-desc">Multi-tenant SaaS for Indian dairy co-operatives. Member onboarding, milk procurement, payments and analytics in one stack.</p>
+    </div>
+    <div class="project">
+      <div class="project-arrow">→</div>
+      <div class="project-tag">Active : Platform</div>
+      <h3 class="project-title">MagnisOS Core</h3>
+      <p class="project-desc">Underlying CRM and operations platform for Indian SMBs. Verticals across real estate, dairy and a CoreERP variant.</p>
+    </div>
+    <div class="project">
+      <div class="project-arrow">→</div>
+      <div class="project-tag">Delivered : Audit</div>
+      <h3 class="project-title">AI tools audit : Modi Protectarp</h3>
+      <p class="project-desc">Structured assessment of AI opportunities across operations, identifying quick wins and 12 month roadmap.</p>
+    </div>
+    <div class="project">
+      <div class="project-arrow">→</div>
+      <div class="project-tag">Industrial : Banda</div>
+      <h3 class="project-title">Mahakumbh Alloys and Steel</h3>
+      <p class="project-desc">Feasibility and CMA documentation for integrated steel and solar venture in Bundelkhand region, UP.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Let's <span class="italic">build</span> something that ships.</h2>
+  <p class="tagline" style="margin: 0 auto; max-width: 50ch;">If you are putting AI into production, modernising CX or trying to find honest signal in a noisy market, I am up for a conversation.</p>
+  <div class="contact-links">
+    <a href="mailto:hello@example.com">EMAIL</a>
+    <a href="https://linkedin.com/in/arvindkgautam" target="_blank" rel="noopener">LINKEDIN</a>
+    <a href="https://github.com/" target="_blank" rel="noopener">GITHUB</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Arvind Gautam</span>
+  <span>Built in Singapore : Press <kbd style="background: var(--bg-soft); padding: 0.1em 0.4em; border: 1px solid var(--ink-faint); border-radius: 3px; color: var(--gold);">~</kbd> for terminal</span>
+</footer>
+
+<div class="terminal-hint" onclick="openTerminal()">
+  <kbd>~</kbd>open terminal
+</div>
+
+<!-- TERMINAL OVERLAY -->
+<div class="terminal" id="terminal">
+  <div class="terminal-header">
+    <span class="terminal-dot red"></span>
+    <span class="terminal-dot yellow"></span>
+    <span class="terminal-dot green"></span>
+    <span class="terminal-title">arvind@magnis : ~</span>
+    <button class="terminal-close" onclick="closeTerminal()">[ esc ] close</button>
+  </div>
+  <div class="terminal-body" id="termBody"></div>
+  <div class="terminal-input-line">
+    <span class="term-prompt">arvind@magnis</span>
+    <span class="term-dim">:~$</span>
+    <input type="text" class="terminal-input" id="termInput" autocomplete="off" spellcheck="false" />
+  </div>
+</div>
+
+<script>
+  // Terminal logic
+  const termBody = document.getElementById('termBody');
+  const termInput = document.getElementById('termInput');
+  const terminal = document.getElementById('terminal');
+  const history = [];
+  let historyIndex = -1;
+  let bootDone = false;
+
+  const commands = {
+    help: () => [
+      ['heading', 'Available commands:'],
+      ['', ''],
+      ['', '  about       : who I am and what I do'],
+      ['', '  experience  : career history, condensed'],
+      ['', '  stack       : tools and tech I actually use'],
+      ['', '  projects    : current builds and shipped work'],
+      ['', '  contact     : how to reach me'],
+      ['', '  resume      : download a CV'],
+      ['', '  whoami      : the existential one'],
+      ['', '  clear       : wipe the screen'],
+      ['', '  exit        : back to visual portfolio'],
+      ['', ''],
+      ['dim', '  Try also: sudo, coffee, vim, matrix']
+    ],
+    about: () => [
+      ['heading', '// about'],
+      ['', ''],
+      ['', 'Arvind Gautam. Singapore based. Originally from Banda, Bundelkhand.'],
+      ['', '20+ years across enterprise CX, AI delivery and regional GTM in ASEAN.'],
+      ['', ''],
+      ['', 'Day job: Regional Director at SNUG Technologies, owning advisory'],
+      ['', 'and delivery across the region.'],
+      ['', ''],
+      ['', 'Parallel track: Magnis AI Consulting, where I help mid-market clients'],
+      ['', 'in India figure out which AI use cases are real and which are theatre.'],
+      ['', ''],
+      ['', 'Also building MagnisOS, a multi-tenant SaaS for Indian SMBs.'],
+      ['', 'Dairy co-operatives first, real estate and CoreERP next.']
+    ],
+    experience: () => [
+      ['heading', '// experience'],
+      ['', ''],
+      ['gold', '2024 — present  Regional Director, SNUG Technologies'],
+      ['', '                ASEAN BFSI and telco. AI delivery, P&L, GTM.'],
+      ['', ''],
+      ['gold', '2023 — present  Founder, Magnis AI Consulting'],
+      ['', '                India practice. AI audits, BRDs, transformation.'],
+      ['', ''],
+      ['gold', '2016 — 2023     Solution architecture and pre-sales'],
+      ['', '                Standard Chartered, OCBC, UOB, AIS, BNI.'],
+      ['', ''],
+      ['gold', '< 2016          Earlier: IVR, CTI, contact centre engineering'],
+      ['', ''],
+      ['dim', 'Type `resume` for the full version.']
+    ],
+    stack: () => [
+      ['heading', '// stack'],
+      ['', ''],
+      ['gold', 'AI / ML'],
+      ['', '  OpenAI API, Claude, LangChain-style orchestration'],
+      ['', '  RAG pipelines, document extraction workflows'],
+      ['', '  AWS ML Specialty certified'],
+      ['', ''],
+      ['gold', 'Automation'],
+      ['', '  N8N, custom WhatsApp / Telegram bots (Baileys via Evolution API)'],
+      ['', '  Self-hosted infra on Hetzner / Fly.io'],
+      ['', ''],
+      ['gold', 'Product'],
+      ['', '  Claude Code, React Native / Expo, multi-tenant SaaS patterns'],
+      ['', ''],
+      ['gold', 'Enterprise'],
+      ['', '  TOGAF 9, CISM, Google Cloud Digital Leader']
+    ],
+    projects: () => [
+      ['heading', '// projects'],
+      ['', ''],
+      ['gold', '[ active ] MagnisOS Dairy'],
+      ['', '  Multi-tenant SaaS for Indian dairy co-operatives.'],
+      ['', ''],
+      ['gold', '[ active ] MagnisOS Core'],
+      ['', '  CRM and ops platform. Real estate / dairy / CoreERP verticals.'],
+      ['', ''],
+      ['gold', '[ shipped ] Modi Protectarp : AI tools audit'],
+      ['', '  Structured readiness report and 12 month roadmap.'],
+      ['', ''],
+      ['gold', '[ shipped ] Crimson Inks : BRD and NDA'],
+      ['', '  Kanpur based specialty ink manufacturer.'],
+      ['', ''],
+      ['gold', '[ ongoing ] Mahakumbh Alloys and Steel'],
+      ['', '  Integrated steel and solar project, Banda district, UP.']
+    ],
+    contact: () => [
+      ['heading', '// contact'],
+      ['', ''],
+      ['', '  Email     : hello@example.com   ← update this'],
+      ['', '  LinkedIn  : linkedin.com/in/arvindkgautam'],
+      ['', '  Location  : Singapore (SGT, UTC+8)'],
+      ['', ''],
+      ['dim', '  Open to: senior IC roles, GTM specialist, advisory.']
+    ],
+    resume: () => [
+      ['heading', '// resume'],
+      ['', ''],
+      ['', 'Two versions available:'],
+      ['', '  → Consulting variant'],
+      ['', '  → Sales variant'],
+      ['', ''],
+      ['dim', 'Drop your CV PDFs in /assets and link them here.']
+    ],
+    whoami: () => [
+      ['', 'arvind'],
+      ['dim', '(but really, who is any of us in the cloud era)']
+    ],
+    sudo: () => [
+      ['error', 'arvind is not in the sudoers file. This incident will be reported.'],
+      ['dim', '(it will not actually be reported)']
+    ],
+    coffee: () => [
+      ['', '☕ brewing...'],
+      ['dim', 'Singapore kopi-o-kosong recommended. No sugar, no milk, just clarity.']
+    ],
+    vim: () => [
+      ['error', 'E: cannot exit vim from a web terminal.'],
+      ['dim', 'You know what you did.']
+    ],
+    matrix: () => [
+      ['success', 'Wake up, Arvind...'],
+      ['success', 'The MagnisOS has you...'],
+      ['gold', 'Follow the white rabbit. 🐇']
+    ],
+    ls: () => [
+      ['dim', 'about  experience  projects  stack  contact  resume'],
+      ['dim', '.secrets/  .ssh/  README.md']
+    ],
+    'cat README.md': () => [
+      ['heading', '# Arvind Gautam'],
+      ['', ''],
+      ['', '> Architect. Close. Deliver.'],
+      ['', ''],
+      ['', 'A portfolio that you can also type at.']
+    ],
+    pwd: () => [['', '/home/arvind/portfolio']],
+    date: () => [['', new Date().toString()]],
+    echo: (args) => [['', args.join(' ')]]
+  };
+
+  function appendLine(cls, text) {
+    const div = document.createElement('div');
+    div.className = 'term-line' + (cls ? ' term-' + cls : '');
+    div.textContent = text;
+    termBody.appendChild(div);
+  }
+
+  function appendPrompt(cmd) {
+    const div = document.createElement('div');
+    div.className = 'term-line';
+    div.innerHTML = '<span class="term-prompt">arvind@magnis</span><span class="term-dim">:~$ </span><span class="term-user">' + escapeHtml(cmd) + '</span>';
+    termBody.appendChild(div);
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function runCommand(input) {
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
+    appendPrompt(trimmed);
+    history.push(trimmed);
+    historyIndex = history.length;
+
+    if (trimmed === 'clear') {
+      termBody.innerHTML = '';
+      return;
+    }
+    if (trimmed === 'exit') {
+      closeTerminal();
+      return;
+    }
+
+    const [cmd, ...args] = trimmed.split(/\s+/);
+    const handler = commands[trimmed] || commands[cmd];
+
+    if (handler) {
+      const lines = handler(args);
+      lines.forEach(([cls, text]) => appendLine(cls, text));
+    } else {
+      appendLine('error', `command not found: ${cmd}`);
+      appendLine('dim', `try 'help' for the menu.`);
+    }
+    appendLine('', '');
+    termBody.scrollTop = termBody.scrollHeight;
+  }
+
+  async function boot() {
+    if (bootDone) return;
+    const lines = [
+      ['dim', 'magnis-terminal v1.0.0'],
+      ['dim', 'kernel: arvind-os-26.05'],
+      ['dim', 'last login: ' + new Date().toUTCString()],
+      ['', ''],
+      ['', 'Welcome. This is a portfolio you can type at.'],
+      ['gold', "Type 'help' to see what's available."],
+      ['', '']
+    ];
+    for (const [cls, text] of lines) {
+      appendLine(cls, text);
+      await new Promise(r => setTimeout(r, 120));
+    }
+    bootDone = true;
+  }
+
+  function openTerminal() {
+    terminal.classList.add('active');
+    termInput.focus();
+    if (!bootDone) boot();
+  }
+
+  function closeTerminal() {
+    terminal.classList.remove('active');
+  }
+
+  termInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      runCommand(termInput.value);
+      termInput.value = '';
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        historyIndex--;
+        termInput.value = history[historyIndex];
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex < history.length - 1) {
+        historyIndex++;
+        termInput.value = history[historyIndex];
+      } else {
+        historyIndex = history.length;
+        termInput.value = '';
+      }
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      const current = termInput.value.trim();
+      const matches = Object.keys(commands).filter(c => c.startsWith(current));
+      if (matches.length === 1) termInput.value = matches[0];
+    }
+  });
+
+  // Global keyboard: ~ to open, Esc to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '`' || e.key === '~') {
+      if (document.activeElement !== termInput) {
+        e.preventDefault();
+        if (terminal.classList.contains('active')) closeTerminal();
+        else openTerminal();
+      }
+    }
+    if (e.key === 'Escape' && terminal.classList.contains('active')) {
+      closeTerminal();
+    }
+  });
+</script>
+</body>
+</html>
