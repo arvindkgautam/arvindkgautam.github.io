@@ -807,6 +807,30 @@
       font-weight: 400;
     }
 
+    .hero-tags {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--gold-soft);
+      font-style: normal;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    .engagements-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 2rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      color: var(--ink);
+      opacity: 0.8;
+    }
+
+    .engagements-list .separator {
+      color: var(--rule-strong);
+    }
+
     .contact {
       padding: 4rem 2.5rem;
       text-align: center;
@@ -1116,6 +1140,31 @@
         grid-template-columns: 1fr;
         padding: 4rem 1.2rem 2rem;
         gap: 2.5rem;
+      }
+
+      .hero-tags {
+        font-size: 0.85rem;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+
+      .engagements-list {
+        gap: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+      }
+      .engagements-list .separator {
+        display: none;
+      }
+      .engagements-list span:not(.separator) {
+        background: var(--bg-soft);
+        border: 1px solid var(--rule);
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-family: 'JetBrains Mono', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
       }
 
       .hero-right {
@@ -1510,14 +1559,12 @@
       <p class="tagline"
         style="margin-bottom: 0.4rem; font-style: normal; font-weight: 400; color: var(--ink); font-size: 1.8rem;">
         Enterprise AI &amp; Transformation Leader</p>
-      <p class="tagline"
-        style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--gold-soft); font-style: normal; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">
+      <p class="hero-tags">
         ASEAN &nbsp;|&nbsp; Generative AI &nbsp;|&nbsp; Sovereign AI &nbsp;|&nbsp; Enterprise Modernization</p>
 
       <p class="tagline"
         style="margin-bottom: 2.5rem; font-style: normal; font-size: 1.1rem; color: var(--ink-dim); max-width: 44ch; line-height: 1.5;">
-        I architect enterprise AI solutions, lead transformation programs, close strategic deals, and continue to build
-        AI systems personally.</p>
+        I architect enterprise AI solutions, lead transformation programs, and guide organizations through AI adoption at enterprise scale.</p>
 
       <div class="now-line">
         <strong>now</strong> · architecting agentic workflows, advising on regional AI strategies, and scaling Magnis
@@ -1525,10 +1572,15 @@
       </div>
     </div>
     <div class="hero-right">
-      <p class="summary">Specializing in <strong>secure, governed AI</strong> and <strong>regulated-industry</strong>
-        systems across ASEAN. 20+ years assisting organizations in modernizing customer experience through <strong>local
-          LLM deployment</strong>, <strong>sovereign architectures</strong>, and strict <strong>data residency</strong>
-        compliance. I bridge commercial strategy, technology architecture, and regional execution.
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; text-transform: uppercase; border: 1px solid var(--rule-strong); padding: 0.5rem 0.8rem; border-radius: 4px; width: fit-content; background: rgba(201, 165, 90, 0.03);">
+        <span style="display: inline-block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%;"></span>
+        Top 1% Global Performer · Avaya Circle of Excellence
+      </div>
+
+      <p class="summary">Specializing in <strong>secure, governed systems</strong> and <strong>regulated-industry</strong>
+        deployments across ASEAN. 20+ years assisting organizations in modernizing customer experience through <strong>local
+          LLM deployment</strong>, <strong>sovereign infrastructure</strong>, and strict <strong>data residency</strong>
+        compliance. I bridge commercial strategy, technology design, and local execution.
       </p>
 
       <div style="margin-bottom: 2rem;">
@@ -1537,11 +1589,11 @@
           Current Focus</h3>
         <ul
           style="list-style: none; font-size: 0.9rem; color: var(--ink-dim); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-          <li>→ Agentic AI implementation</li>
+          <li>→ Agentic workflow deployment</li>
           <li>→ Executive AI adoption</li>
-          <li>→ Enterprise modernization</li>
-          <li>→ AI-driven customer experience</li>
-          <li>→ Human + AI operating models</li>
+          <li>→ Systems modernization</li>
+          <li>→ Intelligent customer experience</li>
+          <li>→ Human + Machine operating models</li>
         </ul>
       </div>
 
@@ -1557,17 +1609,17 @@
         <div class="pillar">
           <div class="pillar-num">02</div>
           <div>
-            <span class="pillar-title">AI Advisory &amp; CX Transformation</span>
-            <span class="pillar-desc">Guiding digital modernization from architecture blueprint to production. GenAI,
+            <span class="pillar-title">AI Advisory &amp; CX Modernization</span>
+            <span class="pillar-desc">Guiding digital initiatives from initial design to production. GenAI,
               agentic systems, and governance in regulated markets.</span>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-num">03</div>
           <div>
-            <span class="pillar-title">AI Platform Strategy &amp; Delivery</span>
-            <span class="pillar-desc">Directing roadmap execution for multi-tenant SaaS platforms like Magnis AI,
-              deploying secure and scalable cloud architectures.</span>
+            <span class="pillar-title">Platform Strategy &amp; Delivery</span>
+            <span class="pillar-desc">Directing roadmap execution for multi-tenant SaaS platforms like Magnis,
+              deploying secure and scalable cloud environments.</span>
           </div>
         </div>
       </div>
@@ -1580,30 +1632,28 @@
       <h3
         style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1.5rem;">
         Selected Enterprise Engagements</h3>
-      <div
-        style="font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ink); display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem 2rem; opacity: 0.8;">
+      <div class="engagements-list">
         <span>Standard Chartered</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>OCBC</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>UOB</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>Macquarie</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>ANZ</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>BNI</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>Westcon</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>Prudential</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>Singtel</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>AIA</span>
-        <span style="color: var(--rule-strong)">|</span>
+        <span class="separator">|</span>
         <span>HBF</span>
-
       </div>
     </div>
   </section>
@@ -1654,7 +1704,7 @@
     <div class="capabilities">
       <div class="capability reveal-on-scroll">
         <span class="capability-icon">i.</span>
-        <h3 class="capability-title">Enterprise sales</h3>
+        <h3 class="capability-title">Enterprise Growth</h3>
         <ul class="capability-list">
           <li>Complex multi-country deal cycles, 6 to 14 months</li>
           <li>MEDDIC and consultative selling motion</li>
@@ -1668,18 +1718,18 @@
         <span class="capability-icon">ii.</span>
         <h3 class="capability-title">AI &amp; CX advisory</h3>
         <ul class="capability-list">
-          <li>GenAI for Voice, Chatbots, and agentic workflows</li>
+          <li>GenAI voice, chatbots, and agentic workflows</li>
           <li>RAG pipelines with vector stores and reranking</li>
-          <li>Sovereign AI &amp; ASEAN data residency architectures</li>
-          <li>Governed AI and local LLM deployment in regulated-industry settings</li>
-          <li>Digital &amp; CCaaS transformation (AWS Connect, Avaya, Genesys)</li>
+          <li>Sovereign deployment &amp; ASEAN data residency compliance</li>
+          <li>Governed systems and local LLM deployment in regulated settings</li>
+          <li>Digital &amp; CCaaS modernization (AWS Connect, Avaya, Genesys)</li>
           <li>Prompt engineering, eval harnesses, hallucination guardrails</li>
           <li>Workshop facilitation, roadmap design, vendor selection</li>
         </ul>
       </div>
       <div class="capability reveal-on-scroll">
         <span class="capability-icon">iii.</span>
-        <h3 class="capability-title">Building and shipping</h3>
+        <h3 class="capability-title">Product &amp; Platform Execution</h3>
         <ul class="capability-list">
           <li>Multi-tenant SaaS with Postgres row-level security</li>
           <li>N8N workflow automation, document extraction</li>
@@ -1690,6 +1740,33 @@
         </ul>
       </div>
     </div>
+
+    <section class="content" id="pov">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-num">/ 01.8</span>
+        <h2 class="section-title">Strategic Principles</h2>
+        <span class="section-intro">How I think about enterprise AI adoption at scale.</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+        <div class="reveal-on-scroll" style="border-left: 2px solid var(--gold-soft); padding-left: 1.5rem;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--gold);">01 / Workflows Over Models</h3>
+          <p style="color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6;">AI must fit directly into operational workflows, not sit beside them. The value of intelligent systems is realized through process orchestration, not standalone models.</p>
+        </div>
+        <div class="reveal-on-scroll" style="border-left: 2px solid var(--gold-soft); padding-left: 1.5rem;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--gold);">02 / Governance by Design</h3>
+          <p style="color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6;">Data residency, security, and governance must be designed early into the architecture, never retrofitted as an afterthought. This is critical for regulated industries.</p>
+        </div>
+        <div class="reveal-on-scroll" style="border-left: 2px solid var(--gold-soft); padding-left: 1.5rem;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--gold);">03 / Deployment Flexibility</h3>
+          <p style="color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6;">Regional scaling in ASEAN requires localized deployment adaptability. Organizations need a unified architectural pattern combined with country-level hosting choice.</p>
+        </div>
+        <div class="reveal-on-scroll" style="border-left: 2px solid var(--gold-soft); padding-left: 1.5rem;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--gold);">04 / Hybrid Operating Models</h3>
+          <p style="color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6;">Human + Machine operating structures are far more important than raw model capabilities. Designing the collaboration boundary determines ultimate business success.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="content" id="case-study">
       <div class="section-header reveal-on-scroll">
@@ -1808,15 +1885,12 @@
           <p class="work-desc">Leading commercial growth and solution advisory for an AI-first CCaaS platform, focusing
             on BFSI, telecom, and public sector accounts across ASEAN and ANZ.</p>
           <ul class="work-highlights">
-            <li>Delivered agentic AI use cases improving customer experience and automation, leading the first AI
-              transformation engagement in ASEAN for the platform.</li>
-            <li>Sovereign AI advisory and exposure to Australian enterprise markets (including Macquarie and ANZ),
-              mapping localized data residency requirements to regional scaling.</li>
+            <li>Delivered agentic use cases improving customer experience, leading the first local deployment of the platform in ASEAN.</li>
+            <li>Sovereign advisory and exposure to Australian markets (including Macquarie and ANZ), mapping localized data residency requirements to regional scaling.</li>
             <li>Designed market expansion strategies supporting USD 10M+ pipeline growth, establishing channel and
               systems integrator (SI) networks across ASEAN.</li>
-            <li>Built a RAG-based enterprise knowledge management chatbot end-to-end on OpenAI API and N8N, reducing
-              process effort by 35%.</li>
-            <li>Product and development advisor for the platform.</li>
+            <li>Built a RAG-based knowledge management chatbot end-to-end using N8N, reducing process effort by 35%.</li>
+            <li>Guided product direction and platform capability development.</li>
           </ul>
         </div>
       </div>
@@ -1838,7 +1912,7 @@
               Asia-Pacific.</li>
             <li>Supported revenue and GTM acceleration initiatives, resulting in significant uplift in team revenue
               realisation.</li>
-            <li>Built AI and CX programs across enterprise teams, leading USD 5M+ contract negotiations on 6 to 14 month
+            <li>Built customer experience programs, leading USD 5M+ contract negotiations on 6 to 14 month
               cycles.</li>
             <li>MEDDIC motion with multithreaded engagement across CIO, COO, CTO, and Digital leaders. Five mentees
               promoted.</li>
@@ -1878,9 +1952,9 @@
         <div>
           <h3 class="work-role">Solution Architect → Pre-Sales → Professional Services</h3>
           <p class="work-company">Avaya</p>
-          <p class="work-desc">Twelve years directing solution architecture and professional services for regional
+          <p class="work-desc">Twelve years directing technical design and professional services for regional
             accounts. Designed cloud-native contact center (CCaaS) and communication systems for major banking and
-            telecom groups. Designed and demonstrated early federated chatbot architectures at GITEX Dubai 2018.
+            telecom groups. Designed and demonstrated early federated chatbot deployments at GITEX Dubai 2018.
             Previously held engineering roles at Genesys and AGC Networks.</p>
         </div>
       </div>
@@ -1923,8 +1997,7 @@
           <div class="project-arrow">→</div>
           <div class="project-tag">Advisor and GTM Leader : SaaS Practice</div>
           <h3 class="project-title">Magnis AI</h3>
-          <p class="project-desc">Multi-tenant SaaS practice building practical AI products for Indian SMBs and
-            co-operatives. Two-domain split: marketing on magnisai.com, application on app.magnisai.com.</p>
+          <p class="project-desc">Multi-tenant SaaS building practical solutions for Indian SMBs and co-operatives. Split across magnisai.com and app.magnisai.com.</p>
           <div class="project-stack">Stack · React Native · Supabase · Postgres RLS · N8N</div>
           <span class="project-link">magnisai.com →</span>
         </a>
@@ -1932,8 +2005,7 @@
           <div class="project-arrow">→</div>
           <div class="project-tag">Active : Real Estate</div>
           <h3 class="project-title">Magnis CRM</h3>
-          <p class="project-desc">The WhatsApp-first pipeline for Indian real estate teams — from enquiry to booking, in
-            one screen.</p>
+          <p class="project-desc">A WhatsApp-first CRM built to improve response speed and lead conversion for real estate sales teams.</p>
           <div class="project-stack">Stack · WhatsApp API · Next.js · Supabase</div>
           <span class="project-link">app.magnisai.com →</span>
         </a>
@@ -1941,8 +2013,7 @@
           <div class="project-arrow">→</div>
           <div class="project-tag">Active : Manufacturing</div>
           <h3 class="project-title">Magnis ERP</h3>
-          <p class="project-desc">Quote → SO → Invoice in minutes. Real-time stock, ClearTax e-invoice and Delhivery
-            dispatch — all connected.</p>
+          <p class="project-desc">Unified quote-to-cash workflow with integrated logistics and compliance automation.</p>
           <div class="project-stack">Stack · TypeScript · Postgres · Multi-tenant architecture</div>
           <span class="project-link">app.magnisai.com →</span>
         </a>
@@ -1950,8 +2021,7 @@
           <div class="project-arrow">→</div>
           <div class="project-tag">Active : Dairy Management</div>
           <h3 class="project-title">Magnis Dairy</h3>
-          <p class="project-desc">Offline-first collection app, WhatsApp payment slips and Tally export — purpose-built
-            for Indian dairies.</p>
+          <p class="project-desc">Designed to reduce operational coordination overhead for distributed dairy collection networks, with offline-first logging and WhatsApp receipt delivery.</p>
           <div class="project-stack">Stack · Offline-first · React Native · Supabase</div>
           <span class="project-link">app.magnisai.com →</span>
         </a>
@@ -1959,7 +2029,7 @@
           <div class="project-arrow">·</div>
           <div class="project-tag">Delivered : AI Audit</div>
           <h3 class="project-title">Modi Protectarp : AI tools audit</h3>
-          <p class="project-desc">Structured AI readiness assessment for a specialty manufacturing client. Identified
+          <p class="project-desc">Structured readiness assessment for a specialty manufacturing client. Identified
             quick wins, governance gaps, and a twelve month roadmap from pilot to production.</p>
           <div class="project-stack">Deliverable · Audit report · Roadmap · Vendor selection</div>
         </div>
@@ -1967,7 +2037,7 @@
           <div class="project-arrow">·</div>
           <div class="project-tag">Delivered : Advisory</div>
           <h3 class="project-title">RAG Bot : Knowledge chatbot</h3>
-          <p class="project-desc">Built a RAG-based enterprise knowledge management chatbot end to end. OpenAI API for
+          <p class="project-desc">Built a RAG-based knowledge management chatbot end to end. OpenAI API for
             retrieval and generation, N8N for orchestration, document extraction pipelines for ingestion.</p>
           <div class="project-stack">Stack · OpenAI API · N8N · Vector store · Document AI</div>
         </div>
@@ -1975,16 +2045,16 @@
           <div class="project-arrow">·</div>
           <div class="project-tag">Delivered : Architecture</div>
           <h3 class="project-title">Crimson Inks : BRD &amp; architecture</h3>
-          <p class="project-desc">Business requirements documentation and solution architecture for a Kanpur-based
-            specialty ink manufacturer. Consulting engagement with named Solution Architect.</p>
+          <p class="project-desc">Business requirements documentation (BRD) and functional blueprints for a Kanpur-based
+            specialty ink manufacturer. Technical consulting engagement.</p>
           <div class="project-stack">Deliverable · BRD · Solution architecture · NDA</div>
         </div>
         <div class="project reveal-on-scroll">
           <div class="project-arrow">·</div>
-          <div class="project-tag">Lab / Active Experiment</div>
+          <div class="project-tag">Advanced Messaging Infrastructure</div>
           <h3 class="project-title">Evolution API Gateway</h3>
           <p class="project-desc">Deploying self-hosted, multi-tenant WhatsApp gateways on Hetzner bare-metal to
-            benchmark message latency and integration scalability for high-volume enterprise notification systems.</p>
+            benchmark message latency and integration scalability for high-volume notification systems.</p>
           <div class="project-stack">Stack · Evolution API · Hetzner · Docker · Redis</div>
         </div>
       </div>
@@ -1999,44 +2069,35 @@
 
       <div class="tools">
         <div class="tool reveal-on-scroll">
-          <div class="tool-category">AI Coding</div>
+          <div class="tool-category">AI Assisted Engineering</div>
           <h4 class="tool-name">Claude Code</h4>
-          <p class="tool-opinion">"Incredibly efficient for transitioning from Business Requirements (BRD) to structural
-            codebases. For scaffolding multi-tenant SaaS architectures, it accelerates early-stage delivery by weeks."
+          <p class="tool-opinion">"Incredibly efficient for translating BRDs to clean codebase structures. It accelerates early-stage scaffolding and delivery by weeks."
           </p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">LLM API</div>
           <h4 class="tool-name">OpenAI API</h4>
-          <p class="tool-opinion">"A robust workhorse for production-grade retrieval-augmented generation (RAG). Highly
-            predictable API performance makes it the ideal baseline for rapid enterprise deployments."</p>
+          <p class="tool-opinion">"The benchmark for production-grade retrieval-augmented generation (RAG). Highly predictable API performance makes it the baseline for rapid deployment."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Automation</div>
           <h4 class="tool-name">N8N</h4>
-          <p class="tool-opinion">"An enterprise-grade orchestration tool. Being self-hosted, version-controlled, and
-            highly debuggable, it serves as a robust alternative to complex custom integrations or expensive SaaS
-            middleware."</p>
+          <p class="tool-opinion">"A self-hosted, version-controlled workflow orchestrator that serves as a robust alternative to expensive SaaS middleware."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Backend</div>
           <h4 class="tool-name">Supabase</h4>
-          <p class="tool-opinion">"A comprehensive backend-as-a-service providing PostgreSQL, Row-Level Security (RLS),
-            real-time database sync, and storage. An exceptional accelerator for multi-tenant SaaS architectures like
-            Magnis AI."</p>
+          <p class="tool-opinion">"A complete backend providing PostgreSQL, Row-Level Security, and real-time database sync. An exceptional accelerator for multi-tenant SaaS architectures."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Infrastructure</div>
           <h4 class="tool-name">Cloudflare / Hetzner</h4>
-          <p class="tool-opinion">"The infrastructure foundation for Magnis AI. Cloudflare secures edge routing and
-            global delivery, while Hetzner provides high-performance, cost-effective bare-metal compute. We deploy on
-            AWS for clients requiring traditional enterprise cloud ecosystems."</p>
+          <p class="tool-opinion">"The infrastructure foundation for Magnis. Cloudflare secures edge routing, while Hetzner provides high-performance compute. We leverage AWS for clients requiring traditional cloud ecosystems."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Messaging</div>
           <h4 class="tool-name">Evolution API + Baileys</h4>
-          <p class="tool-opinion">"For high-throughput WhatsApp integration. Self-hosting Evolution API (built on
-            Baileys) offers substantial cost-efficiency, data privacy, and direct channel control at scale."</p>
+          <p class="tool-opinion">"For high-throughput WhatsApp integration. Self-hosting offers substantial cost-efficiency, strict data privacy, and direct channel control at scale."</p>
         </div>
       </div>
     </section>
@@ -2111,7 +2172,7 @@
           <p class="recognition-desc">Awarded the Circle of Excellence global recognition. Honored for driving
             high-value customer retention and commercial P&amp;L growth across key APAC and ASEAN accounts.</p>
         </a>
-        <a class="recognition-item reveal-on-scroll" href="https://www.gitex.com" target="_blank" rel="noopener">
+        <a class="recognition-item reveal-on-scroll" href="assets/GITEX_Dubai_2018_Showcase.pdf" target="_blank" rel="noopener">
           <div class="project-arrow">→</div>
           <div class="recognition-tag">Speaker in Avaya Booth / UAE</div>
           <h3 class="recognition-title">GITEX Dubai</h3>
@@ -2119,7 +2180,7 @@
             enterprise technology leaders. Showcased integration models for complex multi-channel legacy contact center
             estates.</p>
         </a>
-        <a class="recognition-item reveal-on-scroll" href="" target="_blank" rel="noopener">
+        <a class="recognition-item reveal-on-scroll" href="assets/Avaya_Thailand_2024_Keynote.pdf" target="_blank" rel="noopener">
           <div class="project-arrow">→</div>
           <div class="recognition-tag">Keynote / Bangkok</div>
           <h3 class="recognition-title">Thailand AI &amp; CX Summit</h3>
@@ -2142,17 +2203,15 @@
           <div class="project-arrow">→</div>
           <div class="recognition-tag">Developer Ecosystem - Hackathon</div>
           <h3 class="recognition-title"> Terricon Valley Hackathon</h3>
-          <p class="recognition-desc">Recognized for developer ecosystem contributions at the Data Science Conference
-            Europe, focusing on AI-assisted coding tools and productive team workflow patterns.</p>
+          <p class="recognition-desc">Invited to Terricon Valley as a lead mentor and speaker on B2B product innovation, assisting engineering startups in translating architecture designs into scalable commercial strategies.</p>
         </a>
 
         <a class="recognition-item reveal-on-scroll" href="https://www.linkedin.com/in/arvindkgautam/" target="_blank"
           rel="noopener">
           <div class="project-arrow">→</div>
           <div class="recognition-tag">Developer Ecosystem - Jetbrains</div>
-          <h3 class="recognition-title"> Jetbrans Startup Mentorship</h3>
-          <p class="recognition-desc">Jetbrains starup and innvation program, mentored 4 startups and suppoert them to
-            develope their product design and sales straitegy </p>
+          <h3 class="recognition-title"> JetBrains Startup Mentorship</h3>
+          <p class="recognition-desc">Selected for the JetBrains startup and innovation program. Mentored enterprise-facing startups on architecture design, product-market fit, and B2B sales strategy.</p>
         </a>
 
         <a class="recognition-item reveal-on-scroll"
@@ -2257,21 +2316,20 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2 style="max-width: 25ch;">Let’s discuss AI transformation, customer experience modernization, or Agentic AI
-        opportunities across ASEAN.</h2>
-      <p class="contact-sub reveal-on-scroll"
-        style="font-style: normal; font-size: 1.25rem; color: var(--gold); margin-bottom: 1.2rem; max-width: 60ch;">
-        Available for enterprise AI transformation advisory, regional GTM leadership, and strategic modernization
-        initiatives across ASEAN and ANZ.
-      </p>
-      <p class="contact-sub reveal-on-scroll" style="font-size: 1.1rem; max-width: 55ch; margin-bottom: 2.5rem;">
-        If you are putting AI into production, modernising customer experience, or trying to find honest signal in a
-        noisy market, I am up for a conversation.
+      <h2 style="max-width: 25ch; margin-left: auto; margin-right: auto;">Let’s discuss AI transformation, customer experience modernization, or Agentic AI
+        opportunities.</h2>
+      <p class="contact-sub reveal-on-scroll" style="font-size: 1.1rem; max-width: 55ch; margin-bottom: 2.2rem; font-style: normal; margin-left: auto; margin-right: auto;">
+        If you are putting AI into production, modernizing customer experience, or seeking honest technical signal in a noisy market, let's start a conversation.
       </p>
 
-      <a class="cv-button" href="mailto:avi.gautam@gmail.com?subject=Strategic%20Discussion">
+      <a class="cv-button" href="mailto:avi.gautam@gmail.com?subject=Strategic%20Discussion" style="margin-bottom: 2.5rem;">
         <span class="arrow">→</span> Strategic Discussion
       </a>
+
+      <p class="contact-sub reveal-on-scroll"
+        style="font-style: normal; font-size: 0.95rem; color: var(--gold); margin-bottom: 2.5rem; max-width: 65ch; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.6; margin-left: auto; margin-right: auto;">
+        Available for enterprise AI advisory, ASEAN GTM leadership, transformation strategy, and regulated-industry modernization initiatives.
+      </p>
 
       <div class="contact-links">
         <a class="reveal-on-scroll" href="https://linkedin.com/in/arvindkgautam" target="_blank"
@@ -2319,6 +2377,7 @@
           ['heading', 'Available commands:'],
           ['', ''],
           ['', '  about       : who I am and what I do'],
+          ['', '  principles  : my strategic principles for enterprise AI'],
           ['', '  experience  : career history, condensed'],
           ['', '  stack       : tools and tech I actually use'],
           ['', '  projects    : Magnis AI and consulting work'],
@@ -2354,6 +2413,25 @@
           ['', 'conversation with a CIO in the same meeting.'],
           ['', ''],
           ['dim', "Try 'experience', 'projects', or 'casestudy' next."]
+        ],
+        principles: () => [
+          ['heading', '// strategic principles'],
+          ['', ''],
+          ['gold', '01 / Workflows Over Models'],
+          ['', '  AI must fit operational workflows, not sit beside them. Value is'],
+          ['', '  realized through orchestration, not raw model capabilities.'],
+          ['', ''],
+          ['gold', '02 / Governance by Design'],
+          ['', '  Data residency, security, and compliance must be designed early,'],
+          ['', '  never retrofitted as an afterthought.'],
+          ['', ''],
+          ['gold', '03 / Deployment Flexibility'],
+          ['', '  Regional scaling in ASEAN requires localized deployment adaptability.'],
+          ['', '  Unified architectural pattern + country-level hosting choice.'],
+          ['', ''],
+          ['gold', '04 / Hybrid Operating Models'],
+          ['', '  Human + Machine operating models matter more than models themselves.'],
+          ['', '  The collaboration boundary determines business success.']
         ],
         experience: () => [
           ['heading', '// experience'],
@@ -2408,27 +2486,27 @@
           ['', ''],
           ['gold', '[ advisor and GTM leader ] Magnis AI'],
           ['', '  magnisai.com / app.magnisai.com'],
-          ['', '  Multi-tenant SaaS practice for Indian SMBs.'],
+          ['', '  Multi-tenant SaaS building practical solutions for Indian SMBs.'],
           ['', ''],
           ['gold', '[ active ] Magnis CRM'],
           ['', '  Real Estate CRM.'],
-          ['', '  WhatsApp-first pipeline for Indian real estate teams.'],
+          ['', '  Built to improve response speed and lead conversion for real estate sales teams.'],
           ['', ''],
           ['gold', '[ active ] Magnis ERP'],
           ['', '  Manufacturing ERP.'],
-          ['', '  Quote to Invoice in minutes. Real-time stock, e-invoice.'],
+          ['', '  Unified quote-to-cash workflow with integrated logistics and compliance.'],
           ['', ''],
           ['gold', '[ active ] Magnis Dairy'],
-          ['', '  Platform for Indian dairy co-operatives.'],
-          ['', '  Member onboarding, procurement, payments, analytics.'],
+          ['', '  Dairy Platform.'],
+          ['', '  Designed to reduce operational coordination overhead for distributed dairy networks.'],
           ['', ''],
-          ['gold', '[ delivered ] Modi Protectarp : AI tools audit'],
+          ['gold', '[ delivered ] Modi Protectarp : readiness audit'],
           ['', '  Structured readiness report, 12 month roadmap.'],
           ['', ''],
           ['gold', '[ delivered ] RAG Bot : Knowledge chatbot'],
           ['', '  Built end-to-end on OpenAI API and N8N.'],
           ['', ''],
-          ['gold', '[ delivered ] Crimson Inks : BRD and architecture'],
+          ['gold', '[ delivered ] Crimson Inks : BRD and blueprint'],
           ['', '  Kanpur-based specialty ink manufacturer.']
         ],
         clients: () => [
@@ -2581,6 +2659,7 @@
       // Natural language intent map
       const intents = [
         { keys: ['who', 'are you', 'yourself', 'tell me about', 'introduce', 'background'], cmd: 'about' },
+        { keys: ['think', 'principle', 'philosophy', 'pov', 'opinion', 'belief'], cmd: 'principles' },
         { keys: ['work history', 'job', 'career', 'experience', 'where have you worked', 'past role'], cmd: 'experience' },
         { keys: ['skill', 'tech', 'tools', 'stack', 'know how', 'languages', 'frameworks'], cmd: 'stack' },
         { keys: ['magnis', 'startup', 'product', 'building', 'side project', 'project', 'saas'], cmd: 'projects' },
