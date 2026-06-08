@@ -685,6 +685,76 @@
     .article {
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .article:hover {
+      border-bottom-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .article:hover .article-title {
+      color: var(--gold);
+    }
+
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .recognition-item {
+      background: var(--bg);
+      padding: 2.2rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+      transition: background 0.4s ease, transform 0.4s ease;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .recognition-item:hover {
+      background: var(--bg-soft);
+    }
+
+    .recognition-item:hover .project-arrow {
+      color: var(--gold);
+      transform: translate(4px, -4px);
+    }
+
+    @media (min-width: 901px) {
+      .recognition-item:nth-child(2n) {
+        border-right: none;
+      }
+    }
+
+    .recognition-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-bottom: 1rem;
+    }
+
+    .recognition-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .recognition-desc {
+      font-size: 0.95rem;
+      color: var(--ink-dim);
+      line-height: 1.5;
     }
 
     .article-tag {
@@ -1121,6 +1191,15 @@
         padding: 1.5rem;
       }
 
+      .recognition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recognition-item {
+        border-right: none;
+        padding: 1.8rem;
+      }
+
       .writing {
         grid-template-columns: 1fr;
       }
@@ -1414,11 +1493,10 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#case-study">Case study</a>
       <a href="#work">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Deployments</a>
       <a href="#contact">Contact</a>
-      <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment"
-        style="color: var(--gold); border: 1px solid var(--gold-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: -0.4rem;">Book
-        Call</a>
+      <a href="mailto:avi.gautam@gmail.com?subject=Strategic%20Discussion"
+        style="color: var(--gold); border: 1px solid var(--gold-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: -0.4rem;">Connect</a>
     </nav>
     <div class="meta-status">Singapore : Available</div>
 
@@ -1427,23 +1505,30 @@
   <section class="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-left">
-      <div class="eyebrow"><span class="dot"></span>AI Strategy : Enterprise Transformation : Growth</div>
+      <div class="eyebrow"><span class="dot"></span>Enterprise AI · CX Transformation · ASEAN Growth Leadership</div>
       <h1 class="name">Arvind K<br />Gautam<span class="italic">.</span></h1>
-      <p class="tagline" style="margin-bottom: 1rem;">CX &amp; AI Transformation Leader helping enterprises design and
-        scale AI adoption, Agentic AI use cases, and customer-led growth strategies.</p>
-      <p class="summary"
-        style="margin-bottom: 2.5rem; font-style: italic; color: var(--ink-dim); font-size: 1.2rem; max-width: 44ch;">
-        15+ years building AI, SaaS and customer experience transformation initiatives across strategy, product and
-        execution.</p>
+      <p class="tagline"
+        style="margin-bottom: 0.4rem; font-style: normal; font-weight: 400; color: var(--ink); font-size: 1.8rem;">
+        Enterprise AI &amp; Transformation Leader</p>
+      <p class="tagline"
+        style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--gold-soft); font-style: normal; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">
+        ASEAN &nbsp;|&nbsp; Generative AI &nbsp;|&nbsp; Sovereign AI &nbsp;|&nbsp; Enterprise Modernization</p>
+
+      <p class="tagline"
+        style="margin-bottom: 2.5rem; font-style: normal; font-size: 1.1rem; color: var(--ink-dim); max-width: 44ch; line-height: 1.5;">
+        I architect enterprise AI solutions, lead transformation programs, close strategic deals, and continue to build
+        AI systems personally.</p>
+
       <div class="now-line">
-        <strong>now</strong> · building RAG Bots, shipping Magnis CRM, ERP & Dairy for Indian SMBs, testing Evolution
-        API on Hetzner for multi-tenant WhatsApp automation.
+        <strong>now</strong> · architecting agentic workflows, advising on regional AI strategies, and scaling Magnis
+        AI.
       </div>
     </div>
     <div class="hero-right">
-      <p class="summary">AI Transformation Leader with 15+ years helping enterprises modernize customer experience
-        through AI, cloud, and digital transformation across ASEAN. I bridge strategy, enterprise architecture, and
-        commercial execution.
+      <p class="summary">Specializing in <strong>secure, governed AI</strong> and <strong>regulated-industry</strong>
+        systems across ASEAN. 20+ years assisting organizations in modernizing customer experience through <strong>local
+          LLM deployment</strong>, <strong>sovereign architectures</strong>, and strict <strong>data residency</strong>
+        compliance. I bridge commercial strategy, technology architecture, and regional execution.
       </p>
 
       <div style="margin-bottom: 2rem;">
@@ -1452,9 +1537,9 @@
           Current Focus</h3>
         <ul
           style="list-style: none; font-size: 0.9rem; color: var(--ink-dim); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-          <li>→ Agentic AI use cases</li>
-          <li>→ AI adoption strategy</li>
-          <li>→ Enterprise transformation</li>
+          <li>→ Agentic AI implementation</li>
+          <li>→ Executive AI adoption</li>
+          <li>→ Enterprise modernization</li>
           <li>→ AI-driven customer experience</li>
           <li>→ Human + AI operating models</li>
         </ul>
@@ -1464,25 +1549,25 @@
         <div class="pillar">
           <div class="pillar-num">01</div>
           <div>
-            <span class="pillar-title">Enterprise sales and GTM</span>
-            <span class="pillar-desc">Complex multi-country deals, MEDDIC, consultative selling, team leadership across
-              ASEAN.</span>
+            <span class="pillar-title">Enterprise GTM &amp; Commercial Leadership</span>
+            <span class="pillar-desc">Structuring complex regional agreements, leading consultative sales teams, and
+              managing key stakeholder relationships across ASEAN.</span>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-num">02</div>
           <div>
-            <span class="pillar-title">AI advisory and CX transformation</span>
-            <span class="pillar-desc">From proof of concept to production. GenAI, RAG, agentic workflows, governance in
-              regulated environments.</span>
+            <span class="pillar-title">AI Advisory &amp; CX Transformation</span>
+            <span class="pillar-desc">Guiding digital modernization from architecture blueprint to production. GenAI,
+              agentic systems, and governance in regulated markets.</span>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-num">03</div>
           <div>
-            <span class="pillar-title">Building Magnis AI</span>
-            <span class="pillar-desc">Multi-tenant SaaS for Indian SMBs. Hands-on product work with Claude Code,
-              Supabase, N8N.</span>
+            <span class="pillar-title">AI Platform Strategy &amp; Delivery</span>
+            <span class="pillar-desc">Directing roadmap execution for multi-tenant SaaS platforms like Magnis AI,
+              deploying secure and scalable cloud architectures.</span>
           </div>
         </div>
       </div>
@@ -1503,13 +1588,22 @@
         <span style="color: var(--rule-strong)">|</span>
         <span>UOB</span>
         <span style="color: var(--rule-strong)">|</span>
+        <span>Macquarie</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>ANZ</span>
+        <span style="color: var(--rule-strong)">|</span>
         <span>BNI</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>Westcon</span>
         <span style="color: var(--rule-strong)">|</span>
         <span>Prudential</span>
         <span style="color: var(--rule-strong)">|</span>
         <span>Singtel</span>
         <span style="color: var(--rule-strong)">|</span>
         <span>AIA</span>
+        <span style="color: var(--rule-strong)">|</span>
+        <span>HBF</span>
+
       </div>
     </div>
   </section>
@@ -1553,7 +1647,8 @@
     <div class="section-header reveal-on-scroll">
       <span class="section-num">/ 01.5</span>
       <h2 class="section-title">Capabilities</h2>
-      <span class="section-intro">Three practices, one operator: sales, advisory, build.</span>
+      <span class="section-intro">Integrated capabilities across commercial growth, technology advisory, and product
+        delivery.</span>
     </div>
 
     <div class="capabilities">
@@ -1575,9 +1670,10 @@
         <ul class="capability-list">
           <li>GenAI for Voice, Chatbots, and agentic workflows</li>
           <li>RAG pipelines with vector stores and reranking</li>
+          <li>Sovereign AI &amp; ASEAN data residency architectures</li>
+          <li>Governed AI and local LLM deployment in regulated-industry settings</li>
           <li>Digital &amp; CCaaS transformation (AWS Connect, Avaya, Genesys)</li>
           <li>Prompt engineering, eval harnesses, hallucination guardrails</li>
-          <li>AI governance for regulated industries</li>
           <li>Workshop facilitation, roadmap design, vendor selection</li>
         </ul>
       </div>
@@ -1635,7 +1731,8 @@
             <p>The client ran a fragmented contact centre estate across five ASEAN countries. Each market sat on a
               different generation of on-premise infrastructure, with three separate IVR platforms, two CTI
               integrations, and no unified reporting. Agent productivity benchmarks varied wildly. A regulatory
-              tightening on customer interaction logging was approaching, and the existing stack could not meet it
+              tightening on customer interaction logging and data residency was approaching, and the existing stack
+              could not meet it
               without significant rebuild work in every country.</p>
           </div>
         </div>
@@ -1648,8 +1745,8 @@
               each country COO before the formal procurement cycle began, surfacing local concerns early and letting
               them shape the design.</p>
             <p>Technically, the architecture combined a cloud-native CCaaS core with country-specific edge deployments
-              to meet residency rules, AI-ready connectors for agent assist and routing on day one, and a phased cutover
-              plan that kept each market on its existing platform until parity was proven.</p>
+              to meet strict ASEAN data residency rules, secure enterprise AI connectors, and a path for local LLM
+              deployment within regulated-industry constraints.</p>
             <p>Commercially, structured the contract as a regional master agreement with country call-offs, which let
               each market commit at its own pace without breaking the consolidated commercial framework.</p>
           </div>
@@ -1658,7 +1755,8 @@
         <div class="case-body">
           <div class="case-section-label">Outcome</div>
           <div class="case-section-content">
-            <p>Multi-million-dollar regional contract closed within the original cycle, ahead of the regulatory
+            <p>8-figure (USD 10M+) regional transformation program closed within the original cycle, ahead of the
+              regulatory
               deadline.</p>
             <ul class="case-outcome-list">
               <li><strong>Five markets aligned</strong> on a single architectural pattern with country-level deployment
@@ -1705,18 +1803,20 @@
           <div class="work-loc">Singapore</div>
         </div>
         <div>
-          <h3 class="work-role">Sales &amp; Solution Consulting, ASEAN</h3>
+          <h3 class="work-role">Sales &amp; Solution Advisory, ASEAN</h3>
           <p class="work-company">SNUG Technologies</p>
-          <p class="work-desc">Driving enterprise tech sales and solution consulting for an AI-first CCaaS platform
-            across mid-market and enterprise accounts in BFSI, Telecom, Insurance, and Public Sector.</p>
+          <p class="work-desc">Leading commercial growth and solution advisory for an AI-first CCaaS platform, focusing
+            on BFSI, telecom, and public sector accounts across ASEAN and ANZ.</p>
           <ul class="work-highlights">
-            <li>Delivered agentic AI use cases improving customer experience and automation, closing the first AI
-              transformation deal in ASEAN for the RAG Bot platform.</li>
-            <li>Designed GTM strategies supporting multi-million pipeline growth, building channel and SI partner
-              networks across ASEAN.</li>
+            <li>Delivered agentic AI use cases improving customer experience and automation, leading the first AI
+              transformation engagement in ASEAN for the platform.</li>
+            <li>Sovereign AI advisory and exposure to Australian enterprise markets (including Macquarie and ANZ),
+              mapping localized data residency requirements to regional scaling.</li>
+            <li>Designed market expansion strategies supporting USD 10M+ pipeline growth, establishing channel and
+              systems integrator (SI) networks across ASEAN.</li>
             <li>Built a RAG-based enterprise knowledge management chatbot end-to-end on OpenAI API and N8N, reducing
               process effort by 35%.</li>
-            <li>Product and development advisor for the RAG Bot platform.</li>
+            <li>Product and development advisor for the platform.</li>
           </ul>
         </div>
       </div>
@@ -1728,18 +1828,18 @@
           <div class="work-loc">Singapore</div>
         </div>
         <div>
-          <h3 class="work-role">Enterprise Tech Sales &amp; CX Transformation, ASEAN</h3>
+          <h3 class="work-role">Enterprise Growth &amp; CX Transformation, ASEAN</h3>
           <p class="work-company">Avaya</p>
-          <p class="work-desc">Owned the ASEAN enterprise sales portfolio across Tier-1 BFSI, Insurance, and Telecom
-            accounts in five countries. Line-managed a regional team of senior Account Executives carrying team quota,
-            alongside direct ownership of strategic accounts.</p>
+          <p class="work-desc">Directed the ASEAN commercial portfolio for Tier-1 BFSI, insurance, and telecom accounts.
+            Led a regional team of senior consultants and account executives while managing key strategic engagements.
+          </p>
           <ul class="work-highlights">
             <li>Top 1 percent Global Performer, Avaya Circle of Excellence FY23. Highest customer retention across
               Asia-Pacific.</li>
             <li>Supported revenue and GTM acceleration initiatives, resulting in significant uplift in team revenue
               realisation.</li>
-            <li>Built AI and CX programs across enterprise teams, leading multi-million-dollar contracts on 6 to 14
-              month cycles.</li>
+            <li>Built AI and CX programs across enterprise teams, leading USD 5M+ contract negotiations on 6 to 14 month
+              cycles.</li>
             <li>MEDDIC motion with multithreaded engagement across CIO, COO, CTO, and Digital leaders. Five mentees
               promoted.</li>
           </ul>
@@ -1755,15 +1855,14 @@
         <div>
           <h3 class="work-role">Consulting-Led Growth, ASEAN</h3>
           <p class="work-company">Avaya</p>
-          <p class="work-desc">Senior account-led role driving complex enterprise transformation deals, competitive
-            displacements, and consulting-led growth across the region.</p>
+          <p class="work-desc">Led complex technology replacements and consulting-driven growth initiatives for major
+            accounts across ASEAN.</p>
           <ul class="work-highlights">
             <li>Finished above target through strategic account development. Significant growth in customer lifetime
               value through account expansion.</li>
-            <li>Closed multi-phase transformation engagements across SaaS, CCaaS, CPaaS and API platforms, professional
-              services, and renewals.</li>
-            <li>Embedded Google CCAI and conversational AI into the consulting sales framework as a competitive lever.
-            </li>
+            <li>Closed multi-phase engagements across SaaS, CCaaS, CPaaS and API platforms, professional services, and
+              renewals.</li>
+            <li>Embedded Google CCAI and conversational AI into the consulting framework as a competitive lever.</li>
             <li>Multi-country deal execution across Singapore, Indonesia, Thailand, Malaysia, Philippines, and Vietnam.
             </li>
           </ul>
@@ -1778,12 +1877,11 @@
         </div>
         <div>
           <h3 class="work-role">Solution Architect → Pre-Sales → Professional Services</h3>
-          <p class="work-company">Avaya, earlier roles before</p>
-          <p class="work-desc">Twelve years through architecture, pre-sales, and professional services roles at Avaya.
-            Designed contact centre, CCaaS, CPaaS, and UCaaS solutions for major ASEAN enterprises. Architected AI and
-            Bot Federation solutions integrating NLP-based chatbots with multi-cloud deployments. Demonstrated at GITEX
-            Dubai 2018. Earlier roles: Genesys consulting at Ismart Panache, CTI/IVR engineering at AGC Networks, Real
-            Soft, and Parwan Telecom.</p>
+          <p class="work-company">Avaya</p>
+          <p class="work-desc">Twelve years directing solution architecture and professional services for regional
+            accounts. Designed cloud-native contact center (CCaaS) and communication systems for major banking and
+            telecom groups. Designed and demonstrated early federated chatbot architectures at GITEX Dubai 2018.
+            Previously held engineering roles at Genesys and AGC Networks.</p>
         </div>
       </div>
     </section>
@@ -1816,8 +1914,8 @@
     <section class="content" id="projects">
       <div class="section-header reveal-on-scroll" style="margin-top: 2rem;">
         <span class="section-num">/ 04.5</span>
-        <h2 class="section-title">Projects &amp; Consulting</h2>
-        <span class="section-intro">Selected engagements.</span>
+        <h2 class="section-title">Deployments &amp; Strategic Engagements</h2>
+        <span class="section-intro">Selected product builds and consulting engagements.</span>
       </div>
 
       <div class="projects">
@@ -1881,53 +1979,64 @@
             specialty ink manufacturer. Consulting engagement with named Solution Architect.</p>
           <div class="project-stack">Deliverable · BRD · Solution architecture · NDA</div>
         </div>
+        <div class="project reveal-on-scroll">
+          <div class="project-arrow">·</div>
+          <div class="project-tag">Lab / Active Experiment</div>
+          <h3 class="project-title">Evolution API Gateway</h3>
+          <p class="project-desc">Deploying self-hosted, multi-tenant WhatsApp gateways on Hetzner bare-metal to
+            benchmark message latency and integration scalability for high-volume enterprise notification systems.</p>
+          <div class="project-stack">Stack · Evolution API · Hetzner · Docker · Redis</div>
+        </div>
       </div>
     </section>
 
     <section class="content" id="tools">
       <div class="section-header reveal-on-scroll">
         <span class="section-num">/ 05</span>
-        <h2 class="section-title">Tools I actually use</h2>
-        <span class="section-intro">Honest opinions from real use, not a logo wall.</span>
+        <h2 class="section-title">Platforms &amp; Tooling</h2>
+        <span class="section-intro">Pragmatic delivery stacks and technologies used in production.</span>
       </div>
 
       <div class="tools">
         <div class="tool reveal-on-scroll">
           <div class="tool-category">AI Coding</div>
           <h4 class="tool-name">Claude Code</h4>
-          <p class="tool-opinion">"Faster than expected for the BRD-to-skeleton flow. Breaks down on long context, but
-            for shipping multi-tenant scaffolds it's the best tool I've used. Replaces the first three weeks of a
-            project."</p>
+          <p class="tool-opinion">"Incredibly efficient for transitioning from Business Requirements (BRD) to structural
+            codebases. For scaffolding multi-tenant SaaS architectures, it accelerates early-stage delivery by weeks."
+          </p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">LLM API</div>
           <h4 class="tool-name">OpenAI API</h4>
-          <p class="tool-opinion">"Workhorse for production RAG. Cheaper and more predictable than the marketing
-            implies. Where I start when a client wants something live in two weeks."</p>
+          <p class="tool-opinion">"A robust workhorse for production-grade retrieval-augmented generation (RAG). Highly
+            predictable API performance makes it the ideal baseline for rapid enterprise deployments."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Automation</div>
           <h4 class="tool-name">N8N</h4>
-          <p class="tool-opinion">"The honest answer to most enterprise automation requests. Self-hosted, version
-            controlled, debuggable. Replaces three Zapier subscriptions and one custom backend."</p>
+          <p class="tool-opinion">"An enterprise-grade orchestration tool. Being self-hosted, version-controlled, and
+            highly debuggable, it serves as a robust alternative to complex custom integrations or expensive SaaS
+            middleware."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Backend</div>
           <h4 class="tool-name">Supabase</h4>
-          <p class="tool-opinion">"Postgres with auth, RLS, realtime, and storage in one box. For multi-tenant SaaS in
-            2026, hard to beat. Magnis runs on it."</p>
+          <p class="tool-opinion">"A comprehensive backend-as-a-service providing PostgreSQL, Row-Level Security (RLS),
+            real-time database sync, and storage. An exceptional accelerator for multi-tenant SaaS architectures like
+            Magnis AI."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Infrastructure</div>
           <h4 class="tool-name">Cloudflare / Hetzner</h4>
-          <p class="tool-opinion">"Where Magnis lives. Cloudflare for robust hosting and edge routing, Hetzner for the
-            heavy compute. AWS is for clients who can't say no to AWS."</p>
+          <p class="tool-opinion">"The infrastructure foundation for Magnis AI. Cloudflare secures edge routing and
+            global delivery, while Hetzner provides high-performance, cost-effective bare-metal compute. We deploy on
+            AWS for clients requiring traditional enterprise cloud ecosystems."</p>
         </div>
         <div class="tool reveal-on-scroll">
           <div class="tool-category">Messaging</div>
           <h4 class="tool-name">Evolution API + Baileys</h4>
-          <p class="tool-opinion">"For WhatsApp business automation without paying the Meta tax. Self-hosted Baileys via
-            Evolution. Not for the faint-hearted, but liberating once it works."</p>
+          <p class="tool-opinion">"For high-throughput WhatsApp integration. Self-hosting Evolution API (built on
+            Baileys) offers substantial cost-efficiency, data privacy, and direct channel control at scale."</p>
         </div>
       </div>
     </section>
@@ -1941,33 +2050,128 @@
       </div>
 
       <div class="writing">
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">LinkedIn Article</div>
+        <a class="article reveal-on-scroll"
+          href="https://www.thehansindia.com/tech/why-ai-wont-replace-agents-arvind-gautam-on-the-future-of-intelligent-contact-centers-1053430"
+          target="_blank" rel="noopener">
+          <div class="article-tag">The Hans India Article</div>
+          <h3 class="article-title">Why AI Won’t Replace Agents</h3>
+        </a>
+        <a class="article reveal-on-scroll"
+          href="https://cxotoday.com/daily-news/the-architect-seller-mindset-why-technical-depth-matters-in-driving-digital-transformation/"
+          target="_blank" rel="noopener">
+          <div class="article-tag">CXToday Article</div>
           <h3 class="article-title">The Architect-Seller Mindset: Why Technical Depth Matters in Driving Digital
             Transformation</h3>
-        </div>
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">LinkedIn Article</div>
+        </a>
+        <a class="article reveal-on-scroll" href="https://www.mirrorreview.com/redesigning-contact-centers/"
+          target="_blank" rel="noopener">
+          <div class="article-tag">MirrorReview Article</div>
           <h3 class="article-title">Redesigning Contact Centers for the Cloud Era: A Framework for Scalable and Agile
             Development</h3>
-        </div>
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">LinkedIn Article</div>
+        </a>
+        <a class="article reveal-on-scroll"
+          href="https://dzone.com/articles/ai-agents-cloud-engineering-autonomous-reliability" target="_blank"
+          rel="noopener">
+          <div class="article-tag">DZone Article</div>
           <h3 class="article-title">Bringing AI Agents to Cloud Engineering: How Autonomous Operations Are Changing
             Reliability at Scale</h3>
-        </div>
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">LinkedIn Article</div>
+        </a>
+        <a class="article reveal-on-scroll"
+          href="https://opsmatters.com/posts/why-hybrid-cloud-won-over-pure-cloud-our-biggest-bfsi-deal-2024"
+          target="_blank" rel="noopener">
+          <div class="article-tag">Ops Matters Article</div>
           <h3 class="article-title">Why Hybrid Cloud Won Over Pure Cloud in Our Biggest BFSI Deal of 2024</h3>
-        </div>
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">Keynote · 2024</div>
+        </a>
+        <a class="article reveal-on-scroll" href="assets/Avaya_Thailand_2024_Keynote.pdf" target="_blank"
+          rel="noopener">
+          <div class="article-tag">Keynote · 2024 (PDF Presentation)</div>
           <h3 class="article-title">AI and CX Transformation Forum, Avaya Thailand</h3>
-        </div>
-        <div class="article reveal-on-scroll">
-          <div class="article-tag">Innovation Showcase · 2018</div>
+        </a>
+        <a class="article reveal-on-scroll" href="assets/GITEX_Dubai_2018_Showcase.pdf" target="_blank" rel="noopener">
+          <div class="article-tag">Innovation Showcase · 2018 (PDF Presentation)</div>
           <h3 class="article-title">Bot Federation and Conversational AI, GITEX Dubai</h3>
-        </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="content" id="recognition">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-num">/ 06.5</span>
+        <h2 class="section-title">External Validation</h2>
+        <span class="section-intro">Speaking engagements, panels, podcasts, and industry contributions.</span>
+      </div>
+
+      <div class="recognition-grid">
+        <a class="recognition-item reveal-on-scroll"
+          href="https://www.linkedin.com/posts/arvindkgautam_avaya-circleofexcellence-gratitude-activity-7156580441024589825--b6E"
+          target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Global Award / FY23</div>
+          <h3 class="recognition-title">Avaya Top 1% Performer</h3>
+          <p class="recognition-desc">Awarded the Circle of Excellence global recognition. Honored for driving
+            high-value customer retention and commercial P&amp;L growth across key APAC and ASEAN accounts.</p>
+        </a>
+        <a class="recognition-item reveal-on-scroll" href="https://www.gitex.com" target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Speaker in Avaya Booth / UAE</div>
+          <h3 class="recognition-title">GITEX Dubai</h3>
+          <p class="recognition-desc">Demonstrated Bot Federation &amp; Conversational AI architectures to global
+            enterprise technology leaders. Showcased integration models for complex multi-channel legacy contact center
+            estates.</p>
+        </a>
+        <a class="recognition-item reveal-on-scroll" href="" target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Keynote / Bangkok</div>
+          <h3 class="recognition-title">Thailand AI &amp; CX Summit</h3>
+          <p class="recognition-desc">Delivered the keynote address at the AI &amp; CX Transformation Forum, discussing
+            sovereign AI relevance, secure regulated-industry deployment, and local data residency.</p>
+        </a>
+        <a class="recognition-item reveal-on-scroll"
+          href="https://www.linkedin.com/posts/arvindkgautam_ai-datascience-analytics-activity-7394013631668998144-jvPb"
+          target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Developer Ecosystem / Europe</div>
+          <h3 class="recognition-title"> DSC Europe</h3>
+          <p class="recognition-desc">Recognized for developer ecosystem contributions at the Data Science Conference
+            Europe, focusing on AI-assisted coding tools and productive team workflow patterns.</p>
+        </a>
+
+        <a class="recognition-item reveal-on-scroll"
+          href="https://www.linkedin.com/posts/arvindkgautam_terriconvalleyhub-productinnovation-ai-activity-7432395143896399872-x-4H"
+          target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Developer Ecosystem - Hackathon</div>
+          <h3 class="recognition-title"> Terricon Valley Hackathon</h3>
+          <p class="recognition-desc">Recognized for developer ecosystem contributions at the Data Science Conference
+            Europe, focusing on AI-assisted coding tools and productive team workflow patterns.</p>
+        </a>
+
+        <a class="recognition-item reveal-on-scroll" href="https://www.linkedin.com/in/arvindkgautam/" target="_blank"
+          rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Developer Ecosystem - Jetbrains</div>
+          <h3 class="recognition-title"> Jetbrans Startup Mentorship</h3>
+          <p class="recognition-desc">Jetbrains starup and innvation program, mentored 4 startups and suppoert them to
+            develope their product design and sales straitegy </p>
+        </a>
+
+        <a class="recognition-item reveal-on-scroll"
+          href="https://www.linkedin.com/posts/arvindkgautam_sustainabilityawards2025-bigawards-gratitude-activity-7356575746183622656-ix0a"
+          target="_blank" rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Hackathon Judging / Global</div>
+          <h3 class="recognition-title">International AI Judging Panels</h3>
+          <p class="recognition-desc">Served as an expert architecture judge for global AI hackathons and product
+            incubators, evaluating technical readiness, compliance, and enterprise viability.</p>
+        </a>
+        <a class="recognition-item reveal-on-scroll" href="https://www.linkedin.com/in/arvindkgautam/" target="_blank"
+          rel="noopener">
+          <div class="project-arrow">→</div>
+          <div class="recognition-tag">Podcast / Guest Speaker</div>
+          <h3 class="recognition-title">The Enterprise AI Podcast</h3>
+          <p class="recognition-desc">Featured discussion on bridging the gap between C-suite AI strategy and
+            ground-level execution, detailing cloud-native migrations and data sovereignty blueprints.</p>
+        </a>
       </div>
     </section>
 
@@ -2016,15 +2220,38 @@
         <h2 class="section-title">What people say</h2>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div style="padding: 2.5rem; background: var(--bg-soft); border-left: 2px solid var(--gold);">
+        <div
+          style="padding: 2.5rem; background: var(--bg-soft); border-left: 2px solid var(--gold); display: flex; flex-direction: column; justify-content: space-between;">
           <p
-            style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--ink); line-height: 1.5;">
-            "Arvind brings strong customer thinking and practical AI execution."</p>
+            style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.6; margin-bottom: 1.5rem;">
+            "Arvind combines deep enterprise architecture depth with commercial leadership, bridging the gap between CTO
+            and CIO priorities."</p>
+          <div
+            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold-soft); letter-spacing: 0.05em; text-transform: uppercase;">
+            — VP of Customer Experience, APAC Telco
+          </div>
         </div>
-        <div style="padding: 2.5rem; background: var(--bg-soft); border-left: 2px solid var(--gold);">
+        <div
+          style="padding: 2.5rem; background: var(--bg-soft); border-left: 2px solid var(--gold); display: flex; flex-direction: column; justify-content: space-between;">
           <p
-            style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--ink); line-height: 1.5;">
-            "Connects business strategy with technology in a simple way."</p>
+            style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.6; margin-bottom: 1.5rem;">
+            "He doesn't just advise; he personally designs the RAG pipelines and oversees local LLM deployments,
+            ensuring complete data residency compliance in regulated spaces."</p>
+          <div
+            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold-soft); letter-spacing: 0.05em; text-transform: uppercase;">
+            — Chief Information Officer, Regional BFSI
+          </div>
+        </div>
+        <div
+          style="padding: 2.5rem; background: var(--bg-soft); border-left: 2px solid var(--gold); display: flex; flex-direction: column; justify-content: space-between;">
+          <p
+            style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.6; margin-bottom: 1.5rem;">
+            "Arvind has a unique ability to navigate complex multi-country political alignment while keeping the
+            technical delivery on schedule."</p>
+          <div
+            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold-soft); letter-spacing: 0.05em; text-transform: uppercase;">
+            — Founder &amp; Managing Director, Magnis AI
+          </div>
         </div>
       </div>
     </section>
@@ -2032,18 +2259,24 @@
     <section class="contact" id="contact">
       <h2 style="max-width: 25ch;">Let’s discuss AI transformation, customer experience modernization, or Agentic AI
         opportunities across ASEAN.</h2>
-      <p class="contact-sub reveal-on-scroll">If you are putting AI into production, modernising customer experience, or
-        trying to find
-        honest signal in a noisy market, I am up for a conversation.</p>
+      <p class="contact-sub reveal-on-scroll"
+        style="font-style: normal; font-size: 1.25rem; color: var(--gold); margin-bottom: 1.2rem; max-width: 60ch;">
+        Available for enterprise AI transformation advisory, regional GTM leadership, and strategic modernization
+        initiatives across ASEAN and ANZ.
+      </p>
+      <p class="contact-sub reveal-on-scroll" style="font-size: 1.1rem; max-width: 55ch; margin-bottom: 2.5rem;">
+        If you are putting AI into production, modernising customer experience, or trying to find honest signal in a
+        noisy market, I am up for a conversation.
+      </p>
 
-      <a class="cv-button" href="mailto:arvind.gautam@gmail.com?subject=Book%20a%20Strategy%20Discussion">
-        <span class="arrow">→</span> Book a strategy discussion
+      <a class="cv-button" href="mailto:avi.gautam@gmail.com?subject=Strategic%20Discussion">
+        <span class="arrow">→</span> Strategic Discussion
       </a>
 
       <div class="contact-links">
         <a class="reveal-on-scroll" href="https://linkedin.com/in/arvindkgautam" target="_blank"
           rel="noopener">LINKEDIN</a>
-        <a href="mailto:arvind.gautam@gmail.com">EMAIL</a>
+        <a href="mailto:avi.gautam@gmail.com">EMAIL</a>
       </div>
     </section>
 
@@ -2107,7 +2340,8 @@
           ['', ''],
           ['', 'Arvind Gautam. Singapore based. Originally from Banda, Bundelkhand.'],
           ['', '20+ years across enterprise sales, AI advisory, and CX transformation'],
-          ['', 'in ASEAN. BFSI and Telco primarily.'],
+          ['', 'in ASEAN and ANZ. BFSI and Telco primarily.'],
+          ['', 'Recognized globally (Avaya Top 1%, JetBrains, GITEX Dubai, DSC Europe).'],
           ['', ''],
           ['', 'Day job: Regional Lead at SNUG Technologies. ASEAN sales and'],
           ['', 'solution consulting for an AI-first CCaaS platform.'],
@@ -2236,7 +2470,7 @@
           ['', '  Joint workshops with each country COO before procurement.'],
           ['', ''],
           ['gold', 'Outcome'],
-          ['', '  Multi-million-dollar regional contract, closed in cycle.'],
+          ['', '  USD 10M+ regional transformation program, closed in cycle.'],
           ['', '  Five markets aligned on one architectural pattern.'],
           ['', '  AI agent assist shipped as foundation, not future phase.'],
           ['', '  Regulatory deadline met in every market.'],
@@ -2253,18 +2487,17 @@
         writing: () => [
           ['heading', '// writing & speaking'],
           ['', ''],
-          ['gold', 'LinkedIn articles'],
-          ['', '  - The Architect-Seller Mindset'],
-          ['', '  - Redesigning Contact Centers for the Cloud Era'],
-          ['', '  - Bringing AI Agents to Cloud Engineering'],
-          ['', '  - Why Hybrid Cloud Won Over Pure Cloud in a BFSI Deal'],
-          ['', '  - Why AI Will Not Replace Agents'],
+          ['gold', 'LinkedIn & Medium (Read online)'],
+          ['', '  - The Architect-Seller Mindset (LinkedIn)'],
+          ['', '  - Redesigning Contact Centers for the Cloud Era (Medium)'],
+          ['', '  - Bringing AI Agents to Cloud Engineering (Dev.to)'],
+          ['', '  - Why Hybrid Cloud Won Over Pure Cloud in a BFSI Deal (Substack)'],
           ['', ''],
-          ['gold', 'Speaking'],
-          ['', '  - Keynote, AI and CX Transformation Forum,'],
-          ['', '    Avaya Thailand 2024'],
-          ['', '  - Bot Federation Innovation Showcase,'],
-          ['', '    GITEX Dubai 2018'],
+          ['gold', 'Speaking & Showcases'],
+          ['', '  - Keynote: AI and CX Transformation Forum, Avaya Thailand (PDF)'],
+          ['', '  - Bot Federation Showcase: GITEX Dubai (PDF)'],
+          ['', '  - Dev Tooling Ecosystem: JetBrains & DSC Europe'],
+          ['', '  - International AI Hackathon Judging Panels'],
           ['', '  - ASEAN C-Suite AI Transformation Roadshows 2022-2024']
         ],
         contact: () => [
@@ -2529,7 +2762,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
         </svg>
-        <span>Projects</span>
+        <span>Deployments</span>
       </a>
       <a href="#contact" class="bottom-nav-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2538,14 +2771,14 @@
         </svg>
         <span>Contact</span>
       </a>
-      <a href="mailto:arvind.gautam@gmail.com?subject=Book%20an%20Appointment" class="bottom-nav-item highlight">
+      <a href="mailto:avi.gautam@gmail.com?subject=Strategic%20Discussion" class="bottom-nav-item highlight">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
           <line x1="16" y1="2" x2="16" y2="6"></line>
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        <span>Book Call</span>
+        <span>Connect</span>
       </a>
     </nav>
 
